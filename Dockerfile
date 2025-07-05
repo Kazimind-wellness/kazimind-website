@@ -1,20 +1,25 @@
-# Use the official PHP image with Composer and Apache
 FROM php:8.2-apache
 
-# Enable mod_rewrite for Laravel and modern PHP apps
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
+
+# Install PDO MySQL driver
+RUN docker-php-ext-install pdo pdo_mysql
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Install Composer globally
+# Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy project files into the container
+# Copy everything into the container
 COPY . .
 
-# Set correct permissions (optional)
+# Install Composer dependencies
+RUN composer install
+
+# Fix permissions (optional)
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose port (Render listens on 10000 automatically)
+# Expose port 80
 EXPOSE 80
