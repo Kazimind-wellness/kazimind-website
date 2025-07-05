@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --theme-blue: #006fd1;
+    --theme-yellow: rgb(252, 252, 59);
+    --theme-white: white;
+    --theme-font-family1: "Kaushan Script", cursive;
+    --theme-font-family2: "Titillium Web", sans-serif;
+}
+
+
+*{
+    font-family: var(--theme-font-family2);
+}
+
+.main-heading {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1d1c3b;
+}
+
+.section {
+    width: 90%;
+    height: 60vh;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-paragraph {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 80px auto;
+}
+
+.section-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.sub-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #1d1c3b;
+}
+
+.description {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 2;
+}
+
+.therapy-list {
+    font-family: var(--theme-font-family2);
+    padding: 40px;
+    color: #1c1c1c;
+}
+
+.therapy-list ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    font-size: 1.25rem;
+    line-height: 2.2;
+}
+
+.therapy-list li {
+    margin-bottom: 8px;
+    text-align: start;
+}
+
+
+.therapy-list a:hover {
+    text-decoration: none;
+    color: #146c2a;
+}
+
+.contact-button-container {
+    margin: 4rem 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: #365c3a;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #2d4f31;
+}
+
+/* Medium screens - Tablets */
+@media (max-width: 1024px) {
+    .main-heading {
+        font-size: 3rem;
+    }
+
+    .intro-paragraph {
+        font-size: 1.3rem;
+    }
+
+    .sub-heading {
+        font-size: 2rem;
+    }
+
+    .therapy-list ul {
+        font-size: 1.1rem;
+    }
+
+    .contact-button {
+        font-size: 0.9rem;
+        padding: 16px 35px;
+    }
+}
+
+/* Small screens - Mobile landscape and smaller tablets */
+@media (max-width: 768px) {
+    .body {
+        padding: 40px 20px;
+    }
+
+    .section {
+        margin-bottom: 3rem;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .intro-paragraph {
+        font-size: 1.1rem;
+    }
+
+    .sub-heading {
+        font-size: 1.7rem;
+    }
+
+    .description {
+        font-size: 0.95rem;
+    }
+
+    .therapy-list ul {
+        font-size: 1rem;
+        padding-left: 25px;
+    }
+
+    .contact-button {
+        font-size: 0.85rem;
+        padding: 14px 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .mainB {
+        height: 100%;
+        overflow-y: auto;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .section-container {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    .main-heading,
+    .sub-heading {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .intro-paragraph,
+    .description,
+    .therapy-list ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .therapy-list ul {
+        padding-left: 1rem;
+    }
+
+    .contact-button-container {
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+
+    .contact-button {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+        display: inline-block;
+        text-align: center;
+    }
+}

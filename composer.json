@@ -1,0 +1,22 @@
+{
+    "name": "administrator/kazimind",
+    "description": "project",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Administrator\\Kazimind\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "steve",
+            "email": "stevenmacharia2003@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8",
+        "google/apiclient": "^2.14",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

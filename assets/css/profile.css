@@ -1,0 +1,141 @@
+:root {
+    --theme-mustered: #FFDB58;
+    --theme: #006fd1;
+    --theme-yellow: rgb(252, 252, 59);
+    --theme-white: wheat;
+    --theme-font-family1: "Kaushan Script", cursive;
+    --theme-font-family2: "Titillium Web", sans-serif;
+    --f-headerTheme: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--theme-font-family2);
+}
+
+body {
+    background: lightgray;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Container */
+.profile-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Card */
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Headings */
+.card h2 {
+    text-align: center;
+    color: #006fd1;
+    margin-bottom: 1rem;
+}
+
+/* Labels */
+h3 {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.arem;
+    display: block;
+}
+
+h4{
+    font-size: 1rem;
+    color: var(--theme);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="file"] {
+    width: 90%;
+    padding: 0.6rem;
+    border: 1px solid var(--theme);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Image */
+.card img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid var(--theme);
+}
+
+/* Button */
+button[type="submit"] {
+    background-color: #006fd1;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0052a3;
+}
+
+/* Logout Link */
+.logout-button {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background: var(--theme-mustered);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+/* Success Message */
+.card p {
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    button[type="submit"],
+    .logout-button {
+        width: 100%;
+    }
+}
