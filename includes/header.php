@@ -1,4 +1,9 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    ob_start();
+    session_start();
+}
+
 require_once 'db.php';
 $isLoggedIn = isset($_SESSION['user']);
 
