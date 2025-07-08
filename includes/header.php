@@ -1,8 +1,6 @@
-<!-- header  -->
 <?php
-require_once 'db.php'; // ensures session is started
+require_once 'db.php';
 $isLoggedIn = isset($_SESSION['user']);
-
 
 if ($isLoggedIn) {
     $email = $_SESSION['user']['email']; 
