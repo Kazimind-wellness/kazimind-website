@@ -1,4 +1,10 @@
 <?php
+ob_start();
+session_start();
+$pageTitle = "Book Now";
+?>
+
+<?php
 
 use Dotenv\Dotenv;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -77,10 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<?php
-$pageTitle = "Book Now";
-ob_start();
-?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

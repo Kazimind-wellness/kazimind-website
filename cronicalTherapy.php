@@ -1,6 +1,7 @@
 <?php
-$pageTitle = "Book Now";
 ob_start();
+session_start();
+$pageTitle = "Book Now";
 ?>
 
 <head>

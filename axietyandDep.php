@@ -1,3 +1,8 @@
+<?php
+ob_start();
+session_start();
+$pageTitle = "Book Now";
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -12,10 +17,7 @@
 
 
  <div class="mainB">
-    <?php
-    $pageTitle = "Book Now";
-    ob_start();
-    ?>
+
             <div class="section-container section">
                 <h1 class="main-heading">Anxiety and Depression</h1>
                 <p class="intro-paragraph">

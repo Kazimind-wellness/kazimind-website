@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 require 'vendor/autoload.php';
 require 'db.php';

@@ -1,4 +1,8 @@
-
+<?php
+ob_start();
+session_start();
+$pageTitle = "Book Now";
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,10 +16,7 @@
 
  <div class="mainB">
 
-    <?php
-    $pageTitle = "Book Now";
-    ob_start();
-    ?>
+
             <div class="section-container section">
                 <h1 class="main-heading">Trauma, PTSD and C-PTSD</h1>
                 <p class="intro-paragraph">

@@ -1,14 +1,13 @@
 <?php
-
+ob_start();
+session_start();
 require 'vendor/autoload.php';
-
 use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $pageTitle = "Events of the Day";
-ob_start();
 
 $date = $_GET['date'] ?? null;
 if (!$date || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {

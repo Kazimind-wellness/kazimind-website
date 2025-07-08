@@ -1,6 +1,5 @@
 <?php
 // Make sure there is absolutely no whitespace before this PHP tag
-
 require 'db.php';
 
 // Ensure nothing is accidentally printed
