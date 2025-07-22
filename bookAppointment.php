@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="office-hours-container">
   <div class="office-info">
     <h2>Our Office</h2>
-    <p><strong>Kazimind Therapy Centre</strong><br>
+    <p><strong>Kazimind Wellness Centre</strong><br>
       Mt kenya road<br>
       Nanyuki, Sportsman Arms Hotel</p>
 

@@ -32,7 +32,7 @@ $pageTitle = "Book Now";
 
 
  <p class="brief-overview">
-  <mark> Kazimind Therapy Centre </mark>is a health and wellness centre focused on providing mental related services to individuals, 
+  <mark> Kazimind Wellness Centre </mark>is a health and wellness centre focused on providing mental related services to individuals, 
     groups and families across  Kenya. Our therapists provide services for clients in office, in the community and online so that no matter where you reside
     you’re able to get the support you need.
     <hr>

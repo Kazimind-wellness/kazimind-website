@@ -66,7 +66,7 @@ $pageTitle = "Book Now";
                 <h2 class="sub-heading">Types of Therapy and Support</h2>
                 <p class="description">
                     Therapy for trauma will be customized based on what you need want from therapy. Each therapist will have their own approach to 
-                    dealing with trauma, but some of the approaches you might experience at Kazimind Therapy Centre include: 
+                    dealing with trauma, but some of the approaches you might experience at Kazimind Wellness Centre include: 
                 </p>
                 <div class="therapy-list">
                     <ul>
