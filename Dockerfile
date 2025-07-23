@@ -28,3 +28,6 @@ RUN chown -R www-data:www-data /var/www/html
 
 # Expose Apache port
 EXPOSE 80
+
+# Start Apache
+CMD ["apache2-foreground"]
