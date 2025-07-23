@@ -14,10 +14,9 @@ $host = $_ENV['DB_HOST'];
 $db   = $_ENV['DB_NAME'];
 $user = $_ENV['DB_USER'];
 $pass = $_ENV['DB_PASS'];
-$port = $_ENV['DB_PORT'] ?? 5432;
 
 // PostgreSQL DSN
-$dsn = "pgsql:host=$host;port=$port;dbname=$db";
+$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
 
 // PDO options
 $options = [
