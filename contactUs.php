@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       Please submit your information below and our administrative team can assist you.
     </p>
     <p>
-      If you already see one of our therapist we invite you to email or <a href="#">book</a> with them directly.
+      If you are ready see one of our therapist we invite you to email or <a href="#">book</a> with them directly.
     </p>
     <p>
       All messages sent through this contact form pass through our administrative team, so please don’t share anything confidential in this form.
@@ -220,6 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <li><strong>Sundays</strong> closed</li>
     </ul>
     <p>Closed on Sundays Only.</p>
+    <p>Open to appointment On Public Holidays</p>
     <p><em>Our therapists work a variety of hours, the above hours indicate when our administrative support is available for you in-office and online.</em></p>
     <p><em>Please note emails sent to the administrative desk on weekends may not be responded to until Monday.</em></p>
   </div>
@@ -228,7 +229,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="travel-info">
   <h3>Travelling to our office:</h3>
   <p>
-    Located right in the heart of Nanyuki town, on Lenana Road, just off the main Nairobi–Nanyuki Highway, and approximately 2 km north of the Equator line. Within Sportsmans Arms Hotel. 
+    Located right in the heart of Nanyuki town, on Lenana Road, just off the main Nairobi–Nanyuki Highway. Within Sportsmans Arms Hotel. 
   </p>  
 </div>
 

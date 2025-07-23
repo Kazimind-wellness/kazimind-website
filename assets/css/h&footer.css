@@ -129,7 +129,7 @@
 
  .logo-section {
      text-align: center;
-     animation: pulseLogo 2s infinite alternate;
+     /* animation: pulseLogo 2s infinite alternate; */
  }
 
  .logo-section img {

@@ -226,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="travel-info">
   <h3>Travelling to our office:</h3>
   <p>
-    Located right in the heart of Nanyuki town, on Lenana Road, just off the main Nairobi–Nanyuki Highway, and approximately 2 km north of the Equator line. Within Sportsmans Arms Hotel. 
+    Located right in the heart of Nanyuki town, on Lenana Road. Within Sportsmans Arms Hotel. 
   </p>  
 </div>
 
