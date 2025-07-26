@@ -13,7 +13,7 @@
 .therapy-heading {
     font-size: 48px;
     font-weight: 800;
-    color: #231942;
+    color: #006fd1;
     text-align: center;
     margin-top: 40px;
     margin-bottom: 30px;
@@ -55,12 +55,12 @@
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #231942;
+    color: #006fd1;
 }
 
 .btn-book {
     display: inline-block;
-    background-color: #014421;
+    background-color: #006fd1;
     color: #fff;
     padding: 12px 24px;
     font-weight: 600;

@@ -18,7 +18,7 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
-    color: #1d1c3b;
+    color: #006fd1;
 }
 
 .section {
@@ -47,7 +47,7 @@
     font-weight: 700;
     margin-bottom: 20px;
     text-align: left;
-    color: #1d1c3b;
+    color: #006fd1;
 }
 
 .description {
@@ -89,7 +89,7 @@
 
 .contact-button {
     display: inline-block;
-    background-color: #365c3a;
+    background-color: #006fd1;
     color: white;
     padding: 18px 40px;
     border-radius: 50px;

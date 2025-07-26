@@ -13,7 +13,7 @@ $pageTitle = "Book Now";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/indexStyles.css">
-    <link rel="stylesheet" href="assets/css/h&footer.css">
+    <link rel="stylesheet" href="assets/css/h-footer.css">
     <title>Kazimind</title>
 </head>
 
@@ -21,12 +21,17 @@ $pageTitle = "Book Now";
   <div class="background-overlay bg1" id="bg1"></div>
   <div class="background-overlay bg2" id="bg2"></div>
 
-  <div class="welcome-message">
+  <!-- <div class="welcome-message">
     <h2>WELCOME TO</h2>
     <h1 class="animate__animated animate__zoomInRight animate__delay-0.5s">Kazimind</h1>
     <p>Our goal is to create a safe and supportive environment to help both clients and therapists grow to their full potential.</p>
   </div>
-  <button type="button" onclick="window.location.href='aboutUs.php'">Our Story</button>
+  <button type="button" onclick="window.location.href='aboutUs.php'">Our Story</button> -->
+
+<div class="moving-message">
+  <p>Our goal is to create a safe and supportive environment to help both clients and therapists grow to their full potential.</p>
+</div>
+
 </div>
 
 
@@ -40,52 +45,50 @@ $pageTitle = "Book Now";
 
 
  <div class="topic-handled">
-  <p class="topic-intro">
-   <mark> Our team members have experience working </mark> with a variety of topics and challenges, 
-    and can support you with whatever is going on for you including the following: 
-  </p>
+        <p class="topic-intro">
+        <mark> Our team members have experience working </mark> with a variety of topics and challenges, 
+          and can support you with whatever is going on for you including the following: 
+        </p>
 
-  <div class="topic-handled-lists">
+        <div class="topic-handled-lists">
 
-<ul>
-  <li>Anxiety and Depression</li>
-  <li>Chronic and Acute Body Pain</li>
-  <li>Stress Management</li>
-  <li>Trauma, PTSD and C-PTSD</li>
-  <li>Gender and Sexuality</li>
-  <li>Nutrition Planning and Counselling</li>
-  <li>Body Image</li>
-  <li>Mind-Body Connection</li>
-  <li>Corporate Mental Health Talks</li>
-</ul>
+                  <ul>
+                    <li>Anxiety and Depression</li>
+                    <li>Chronic and Acute Body Pain</li>
+                    <li>Stress Management</li>
+                    <li>Trauma, PTSD and C-PTSD</li>
+                    <li>Gender and Sexuality</li>
+                    <li>Nutrition Planning and Counselling</li>
+                    <li>Body Image</li>
+                    <li>Mind-Body Connection</li>
+                    <li>Corporate Mental Health Talks</li>
+                  </ul>
 
-<ul>
-  <li>Self-Esteem</li>
-  <li>Communication</li>
-  <li>Marriage Preparation</li>
-  <li>Anger Management</li>
-  <li>Neurodiversity, ADHD and ASD</li>
-  <li>Suicide and Self-Harm</li>
-  <li>Attachment</li>
-  <li>One On One Therapy</li>
-  <li>Teen Therapy</li>
-</ul>
+                  <ul>
+                    <li>Self-Esteem</li>
+                    <li>Communication</li>
+                    <li>Marriage Preparation</li>
+                    <li>Anger Management</li>
+                    <li>Neurodiversity, ADHD and ASD</li>
+                    <li>Suicide and Self-Harm</li>
+                    <li>Attachment</li>
+                    <li>One On One Therapy</li>
+                    <li>Teen Therapy</li>
+                  </ul>
+                  <ul>
+                    <li>Grief and Loss</li>
+                    <li>Perinatal Health and Post-Partum Support</li>
+                    <li>Substance Use and Recovery</li>
+                    <li>Couples Therapy</li>
+                    <li>Family Therapy</li>
+                    <li>Child therapy </li>
+                    <li>Youth Training workshop</li>
+                    <li>Student Personal Therapy</li>
+                  </ul>
 
-<ul>
-  <li>Grief and Loss</li>
-  <li>Perinatal Health and Post-Partum Support</li>
-  <li>Substance Use and Recovery</li>
-  <li>Couples Therapy</li>
-  <li>Family Therapy</li>
-  <li>Child therapy </li>
-  <li>Youth Training workshop</li>
-  <li>Student Personal Therapy</li>
-</ul>
-
-<a href="contactUs.php" style="text-decoration: none;">Reach out to us to book your consult today.</a>
+      <a href="contactUs.php" style="text-decoration: none;">Reach out to us to book your consult today.</a>
+  </div>
 </div>
-</div>
-
 
   <div class="section-cards">
     <div class="card card-team">
@@ -204,48 +207,101 @@ $pageTitle = "Book Now";
 
 });
 
-const images = [
-  "images/frontDesk.jpg",
-  "images/imageB.jpg",
-  "images/imageB1.jpg",
-  "images/imageB4.jpg",
-  "images/imageb3.jpg",
-  "images/imageB5.jpg",
-  "images/imageB6.jpg"
-];
 
-images.forEach(src => {
-  const img = new Image();
-  img.src = src; // preload
-});
+    const images = [
+        "images/imageB.jpg",
+        "images/imageB4.jpg",
+        "images/imageb3.jpg",
+        "images/imageB5.jpg",
+        "images/imageB6.jpg"
+    ];
 
-let current = 0;
-let showingBg1 = true;
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src; // preload
+    });
 
-const bg1 = document.getElementById('bg1');
-const bg2 = document.getElementById('bg2');
+    let current = 0;
+    let showingBg1 = true;
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
 
-// Initial image
-bg1.style.backgroundImage = `url('${images[current]}')`;
-
-function crossFadeBackground() {
-  current = (current + 1) % images.length;
-
-  if (showingBg1) {
-    bg2.style.backgroundImage = `url('${images[current]}')`;
-    bg2.style.opacity = 1;
-    bg1.style.opacity = 0;
-  } else {
+    // Initial image
     bg1.style.backgroundImage = `url('${images[current]}')`;
-    bg1.style.opacity = 1;
-    bg2.style.opacity = 0;
-  }
 
-  showingBg1 = !showingBg1;
-}
+    function crossFadeBackground() {
+        current = (current + 1) % images.length;
 
-setInterval(crossFadeBackground, 8000);
+        if (showingBg1) {
+            bg2.style.backgroundImage = `url('${images[current]}')`;
+            bg2.style.opacity = 1;
+            bg1.style.opacity = 0;
+        } else {
+            bg1.style.backgroundImage = `url('${images[current]}')`;
+            bg1.style.opacity = 1;
+            bg2.style.opacity = 0;
+        }
 
+        showingBg1 = !showingBg1;
+    }
+
+    setInterval(crossFadeBackground, 8000);
+
+    // Animate cards on scroll
+    const animateOnScroll = () => {
+        const cards = document.querySelectorAll('.card-content');
+        cards.forEach(card => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (cardPosition < screenPosition) {
+                card.style.transform = 'translateY(0)';
+                card.style.opacity = '1';
+            }
+        });
+    };
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+
+    // Trigger animations for topic lists
+    document.addEventListener('DOMContentLoaded', () => {
+        const lists = document.querySelectorAll('.topic-handled-lists ul');
+        lists.forEach((list, index) => {
+            setTimeout(() => {
+                list.style.opacity = '1';
+            }, 300 * (index + 1));
+        });
+        
+        setTimeout(() => {
+            document.querySelector('.topic-handled a').style.opacity = '1';
+        }, 1500);
+    });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const animatedElements = document.querySelectorAll(
+      ".card-content, .article-card, .intro, .topic-intro, .topic-handled-lists ul, .event-card, .event-buttons, .brief-overview"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-visible");
+          } else {
+            entry.target.classList.remove("animate-visible"); // So animation re-triggers on scroll
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+  });
 </script>
 
 <?php

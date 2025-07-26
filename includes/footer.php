@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="assets/css/h&footer.css">
+    <link rel="stylesheet" href="assets/css/h-footer.css">
     <link rel="stylesheet" href="assets/css/indexStyles.css">
 </head>
 
