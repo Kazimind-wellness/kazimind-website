@@ -49,6 +49,7 @@
         background: rgba(0, 111, 209, 0.9);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         height: 15%;
+        border-bottom: 3px solid var(--theme-mustered);
     }
 
     .logo {
@@ -94,12 +95,12 @@
         left: 0;
         width: 0;
         height: 2px;
-        background-color: #b3d4ff;
+        background-color: var(--theme-mustered);
         transition: width 0.4s ease-out;
     }
 
     .nav-links li a:hover {
-        color: #b3d4ff;
+        color: var(--theme-mustered);
     }
 
     .nav-links li a:hover::after {
@@ -338,6 +339,7 @@
             position: relative;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid var(--theme-mustered);
         }
 
         .footer-container {
@@ -399,16 +401,18 @@
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
             color: white;
             transition: all 0.3s ease;
             font-size: 1.1rem;
         }
 
         .social-icons a:hover {
-            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-3px) scale(1.1);
+        }
+
+        .social-icons a img{
+            height: 80%;
+            width: 80%;
         }
 
         .copyR {

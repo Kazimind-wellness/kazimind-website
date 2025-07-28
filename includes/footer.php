@@ -25,14 +25,14 @@
     <div class="footer-column">
       <h3>Follow Us</h3>
       <div class="social-icons">
-        <a href="https://www.facebook.com/KaziMindWellness"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://x.com/kazimindw?t=C2wK7H9IVccb4RXcf9fK9A&s=08"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=nsq9ae0"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/KaziMindWellness"><img src="images/facebook-icon.png" alt=""></i></a>
+        <a href="https://x.com/kazimindw?t=C2wK7H9IVccb4RXcf9fK9A&s=08"><img src="images/x-icon.png" alt=""></i></a>
+        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=nsq9ae0"><img src="images/ig-icon.jpg" alt=""></i></a>
       </div>
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/kazi-mind-wellness-04434a308/"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://www.tiktok.com/@kazimindwellness?is_from_webapp=1&sender_device=pc"><i class="fa-brands fa-tiktok"></i></a>
-        <a href="www.youtube.com/@KaziMindHub"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/kazi-mind-wellness-04434a308/"><img src="images/linkedin-icon.png" alt=""></a>
+        <a href="https://www.tiktok.com/@kazimindwellness?is_from_webapp=1&sender_device=pc"><img src="images/tiktok-icon.png" alt=""></i></a>
+        <a href="www.youtube.com/@KaziMindHub"><img src="images/youtube-icon.png" alt=""></a>
       </div>
     </div>
 

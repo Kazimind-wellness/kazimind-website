@@ -38,7 +38,7 @@ if ($isLoggedIn) {
 
         <div class="navbar">
         <a href="#" class="logo">
-            <img src="images/kazi-mind-high-resolution-logo-transparent.png" alt="Skye Bioscience Logo">
+            <img src="images/kazi-mind-high-resolution-logo-transparent.png" alt="Kazimind Logo">
         </a>
 
         <button class="menu-btn">☰</button>
