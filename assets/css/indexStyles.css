@@ -1194,7 +1194,6 @@ mark {
 
 .faq-question:hover {
     background: lightblue;
-    color: #ffe4c4;
 }
 
 .faq-answer {
@@ -1795,7 +1794,7 @@ position: absolute;
     .calendar-container {
         padding: 1rem;
         max-width: 95%;
-        max-height: 50%;
+        max-height: 58%;
     }
 
     .calendar-grid {
