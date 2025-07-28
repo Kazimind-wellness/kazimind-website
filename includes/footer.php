@@ -26,7 +26,7 @@
       <h3>Follow Us</h3>
       <div class="social-icons">
         <a href="https://www.facebook.com/KaziMindWellness"><img src="images/facebook-icon.png" alt=""></i></a>
-        <a href="https://x.com/kazimindw?t=C2wK7H9IVccb4RXcf9fK9A&s=08"><img src="images/x-icon.png" alt=""></i></a>
+        <a href="https://x.com/kazimindw?t=C2wK7H9IVccb4RXcf9fK9A&s=08"><img src="images/X-icon.png" alt=""></i></a>
         <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=nsq9ae0"><img src="images/ig-icon.jpg" alt=""></i></a>
       </div>
       <div class="social-icons">
