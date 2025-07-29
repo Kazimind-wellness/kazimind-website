@@ -210,10 +210,13 @@ $pageTitle = "Book Now";
 
     const images = [
         "images/imageB.jpg",
+        "images/imageB1.jpg",
+        "images/imageB2.jpg",
         "images/imageB4.jpg",
         "images/imageb3.jpg",
         "images/imageB5.jpg",
-        "images/imageB6.jpg"
+        "images/imageB6.jpg",
+        "images/imageB7.jpg"
     ];
 
     images.forEach(src => {

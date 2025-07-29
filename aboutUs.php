@@ -28,7 +28,7 @@ $pageTitle = "Book Now";
     <i class="fas fa-volume-mute"></i>
   </button>
 
-  <div class="video-overlay"></div>
+  <!-- <div class="video-overlay"></div> -->
 </div>
 
 <!-- AboutUs Content  -->
