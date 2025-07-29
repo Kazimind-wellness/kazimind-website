@@ -4,7 +4,7 @@ session_start();
 $pageTitle = "Book Now";
 ?>
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -18,7 +18,7 @@ $pageTitle = "Book Now";
 
 <div class="background2" id="background2"><span style="opacity: 100%;"></span></div>
 
-<div class="areasOfFocusIntro">
+<div class="areasOfFocusIntro scroll-animate">
   <h2>Areas of Focus</h2>
   <p>
     Our team at The Kazimnd Therapy Centre can support you with a variety of mental,
@@ -27,84 +27,141 @@ $pageTitle = "Book Now";
   </p>
 </div>
 
+<div class="areasOfFocus-images scroll-animate">
 
-<div class="areasOfFocus-images">
   <div class="focus-item">
-    <img src="images/trauma.jpg" alt="Trauma">
+    <div class="focus-image-container">
+      <img src="images/trauma.jpg" alt="Trauma">
+      <div class="focus-overlay"></div>
+    </div>
     <a href="trauma.php"><p>Trauma</p></a>
   </div>
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/gender.jpg" alt="Gender and Sexuality">
+    <div class="focus-overlay"></div>
+    </div>    
    <a href="genderAndS.php"><p>Gender and <br>Sexuality</p></a> 
   </div>
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/meditation.jpg" alt="Mid-Body Connection">
+    <div class="focus-overlay"></div>
+    </div>   
     <a href="bodyAndMind.php"><p>Mid-Body<br>Connection</p></a> 
   </div>
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/marriage.jpg" alt="Marriage Preparation">
+        <div class="focus-overlay"></div>
+    </div>   
     <a href="mariage-prep.php"><p>Marriage<br>Preparation</p></a>
   </div>
 </div>
 
-<div class="areasOfFocus-images">
+<div class="areasOfFocus-images scroll-animate">
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/couple.jpg" alt="Couples Therapy">
+    <div class="focus-overlay"></div>
+    </div>   
     <a href="couples.php"><p>Couples Therapy</p></a> 
   </div>
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/child.jpg" alt="Child and Youth Therapy">
+        <div class="focus-overlay"></div>
+    </div>   
     <a href="child.php"><p>Child and Youth<br>Therapy</p></a> 
   </div>
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/parent.jpg" alt="Perinatal Health and Post-Partum Support">
+    <div class="focus-overlay"></div>
+    </div>   
     <a href="perinatalHealth.php"><p>Perinatal Health <br>and Post-Partum <br>Support</p></a> 
   </div>
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/loss.jpg" alt="Grief and Loss">
+        <div class="focus-overlay"></div>
+    </div>   
     <a href="griefAndLoss.php"><p>Grief and Loss</p></a> 
   </div>
 </div>
 
 
 
-<div class="areasOfFocus-images">
+
+<div class="areasOfFocus-images scroll-animate">
+
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/depession.jpg" alt="Anxiety and Depression">
+            <div class="focus-overlay"></div>
+    </div>   
    <a href="axietyandDep.php"><p>Anxiety and<br>Depression</p></a> 
   </div>
   <!-- <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/pain.jpg" alt="Chronic and Acute Body Pain">
+        <div class="focus-overlay"></div>
+    </div>   
    <a href="cronicPain.php"><p>Chronic and Acute<br>Body Pain</p></a>
   </div> -->
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/suiside.jpg" alt="Suicide and Self-Harm">
+        <div class="focus-overlay"></div>
+    </div>  
     <a href="selfHarm.php"><p>Suicide and Self-<br>Harm</p></a> 
   </div>
   <div class="focus-item">
+    <div class="focus-image-container">
     <img src="images/depresion.jpg" alt="Stress Management">
+      <div class="focus-overlay"></div>
+    </div>  
     <a href="stressMag.php"><p>Stress Management</p></a> 
   </div>
 </div>
 
-<!-- <div class="areasOfFocus-images">
-  <div class="focus-item">
-    <img src="images/selfharm.jpg" alt="Reiki Energy Healing ">
-    <a href="reikiHealing.php"><p>Reiki Energy <br> Healing </p></a> 
-  </div>
-  <div class="focus-item">
-    <img src="images/depressed.jpg" alt="Reduced Fee Therapy">
-  <a href="reduced-fee-therapy.php"><p>Reduced Fee <br> Therapy</p></a>  
-  </div>
-</div> -->
 
-<div class="matching-assistance">
+<!-- Additional focus image sections with same structure -->
+
+<div class="matching-assistance scroll-animate">
    <a href="contactUs.php">NOT SURE WHO TO SEE? CONTACT US FOR MATCHING ASSISTANCE!</a>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Scroll animations with reset capability
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            } else {
+                entry.target.classList.remove('animated');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animateElements.forEach(el => observer.observe(el));
+});
+</script>
 
 <?php
 $content = ob_get_clean();
 include 'includes/layout.php';
 ?>
-
-</body> 
+</body>

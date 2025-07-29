@@ -7,24 +7,19 @@ $pageTitle = "Book Now";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="assets/css/indexStyles.css">
     <link rel="stylesheet" href="assets/css/h-footer.css">
     <title>Kazimind</title>
 </head>
 
-<!-- uploads\WhatsApp Video 2025-06-13 at 09.30.37_557383d8.mp4 -->
-<!-- Our Team -->
-
 <section class="team" id="team">
+    <h2 class="title scroll-animate">
+        Meet Our Team - Psychologists
+    </h2>
+    <div class="swiper review-slider scroll-animate">
+        <div class="swiper-wrapper">
 
-    <h2 class="title">
-		Meet Our  Team - Psychologists
-			</h2>
-    <div class="swiper review-slider">
-            <div class="swiper-wrapper">
                     <div class="swiper-slide box">
                         <img src="images/fenis.png" alt="">
                         <h3>Fenis Akinyi</h3>
@@ -54,19 +49,17 @@ $pageTitle = "Book Now";
                         </p>
 
                     </div>
-            </div>
-
+        </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-
     </div>
 
-    <h2 class="title">
-		Meet Our  Team - Technology and Innovation
-			</h2>
-    <div class="swiper review-slider">
-            <div class="swiper-wrapper">
-                   
+    <h2 class="title scroll-animate">
+        Meet Our Team - Technology and Innovation
+    </h2>
+    <div class="swiper review-slider scroll-animate">
+        <div class="swiper-wrapper">
+
                     <div class="swiper-slide box">
                         <img src="images/steven.png" alt="">
                         <h3>Steven Macharia</h3>
@@ -98,47 +91,58 @@ $pageTitle = "Book Now";
                             Head Of Technology and Innovation Department
                         </p>
                     </div>
-            </div>
-
+        </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
-
     </div>
 </section>
-    <script src="assets/js/topBackground.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-  var swiper = new Swiper(".review-slider", {
-    spaceBetween: 10,
-    grabCursor: true,
-    loop: true,
-    centeredSlides: false,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-        breakpoints: {
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          },
-  });
-</script>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper
+    var swiper = new Swiper(".review-slider", {
+        spaceBetween: 10,
+        grabCursor: true,
+        loop: true,
+        centeredSlides: false,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+        },
+    });
+
+    // Scroll animations with reset capability
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            } else {
+                entry.target.classList.remove('animated');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animateElements.forEach(el => observer.observe(el));
+});
+</script>
 
 <?php
 $content = ob_get_clean();
 include 'includes/layout.php';
 ?>
-
 </body>
