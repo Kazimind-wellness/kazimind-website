@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
@@ -99,36 +99,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="background2" id="background2"><span style="opacity: 100%;"></span></div>
 
-<h1 class="contact-h1">Contact Us</h1>
+<h1 class="contact-h1 scroll-animate">Contact Us</h1>
 
 <div class="contact-section">
-
-  <div class="contact-text">  
+  <div class="contact-text scroll-animate">  
     <p>
       Choosing a therapist and connecting for a free consult are the first steps in beginning your wellness journey.  
       Please submit your information below and our administrative team can assist you.
     </p>
     <p>
-      If you are ready see one of our therapist we invite you to email or <a href="#">book</a> with them directly.
+      If you are ready see one of our therapist we invite you to email or <a href="#" class="contact-link">book</a> with them directly.
     </p>
     <p>
-      All messages sent through this contact form pass through our administrative team, so please don’t share anything confidential in this form.
+      All messages sent through this contact form pass through our administrative team, so please don't share anything confidential in this form.
     </p>
-
   </div>
-  <div class="contact-image">
+  <div class="contact-image scroll-animate">
     <img src="images/fenis.jpg" alt="Office Desk" />
   </div>
-      <p class="disclaimer">
-      <em>Please note if you are in crisis or need immediate support, these messages may not be immediately seen, and in such situations you should reach out to a supportive person or emergency services.</em>
-      <em> If you need immediate support please reach out to your local distress line. </em>
-    </p>
+  <p class="disclaimer scroll-animate">
+    <em class="disclaimer scroll-animate">Please note if you are in crisis or need immediate support, these messages may not be immediately seen, <br> and in such situations you should reach out to a supportive person or emergency services. <br> If you need immediate support please reach out to your local distress line.</em>
+  </p>
 </div>
 
 
-<div class="contact-form">
+<div class="contact-form scroll-animate">
   <form method="post">
-    <div class="form-group two-columns">
+    <div class="form-group two-columns scroll-animate">
       <div>
         <label for="first-name">Name <span>(required)</span></label>
         <input type="text" id="first-name" placeholder="First Name" name="first-name" required>
@@ -139,23 +136,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="email">Email Address <span>(required)</span></label>
       <input type="email" id="email" name="email" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="location">Location <span>(required)</span></label>
       <small>Your province or city</small>
       <input type="text" id="location" name="location" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="phone">Phone</label>
       <input type="tel" id="phone" name="phone">
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="reason">Reason for Contact <span>(required)</span></label>
       <select id="reason" name="reason" required>
         <option value="">Select an option</option>
@@ -165,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="service">Related to which service? <span>(required)</span></label>
       <select id="service" name="service" required>
         <option value="">Select an option</option>
@@ -175,14 +172,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </select>
     </div>
 
-     <div class="form-group">
+     <div class="form-group scroll-animate">
       <label for="message">
         Tell us about yourself and what service you're interested in
         <span>(required)</span>
       </label>
       <textarea id="message" name="message" placeholder="If you are unsure of the clinician that would be best for you please let us know what you're hoping to address in therapy and we'll try to connect you with an appropriate therapist." required></textarea>
     </div>
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <button type="submit" class="submit-button" name="submit" >SUBMIT</button>
     </div>
   </form>
@@ -191,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="office-hours-container">
-  <div class="office-info">
+  <div class="office-info scroll-animate">
     <h2>Our Office</h2>
     <p><strong>Kazimind Wellness Centre</strong><br>
       Mt kenya road<br>
@@ -212,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 
-  <div class="office-hours">
+  <div class="office-hours scroll-animate">
     <h2>Our Hours</h2>
     <ul>
       <li><strong>Mondays</strong> 8am - 5pm</li>
@@ -230,14 +227,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </div>
 
-<div class="travel-info">
+<div class="travel-info scroll-animate">
   <h3>Travelling to our office:</h3>
   <p>
     Located right in the heart of Nanyuki town, on Lenana Road, just off the main Nairobi–Nanyuki Highway. Within Sportsmans Arms Hotel. 
   </p>  
 </div>
 
-  <script src="assets/js/topBackground.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced scroll animations with reset capability
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            } else {
+                entry.target.classList.remove('animated');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    animateElements.forEach(el => observer.observe(el));
+
+    // Form input focus effects
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+        });
+    });
+});
+</script>
 
 <?php
 $content = ob_get_clean();

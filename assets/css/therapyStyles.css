@@ -9,7 +9,7 @@
     --f-headerTheme: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-
+/* Base Styles */
 .therapy-heading {
     font-size: 48px;
     font-weight: 800;
@@ -19,13 +19,29 @@
     margin-bottom: 30px;
     font-family: 'Segoe UI', sans-serif;
     letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+.therapy-heading.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .therapy-section {
     padding: 60px 20px;
     background-color: #fff;
     font-family: 'Segoe UI', sans-serif;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition-delay: calc(var(--index) * 0.1s);
+}
+
+.therapy-section.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .therapy-content {
@@ -35,8 +51,17 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 40px;
-    border-bottom: 3px solid gray;
+    border-bottom: 3px solid rgba(0, 111, 209, 0.2);
     padding-bottom: 3rem;
+    transition: border-color 0.3s ease;
+}
+
+.therapy-section:hover .therapy-content {
+    border-bottom-color: rgba(0, 111, 209, 0.5);
+}
+
+.therapy-image {
+    transition: transform 0.5s ease;
 }
 
 .therapy-image img {
@@ -44,6 +69,14 @@
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
+    transition: all 0.5s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.therapy-image:hover img {
+    /* transform: scale(1.05) rotate(2deg); */
+    box-shadow: 0 10px 25px rgba(0, 111, 209, 0.3);
+    transform: scale(1.1);
 }
 
 .therapy-text {
@@ -51,11 +84,52 @@
     min-width: 300px;
 }
 
+
+.therapy-section:hover .therapy-text h2 {
+    color: #0055a5;
+    transform: translateX(5px);
+}
+
 .therapy-text h2 {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
     color: #006fd1;
+    transition: all 0.3s ease;
+    display: inline-block;
+    /* Required for the pseudo-element to work */
+    position: relative;
+    /* Needed for absolute positioning of underline */
+}
+
+.therapy-text h2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #0055a5;
+    transition: width 0.3s ease;
+}
+
+.therapy-section:hover .therapy-text h2 {
+    color: #0055a5;
+    transform: translateX(5px);
+}
+
+.therapy-section:hover .therapy-text h2::after {
+    width: 100%;
+}
+.therapy-text p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #111;
+    transition: color 0.3s ease;
+}
+
+.therapy-section:hover .therapy-text p {
+    color: #333;
 }
 
 .btn-book {
@@ -67,30 +141,78 @@
     border-radius: 30px;
     text-decoration: none;
     margin-bottom: 20px;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-book:hover {
-    background-color: #026c35;
+    background-color: #0055a5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 111, 209, 0.3);
 }
 
-.therapy-text p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #111;
-}
-
-.reiki{
+.reiki {
     font-size: 2rem;
     text-align: center;
     font-family: var(--theme-font-family2);
     padding: 1rem 2rem;
 }
 
-@media (max-width: 768px) {
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
 
-    .reiki{
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .therapy-heading {
+        font-size: 36px;
+    }
+
+    .therapy-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .therapy-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .therapy-text {
+        min-width: 100%;
+    }
+
+    .reiki {
         font-size: 1rem;
         text-align: start;
     }
 }
+
+@media (max-width: 480px) {
+    .therapy-heading {
+        font-size: 28px;
+    }
+
+    .therapy-text h2 {
+        font-size: 24px;
+    }
+
+    .therapy-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+

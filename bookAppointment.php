@@ -102,9 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <h1 class="contact-h1">Book An Appointment With Us</h1>
 
 
-<div class="contact-form">
+<div class="contact-form scroll-animate">
   <form method="post">
-    <div class="form-group two-columns">
+    <div class="form-group two-columns scroll-animate">
       <div>
         <label for="first-name">Name <span>(required)</span></label>
         <input type="text" id="first-name" placeholder="First Name" name="first-name" required>
@@ -115,33 +115,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="email">Email Address <span>(required)</span></label>
       <input type="email" id="email" name="email" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="location">Location <span>(required)</span></label>
       <small>Your province or city</small>
       <input type="text" id="location" name="location" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="phone">Phone</label>
       <input type="tel" id="phone" name="phone">
     </div>
 
-        <div class="form-group">
+        <div class="form-group scroll-animate">
             <label for="date">Preferred Date *</label>
             <input type="date" id="date" name="date" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-group scroll-animate">
             <label for="time">Preferred Time *</label>
             <input type="time" id="time" name="time" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-group scroll-animate">
         <label for="venue">Preferred Venue<span>(required)</span></label>
         <select id="venue" name="venue" required>
             <option value="">Select an option</option>
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </select>
         </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="reason">Reason for Contact <span>(required)</span></label>
       <select id="reason" name="reason" required>
         <option value="">Select an option</option>
@@ -160,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </select>
     </div>
 
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <label for="service">Related to which service? <span>(required)</span></label>
       <select id="service" name="service" required>
         <option value="">Select an option</option>
@@ -172,14 +172,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-     <div class="form-group">
-      <label for="message">
+     <div class="form-group scroll-animate">
+      <label for="message scroll-animate">
         Tell us about yourself and what service you're interested in
         <span>(required)</span>
       </label>
       <textarea id="message" name="message" placeholder="If you are unsure of the clinician that would be best for you please let us know what you're hoping to address in therapy and we'll try to connect you with an appropriate therapist." required></textarea>
     </div>
-    <div class="form-group">
+    <div class="form-group scroll-animate">
       <button type="submit" class="submit-button" name="submit" >SUBMIT</button>
     </div>
   </form>
@@ -188,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div class="office-hours-container">
-  <div class="office-info">
+  <div class="office-info scroll-animate">
     <h2>Our Office</h2>
     <p><strong>Kazimind Wellness Centre</strong><br>
       Mt kenya road<br>
@@ -209,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 
-  <div class="office-hours">
+  <div class="office-hours scroll-animate">
     <h2>Our Hours</h2>
     <ul>
       <li><strong>Mondays</strong> 8am - 5pm</li>
@@ -226,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 </div>
 
-<div class="travel-info">
+<div class="travel-info scroll-animate">
   <h3>Travelling to our office:</h3>
   <p>
     Located right in the heart of Nanyuki town, on Lenana Road. Within Sportsmans Arms Hotel. 
@@ -234,7 +234,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Enhanced scroll animations with reset capability
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            } else {
+                entry.target.classList.remove('animated');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
 
+    animateElements.forEach(el => observer.observe(el));
+
+    // Form input focus effects
+    const inputs = document.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+        });
+    });
+});
 </script>
 
 <?php

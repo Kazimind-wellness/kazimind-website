@@ -1,51 +1,48 @@
 <?php
 ob_start();
 session_start();
-$pageTitle = "Book Now";
+$pageTitle = "Psychotherapy Services";
 ?>
 
 <head>
- <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/indexStyles.css">
-<link rel="stylesheet" href="assets/css/h-footer.css">
-<link rel="stylesheet" href="assets/css/therapyStyles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/indexStyles.css">
+    <link rel="stylesheet" href="assets/css/h-footer.css">
+    <link rel="stylesheet" href="assets/css/therapyStyles.css">
 </head>
 
-<h1 class="therapy-heading">Psychotherapy Services</h1>
+<h1 class="therapy-heading animate-on-scroll">Psychotherapy Services</h1>
 
-<div class="therapy-section">
+<div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
             <img src="images\individualtherap.jpg" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Individual Therapy</h2>
-            <!-- <a href="#" class="btn-book">Book an Individual Therapy Appointment</a> -->
             <p>
-                	Individual Therapy is where you get an opportunity to meet one on one with our therapist. 
-                    Our therapists help individuals to navigate life challenges and reflect on their past experiences. 
-                    Our therapist focuses on anxiety, depression, trauma, stress, loss and grief.  
-                    They equip clients with skills that would them navigate life challenges and help them regain resilience.
+                Individual Therapy is where you get an opportunity to meet one on one with our therapist. 
+                Our therapists help individuals to navigate life challenges and reflect on their past experiences. 
+                Our therapist focuses on anxiety, depression, trauma, stress, loss and grief.  
+                They equip clients with skills that would them navigate life challenges and help them regain resilience.
             </p>
         </div>
     </div>
 </div>
 
-
-<div class="therapy-section">
+<div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
             <img src="images\teenTherap.jpg" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Teen Therapy and Child therapy</h2>
-            <!-- <a href="#" class="btn-book">Book an Individual Therapy Appointment</a> -->
             <p>
                 Young adults are facing challenges too when it comes to self-awareness, decision making. 
                 We have child psychologist who helps teens to navigate this life, school pressures to build skills for healthier future. 
@@ -55,15 +52,13 @@ $pageTitle = "Book Now";
     </div>
 </div>
 
-
-<div class="therapy-section">
+<div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
             <img src="images/couple2.jpg" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Couples / Partner Therapy</h2>
-            <!-- <a href="#" class="btn-book">Book an Individual Therapy Appointment</a> -->
             <p>
                 If you and your partner are facing challenges in your marriage, you can lock in with our family 
                 and marriage therapist, who helps partner navigate and resolve their issues more effectively and 
@@ -73,17 +68,13 @@ $pageTitle = "Book Now";
     </div>
 </div>
 
-
-
-
-<div class="therapy-section">
+<div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
             <img src="images\a-family.jpg" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Family Therapy</h2>
-            <!-- <a href="#" class="btn-book">Book an Individual Therapy Appointment</a> -->
             <p>
                 Family therapy can be way to strengthen relationship within the family may it be communication skills within family, siblings. This consists of mother, father and children. We have therapist that can help.
             </p>
@@ -91,15 +82,13 @@ $pageTitle = "Book Now";
     </div>
 </div>
 
-
-<div class="therapy-section">
+<div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
             <img src="images/walkAndTalk.jpg" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Walk and Talk Therapy</h2>
-            <!-- <a href="#" class="btn-book">Book an Individual Therapy Appointment</a> -->
             <p>
                 Walk and Talk Therapy is a form of psychotherapy that incorporates walking outdoors 
                 while talking about issues and problem-solving with your therapist. 
@@ -111,14 +100,13 @@ $pageTitle = "Book Now";
     </div>
 </div>
 
-<div class="therapy-section">
+<div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
             <img src="images\student.png" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Student personal Therapy</h2>
-            <!-- <a href="#" class="btn-book">Book an Individual Therapy Appointment</a> -->
             <p>
                 We offer personal therapy to students in college, universities waiting to graduate. 
                 Our services are available online and physical.
@@ -126,6 +114,91 @@ $pageTitle = "Book Now";
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        let lastScrollPosition = window.pageYOffset;
+        let ticking = false;
+        
+        // Track which elements have been animated
+        const animatedElements = new Set();
+        
+        // Set index for staggered animations
+        animateElements.forEach((el, index) => {
+            el.style.setProperty('--index', index);
+        });
+        
+        function checkPosition() {
+            const currentScrollPosition = window.pageYOffset;
+            const scrollDirection = currentScrollPosition > lastScrollPosition ? 'down' : 'up';
+            
+            animateElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const elementBottom = el.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight * 0.8) && (elementBottom > 0);
+                
+                // Always check visibility regardless of scroll direction
+                if (isVisible) {
+                    el.classList.add('animate');
+                    animatedElements.add(el);
+                } else {
+                    // Remove animation class when element is out of view
+                    // This ensures animations can trigger again when scrolled back into view
+                    el.classList.remove('animate');
+                    animatedElements.delete(el);
+                }
+            });
+            
+            lastScrollPosition = currentScrollPosition;
+            ticking = false;
+        }
+        
+        // More aggressive scroll handling
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(checkPosition);
+                ticking = true;
+            }
+        }, { passive: true });
+        
+        // Initial check
+        checkPosition();
+        
+        // Add intersection observer for more reliable detection
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                } else {
+                    entry.target.classList.remove('animate');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        animateElements.forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Enhanced hover effects
+        const therapySections = document.querySelectorAll('.therapy-section');
+        therapySections.forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 10px 30px rgba(0, 111, 209, 0.1)';
+                this.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    });
+</script>
 
 <?php
 $content = ob_get_clean();

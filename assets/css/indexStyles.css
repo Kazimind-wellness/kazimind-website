@@ -1783,6 +1783,55 @@ mark {
 }
 /* CONTACT US CSS STRATS HERE  */
 
+:root {
+    --theme-blue: #006fd1;
+    --theme-dark-blue: #0056b3;
+    --theme-light: #f8f9fa;
+    --theme-text: #333;
+    --transition-duration: 0.4s;
+    --transition-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Scroll Animation Classes */
+.scroll-animate {
+    opacity: 0;
+    transition: all var(--transition-duration) var(--transition-easing);
+}
+
+.contact-h1.scroll-animate {
+    transform: translateY(30px);
+}
+
+.contact-text.scroll-animate {
+    transform: translateX(-30px);
+}
+
+.contact-image.scroll-animate {
+    transform: translateX(30px);
+}
+
+.contact-form.scroll-animate {
+    transform: scale(0.98);
+}
+
+.office-info.scroll-animate {
+    transform: translateX(-30px);
+}
+
+.office-hours.scroll-animate {
+    transform: translateX(30px);
+}
+
+.travel-info.scroll-animate {
+    transform: translateY(30px);
+}
+
+.animated {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Enhanced Contact Section */
 .contact-section {
     display: flex;
     flex-wrap: wrap;
@@ -1790,45 +1839,59 @@ mark {
     align-items: flex-start;
     gap: 40px;
     padding: 40px;
-    font-family: 'Poppins', sans-serif;
     background-color: #f9f9f7;
+    position: relative;
 }
 
 .contact-text {
     max-width: 600px;
     color: #1a1a1a;
     line-height: 1.8;
+    transition-delay: 0.1s;
 }
 
 .contact-h1 {
     font-size: 48px;
     font-weight: 700;
-    color: #006fd1;
+    color: var(--theme-blue);
     margin-bottom: 20px;
     text-align: center;
+    transition: all 0.5s ease;
 }
 
 .contact-text p {
     font-size: 20px;
     color: #1e1b3a;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
-.contact-section p {
+
+.contact-section p em{
     font-size: 20px;
     color: #1e1b3a;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
 
-.contact-text a {
-    text-decoration: underline;
-    color: inherit;
+.contact-link {
+    color: var(--theme-blue);
+    text-decoration: none;
+    position: relative;
 }
 
-.contact-text .disclaimer {
-    font-size: 16px;
-    font-style: italic;
-    color: #333;
-    margin-top: 30px;
+.contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--theme-blue);
+    transition: width 0.3s ease;
+}
+
+.contact-link:hover::after {
+    width: 100%;
 }
 
 .contact-image img {
@@ -1836,77 +1899,61 @@ mark {
     height: 20rem;
     border-radius: 4px;
     object-fit: cover;
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+.contact-image:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(2, 85, 238, 0.719);
+}
 
+/* Enhanced Form Styles */
 .contact-form {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px 20px;
-    font-family: 'Poppins', sans-serif;
     background-color: #fcfcfa;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    margin-bottom: 25px;
 }
 
 .form-group label {
-    font-size: 18px;
+    display: block;
+    margin-bottom: 8px;
     font-weight: 500;
-    margin-bottom: 4px;
-    color: #1d1c2b;
+    color: var(--theme-text);
+    transition: all 0.3s ease;
 }
 
-.form-group label span {
-    font-size: 14px;
-    font-weight: 400;
-    color: #555;
-    margin-left: 5px;
-}
-
-.form-group small {
-    font-size: 13px;
-    color: #555;
-    margin-bottom: 4px;
+.form-group.focused label {
+    color: var(--theme-blue);
+    transform: translateY(-5px);
 }
 
 input,
-select {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    background-color: white;
+select,
+textarea {
     width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
 input:focus,
-select:focus {
-    outline: 2px solid #1d1c2b;
-}
-
-.two-columns {
-    display: flex;
-    gap: 20px;
-}
-
-.two-columns>div {
-    flex: 1;
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 600px) {
-    .two-columns {
-        flex-direction: column;
-    }
+select:focus,
+textarea:focus {
+    border-color: var(--theme-blue);
+    box-shadow: 0 0 0 2px rgba(0, 111, 209, 0.2);
+    outline: none;
 }
 
 textarea {
@@ -1920,28 +1967,41 @@ textarea {
     resize: vertical;
 }
 
-textarea:focus {
-    outline: 2px solid #1d1c2b;
-}
-
 .submit-button {
     background-color: transparent;
-    border: 2px solid #1d1c2b;
-    color: #1d1c2b;
+    border: 2px solid var(--theme-blue);
+    color: var(--theme-blue);
     padding: 14px 36px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 50px;
     font-weight: 600;
     text-transform: uppercase;
-    width: fit-content;
-    align-self: start;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .submit-button:hover {
-    background-color: #1d1c2b;
-    color: #fff;
+    background-color: var(--theme-blue);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 111, 209, 0.3);
+}
+
+.submit-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.6s ease;
+}
+
+.submit-button:hover::after {
+    left: 100%;
 }
 
 .office-hours-container {
@@ -1950,7 +2010,7 @@ textarea:focus {
     gap: 40px;
     font-family: 'Poppins', sans-serif;
     background-color: #fcfcfa;
-    padding: 40px 20px;
+    padding: 40px 10rem;
     color: #1d1c2b;
 }
 
@@ -1964,7 +2024,7 @@ textarea:focus {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #1d1c2b;
+    color: #006fd1;
 }
 
 .office-info p,
@@ -1972,6 +2032,15 @@ textarea:focus {
     font-size: 16px;
     margin-bottom: 10px;
     line-height: 1.6;
+}
+
+.office-info:hover p,
+.office-hours:hover p {
+    color: #006fd1;
+}
+
+.office-info p strong{
+    color: #006fd1;
 }
 
 .office-hours ul {
@@ -1985,8 +2054,19 @@ textarea:focus {
     font-size: 16px;
 }
 
+.office-hours li:hover {
+    transform: translateX(5px);
+    border-left: 2px solid #006fd1;
+}
+
+.office-hours li strong{
+    margin-bottom: 6px;
+    font-size: 16px;
+    color: #006fd1;
+}
+
 .office-info a {
-    color: #1d1c2b;
+    color: #006fd1;
     text-decoration: underline;
 }
 
@@ -1996,28 +2076,17 @@ textarea:focus {
     margin-top: 10px;
 }
 
-/* Optional: Responsive Tweaks */
-@media (max-width: 768px) {
-    .office-hours-container {
-        flex-direction: column;
-    }
-
-
-.faq-question {
-    font-size: 1.2rem;
+.map iframe:hover {
+    transform: scale(1.01);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
-}
-
 
 .travel-info {
     max-width: 100%;
-
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 40px 7rem;
     font-family: 'Poppins', sans-serif;
     background-color: #fcfcfa;
-    color: #1d1c2b;
     line-height: 1.8;
 }
 
@@ -2025,11 +2094,52 @@ textarea:focus {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 20px;
+    color: #006fd1;
 }
 
 .travel-info p {
     font-size: 17px;
     margin-bottom: 20px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 30px 20px;
+    }
+
+    .office-hours-container {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    
+    .contact-h1 {
+        font-size: 36px;
+    }
+
+    .contact-text p,
+    .contact-section p {
+        font-size: 18px;
+    }
+
+    .travel-info{
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-h1 {
+        font-size: 30px;
+    }
+
+    .contact-text p,
+    .contact-section p {
+        font-size: 16px;
+    }
+
+    .submit-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
 }
 
 /* UPCOMING EVENTS CSS */
