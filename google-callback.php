@@ -92,7 +92,7 @@ try {
             <h2>Hi {$userInfo->name},</h2>
             <p>You just logged into our website using your Google account.</p>
             <p>If this was you, no further action is needed.</p>
-            <p>If this wasn't you, please <a href='mailto:support@yourdomain.com'>contact support</a> immediately.</p>
+            <p>If this wasn't you, please <a href='mailto:kazimindwellness50@gmail.com'>contact support</a> immediately.</p>
             <br><small>This is an automated email.</small>
         ";
 
