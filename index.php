@@ -27,7 +27,7 @@ $pageTitle = "Book Now";
 </div>
 
 <p class="brief-overview">
-  <mark> Kazimind Wellness Centre </mark>is a health and wellness centre focused on providing mental related services to individuals, 
+  Kazimind Wellness Centre is a health and wellness centre focused on providing mental related services to individuals, 
     groups and families across Kenya. Our therapists provide services for clients in office, in the community and online so that no matter where you reside
     you're able to get the support you need.
     <hr>
@@ -35,7 +35,7 @@ $pageTitle = "Book Now";
 
 <div class="topic-handled">
   <p class="topic-intro">
-    <mark> Our team members have experience working </mark> with a variety of topics and challenges, 
+    Our team members have experience working with a variety of topics and challenges, 
     and can support you with whatever is going on for you including the following: 
   </p>
 
@@ -125,7 +125,7 @@ $pageTitle = "Book Now";
   <div class="intro">
     <h2>Articles and Tips</h2>
     <p>
-      Looking to meet our team members or <mark>learn information and strategies to support yourself?</mark>
+      Looking to meet our team members or learn information and strategies to support yourself?
       We'll share information and tips here to support the cultivation of your mind.
     </p>
     <p>
