@@ -376,19 +376,35 @@
         }
 
         .footer-column p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             margin-bottom: 1rem;
-            line-height: 1.6;
             color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .footer-column i {
-            color: white;
-            margin-right: 12px;
-            width: 20px;
-            text-align: center;
-            opacity: 0.9;
+        .footer-column p:hover {
+            color: #ffd700;
+            transform: translateX(5px);
         }
 
+        .footer-column img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .footer-column p:hover img {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        .footer-column span {
+            font-size: 1rem;
+        }
         .social-icons {
             display: flex;
             gap: 1.2rem;

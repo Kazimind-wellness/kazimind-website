@@ -15,14 +15,13 @@
 
     <div class="footer-column">
       <h3>Contact Us</h3>
-      <p><i class="fa-solid fa-location-dot"></i>Nanyuki town, Kenya</p>
-      <p>
-        <i class="fa-solid fa-phone"></i> +254 700 479 944<br>
-        <i class="fa-solid fa-phone"></i> +254 202 020 830<br>
-      </p>
-      <p><i class="fa-brands fa-whatsapp"></i>+254 700 479 944</p>
-      <p><i class="fa-solid fa-envelope"></i> kazimindw@gmail.com</p>
+      <p><img src="images/location-dot.jpg" alt=""> <span>Nanyuki town, Kenya</span></p>
+      <p><img src="images/call-icon.png" alt=""> <span>+254 700 479 944</span></p>
+      <p><img src="images/phone-icon.png" alt=""> <span>+254 202 020 830</span></p>
+      <p><img src="images/whstapp-icon.png" alt=""> <span>+254 700 479 944</span></p>
+      <p><img src="images/mail-icon.png" alt=""> <span>kazimindw@gmail.com</span></p>
     </div>
+
 
     <div class="footer-column">
       <h3>Follow Us</h3>
