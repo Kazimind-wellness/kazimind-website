@@ -91,7 +91,7 @@ if ($isLoggedIn) {
 
     <div class="hero-section">
         <video autoplay muted loop playsinline class="bg-video">
-            <source src="uploads/your-video-file.mp4" type="video/mp4">
+            <source src="uploads/header-vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="overlay"></div>
