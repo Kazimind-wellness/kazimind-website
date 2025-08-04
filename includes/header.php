@@ -97,7 +97,7 @@ if ($isLoggedIn) {
         <div class="overlay"></div>
         <div class="hero-content">
             <h1><span>Cultivate</span> Your <span>Mind</span></h1>
-            <p>Cultivating The Minds Of Our Generation</p>
+            <!-- <p>Cultivating The Minds Of Our Generation</p> -->
             <a href="contactUs.php" class="nasdaq-btn"><strong>Reach</strong> Out To <strong>Us</strong> </a>
         </div>
     </div>
