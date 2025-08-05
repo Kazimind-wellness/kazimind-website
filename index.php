@@ -20,9 +20,15 @@ $pageTitle = "Book Now";
 <div class="welcome" id="welcome">
   <div class="background-overlay bg1" id="bg1"></div>
   <div class="background-overlay bg2" id="bg2"></div>
+  
+  <div class="welcome-content">
+    <h1 class="welcome-title">Welcome to Our Centre</h1>
+    <p class="welcome-subtitle">Professional care in a compassionate environment where healing begins and growth is nurtured</p>
+    <!-- <button class="cta-button">Schedule a Consultation</button> -->
+  </div>
 
   <div class="moving-message">
-    <p>Our goal is to create a safe and supportive environment to help both clients and therapists grow to their full potential.</p>
+    <p>Our goal is to create a safe and supportive environment to help both clients and therapists grow to their full potential.  • Compassion • Understanding • Growth • Healing </p>
   </div>
 </div>
 
@@ -42,7 +48,7 @@ $pageTitle = "Book Now";
   <div class="topic-handled-lists">
     <ul>
       <li><span>Anxiety and Depression</span></li>
-      <li><span>Chronic and Acute Body Pain</span></li>
+      <!-- <li><span>Chronic and Acute Body Pain</span></li> -->
       <li><span>Stress Management</span></li>
       <li><span>Trauma, PTSD and C-PTSD</span></li>
       <li><span>Gender and Sexuality</span></li>
@@ -166,7 +172,7 @@ $pageTitle = "Book Now";
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   // Background image crossfade (keep existing)
-  const images = [
+const images = [
     "images/imageB.jpg",
     "images/imageB1.jpg",
     "images/imageB2.jpg",
@@ -175,34 +181,100 @@ document.addEventListener('DOMContentLoaded', function () {
     "images/imageB5.jpg",
     "images/imageB6.jpg",
     "images/imageB7.jpg"
-  ];
+];
 
-  // Preload images and background setup (keep existing)
-  images.forEach(src => {
+// Preload images with callback when all are loaded
+let loadedImages = 0;
+images.forEach(src => {
     const img = new Image();
     img.src = src;
-  });
+    img.onload = () => {
+        loadedImages++;
+        if (loadedImages === images.length) {
+            // All images loaded, start slideshow
+            initSlideshow();
+        }
+    };
+});
 
-  let current = 0;
-  let showingBg1 = true;
-  const bg1 = document.getElementById('bg1');
-  const bg2 = document.getElementById('bg2');
-  bg1.style.backgroundImage = `url('${images[current]}')`;
+function initSlideshow() {
+    let current = 0;
+    let showingBg1 = true;
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
+    
+    // Set initial background with zoom effect
+    bg1.style.backgroundImage = `url('${images[current]}')`;
+    bg1.style.transform = 'scale(1.05)';
+    setTimeout(() => {
+        bg1.style.transform = 'scale(1)';
+    }, 100);
 
-  function crossFadeBackground() {
-    current = (current + 1) % images.length;
-    if (showingBg1) {
-      bg2.style.backgroundImage = `url('${images[current]}')`;
-      bg2.style.opacity = 1;
-      bg1.style.opacity = 0;
-    } else {
-      bg1.style.backgroundImage = `url('${images[current]}')`;
-      bg1.style.opacity = 1;
-      bg2.style.opacity = 0;
+    function crossFadeBackground() {
+        current = (current + 1) % images.length;
+        const nextImage = images[current];
+        
+        if (showingBg1) {
+            bg2.style.backgroundImage = `url('${nextImage}')`;
+            bg2.style.opacity = 1;
+            bg2.style.transform = 'scale(1.05)';
+            bg1.style.opacity = 0;
+            
+            setTimeout(() => {
+                bg2.style.transform = 'scale(1)';
+            }, 100);
+        } else {
+            bg1.style.backgroundImage = `url('${nextImage}')`;
+            bg1.style.opacity = 1;
+            bg1.style.transform = 'scale(1.05)';
+            bg2.style.opacity = 0;
+            
+            setTimeout(() => {
+                bg1.style.transform = 'scale(1)';
+            }, 100);
+        }
+        showingBg1 = !showingBg1;
     }
-    showingBg1 = !showingBg1;
-  }
-  setInterval(crossFadeBackground, 8000);
+    
+    // Function to start the automatic animation
+    function startAnimation(element) {
+        // Reset any existing animation
+        stopAnimation(element);
+        
+        // Set initial state
+        element.style.transform = 'scale(1) translate(0, 0)';
+        
+        // Start the animation loop
+        element.animationInterval = setInterval(() => {
+            // Calculate progress through a 20-second cycle (can adjust timing)
+            const now = Date.now();
+            const cycleTime = 20000; // 20 seconds for full cycle
+            const progress = (now % cycleTime) / cycleTime;
+            
+            // Calculate movement values (subtle side-to-side and zoom)
+            const moveX = Math.sin(progress * Math.PI * 2) * 20; // ±20px horizontal movement
+            const moveY = Math.cos(progress * Math.PI * 2) * 10; // ±10px vertical movement
+            const scale = 1 + (Math.sin(progress * Math.PI * 4) * 0.02); // 1-1.04 scale oscillation
+            
+            // Apply the transformation
+            element.style.transform = `scale(${scale}) translate(${moveX}px, ${moveY}px)`;
+            element.style.transition = 'transform 8s linear';
+        }, 50); // Update every 50ms for smooth animation
+    }
+    
+    // Function to stop animation
+    function stopAnimation(element) {
+        if (element.animationInterval) {
+            clearInterval(element.animationInterval);
+            element.animationInterval = null;
+        }
+    }
+    
+    setInterval(crossFadeBackground, 8000);
+    
+    // Start animation for initial background
+    startAnimation(bg1);
+}
 
   // Event scroll buttons (keep existing)
   const scrollContainer = document.getElementById('events-scroll');
@@ -219,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // NEW: Enhanced Intersection Observer with reset capability
   const animatedElements = document.querySelectorAll(
-    '.card-content, .article-card, .intro, .topic-intro, .topic-handled-lists ul, .event-card, .event-buttons, .brief-overview, mark'
+    '.card-content, .article-card, .intro, .topic-intro, .topic-handled-lists ul, .event-card, .event-buttons, .brief-overview, mark, .upcoming-events'
   );
 
   const observerOptions = {
