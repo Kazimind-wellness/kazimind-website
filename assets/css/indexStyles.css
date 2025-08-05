@@ -66,7 +66,7 @@ body {
 
 .welcome-content {
     position: relative;
-    z-index: 3;
+    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
