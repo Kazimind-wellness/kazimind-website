@@ -46,6 +46,8 @@ $pageTitle = "Marriage Preparation";
             If you're looking for support in preparing for your marriage, some of the approaches you might experience at 
             Kazimind Wellness Centre include:
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>Our Marriage Preparation Group</li>
@@ -56,7 +58,6 @@ $pageTitle = "Marriage Preparation";
                 <li>Communication Support</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a Therapist</h2>

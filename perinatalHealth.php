@@ -70,6 +70,8 @@ $pageTitle = "Perinatal Health and Post-Partum Support";
             At <strong>Kazimind Wellness Centre</strong>, our <strong>therapists</strong> use a variety of approaches to support clients during these important life transitions. 
             Some of the methods you may encounter include:
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>Perinatal Nutrition Support and Planning</li>
@@ -80,7 +82,6 @@ $pageTitle = "Perinatal Health and Post-Partum Support";
                 <li>Narrative Therapy</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a Therapist</h2>

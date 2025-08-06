@@ -52,6 +52,8 @@ $pageTitle = "Grief and Loss";
             Grief therapy can take many forms depending on your needs and the nature of your loss. 
             At <strong>Kazimind Wellness Centre</strong>, our <strong>therapists</strong> use a variety of approaches to support healing, including:
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>Bereavement Therapy</li>
@@ -61,7 +63,6 @@ $pageTitle = "Grief and Loss";
                 <li>Pet Loss and Bereavement Support Group</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a Therapist</h2>

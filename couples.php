@@ -47,6 +47,8 @@ $pageTitle = "Couples Therapy";
         <p class="description">
             <strong>Couples Therapy</strong> can vary depending on your unique needs as a couple and the therapeutic approach your <strong>therapist</strong> uses. Some therapists work exclusively with partners together, while others may also include occasional individual check-ins. Every <strong>therapist</strong> has their own method of supporting couples, but some of the therapeutic approaches you might encounter at <strong>Kazimind Wellness Centre</strong> include:
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>The Gottman Method</li>
@@ -56,7 +58,6 @@ $pageTitle = "Couples Therapy";
                 <li>Marriage Preparation Sessions</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a Therapist</h2>

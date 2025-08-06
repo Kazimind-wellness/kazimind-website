@@ -50,6 +50,8 @@ $pageTitle = "Areas of Focus";
         <p class="description">
             There are a variety of therapeutic approaches available to help you manage anxiety and/or depression, with Cognitive Behavioral Therapy (CBT) currently recognized as a leading method due to its effectiveness in building practical coping skills. However, therapy isn't one size fits all. Each individual has unique needs, and therapists often tailor their approach to fit what works best for each client. At Kazimind Wellness Centre, some of the approaches you might encounter in treating anxiety and/or depression include:
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>Cognitive Behavioural Therapy (CBT)</li>
@@ -62,7 +64,6 @@ $pageTitle = "Areas of Focus";
                 <li>Mindfulness Practices</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a therapist</h2>

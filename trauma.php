@@ -53,7 +53,9 @@ $pageTitle = "Trauma and PTSD";
         <p class="description">
             Therapy for trauma will be customized based on what you need and want from therapy. Each therapist will have their own approach to dealing with trauma, but some of the approaches you might experience at Kazimind Wellness Centre include:
         </p>
-        <div class="therapy-list">
+    </div>
+
+            <div class="therapy-list">
             <ul>
                 <li>Cognitive Processing Therapy (CPT)</li>
                 <li>Internal Family Systems (IFS)</li>
@@ -66,7 +68,6 @@ $pageTitle = "Trauma and PTSD";
                 <li>Sandtray Therapy</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a therapist</h2>

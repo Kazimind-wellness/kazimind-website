@@ -57,18 +57,18 @@ $pageTitle = "Child and Youth Therapy";
             Each <strong>therapist</strong> brings their own approach to working with young clients, but some of the therapeutic methods you may encounter at 
             <strong>Kazimind Wellness Centre</strong> include:
         </p>
-        <div class="therapy-list">
-            <ul>
-                <li>Play Therapy</li>
-                <li>Therapeutic Arts</li>
-                <li>Sandtray Therapy</li>
-                <li>Music-Based Therapy</li>
-                <li>Cognitive Behavioural Therapy (CBT)</li>
-                <li>Internal Family Systems (IFS) / Parts Work</li>
-                <li>Parent-Child Attachment Work</li>
-                <li>Parent Coaching</li>
-            </ul>
-        </div>
+    </div>
+    <div class="therapy-list">
+        <ul>
+            <li>Play Therapy</li>
+            <li>Therapeutic Arts</li>
+            <li>Sandtray Therapy</li>
+            <li>Music-Based Therapy</li>
+            <li>Cognitive Behavioural Therapy (CBT)</li>
+            <li>Internal Family Systems (IFS) / Parts Work</li>
+            <li>Parent-Child Attachment Work</li>
+            <li>Parent Coaching</li>
+        </ul>
     </div>
 
     <div class="section-container scroll-animate">

@@ -57,6 +57,8 @@ $pageTitle = "Suicide and Self-Harm Support";
             address and process it.</strong> Each therapist will have their own approach to dealing with suicide and self-harm, 
             but some of the approaches you might experience at Kazimind wellness Centre include:
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>Safety Planning and Crisis Management</li>
@@ -65,7 +67,6 @@ $pageTitle = "Suicide and Self-Harm Support";
                 <li>Family Therapy</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a therapist</h2>

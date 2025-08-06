@@ -60,14 +60,15 @@ $pageTitle = "Mind-Body Connection";
             At The Kazimind Wellness Centre, we offer a variety 
             of services that support your mental and physical health including:
         </p>
-        <div class="therapy-list">
-            <ul>
-                <li>Behavioral therapy</li>
-                <li>Mindfulness and Meditation Practices</li>
-                <li>Registered Massage Therapy</li>
-                <li>Our Coping with Chronic Illness and Chronic Pain Support Group</li>
-            </ul>
-        </div>
+    </div>
+
+    <div class="therapy-list">
+        <ul>
+            <li>Behavioral therapy</li>
+            <li>Mindfulness and Meditation Practices</li>
+            <li>Registered Massage Therapy</li>
+            <li>Our Coping with Chronic Illness and Chronic Pain Support Group</li>
+        </ul>
     </div>
 
     <div class="section-container scroll-animate">

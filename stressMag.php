@@ -40,6 +40,7 @@ $pageTitle = "Stress Management";
         <p class="description">
             We have many <strong>therapists</strong> on our team who can support you in building effective <strong>stress management</strong> skills. Working with a <strong>therapist</strong> means having a trusted guide by your side to help you explore the sources of <strong>stress</strong> in your life and find healthy ways to manage them. At <strong>Kazimind Wellness Centre</strong>, our diverse team of <strong>therapists</strong> is ready to work with you and offer personalized <strong>treatment</strong> that meets your unique needs.
         </p>
+    </div>
         <div class="therapy-list">
             <ul>
                 <li>Cognitive Behaviour Therapy (CBT)</li>
@@ -49,8 +50,7 @@ $pageTitle = "Stress Management";
                 <li>Solution-Focused Therapy</li>
             </ul>
         </div>
-    </div>
-
+        
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a therapist</h2>
         <p class="description">

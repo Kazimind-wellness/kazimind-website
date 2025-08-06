@@ -51,6 +51,8 @@ $pageTitle = "Gender and Sexuality Support";
         <p class="description">
             There are many forms of <strong>therapy</strong> and support available to help you navigate the complex experiences related to <strong>gender</strong> and <strong>sexuality</strong>. At <strong>Kazimind Wellness Centre</strong>, we have a team of <strong>therapists</strong> who use a variety of therapeutic approaches to support you in exploring and embracing your identity in a safe and affirming space.
         </p>
+    </div>
+
         <div class="therapy-list">
             <ul>
                 <li>Narrative Therapy</li>
@@ -62,7 +64,6 @@ $pageTitle = "Gender and Sexuality Support";
                 <li>Acceptance and Commitment Therapy (ACT)</li>
             </ul>
         </div>
-    </div>
 
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">Working with a therapist</h2>
