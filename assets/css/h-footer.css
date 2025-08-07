@@ -492,7 +492,7 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 811px) {
             .navbar {
                 padding: 1rem;
                 height: auto;
