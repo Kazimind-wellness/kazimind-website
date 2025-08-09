@@ -20,7 +20,7 @@ $pageTitle = "Book Now";
 <div class="welcome" id="welcome">
   <div class="background-overlay bg1" id="bg1"></div>
   <div class="background-overlay bg2" id="bg2"></div>
-  <div class="overlay"></div>
+  <div class="overlay" style="background:  rgba(17, 157, 204, 0.15);"></div>
   <div class="welcome-content">
     <h1 class="welcome-title">Welcome to Our Centre</h1>
     <p class="welcome-subtitle">Professional care in a compassionate environment where healing begins and growth is nurtured</p>
