@@ -135,6 +135,11 @@
             #gradient-canvas {
                 height: 100rem;
             }
+
+            .awareness-grid ul{
+                display: none;
+            }
+
           }
     /* Navbar */
     .navbar {
