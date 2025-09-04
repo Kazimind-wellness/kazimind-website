@@ -18,18 +18,7 @@ $pageTitle = "About Us";
 </head>
 <body>
   
-<div class="background" id="background">
-  <video autoplay muted loop playsinline id="bgVideo">
-    <source src="uploads/WhatsApp Video 2025-06-13 at 09.30.37_557383d8.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  
-
-  <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
-    <i class="fas fa-volume-mute"></i>
-  </button>
-</div>
 
 <div class="review-container">
     <div class="review-header">
@@ -82,7 +71,18 @@ $pageTitle = "About Us";
         </div>
     </div>
 </div>
+<div class="background" id="background">
+  <video autoplay muted loop playsinline id="bgVideo">
+    <source src="uploads/WhatsApp Video 2025-06-13 at 09.30.37_557383d8.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
+  
+
+  <button id="soundToggle" class="sound-toggle" aria-label="Toggle sound">
+    <i class="fas fa-volume-mute"></i>
+  </button>
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Video sound toggle (keep existing)

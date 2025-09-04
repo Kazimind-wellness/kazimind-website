@@ -18,16 +18,7 @@ $pageTitle = "Book Now";
 
 <div class="services">
 
-<div class="background" id="background">
-  <video autoplay muted loop playsinline id="bgVideo">
-    <source src="uploads/WhatsApp Video 2025-06-13 at 09.30.37_557383d8.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
-  <button id="soundToggle" class="sound-toggle">
-    <i class="fas fa-volume-mute"></i>
-  </button>
-</div>
 
 <h1 class="scroll-animate">SERVICES WE OFFER</h1>
 
@@ -109,6 +100,17 @@ $pageTitle = "Book Now";
       </p>
     </div>
 </section>
+
+  <div class="background" id="background">
+    <video autoplay muted loop playsinline id="bgVideo">
+      <source src="uploads/WhatsApp Video 2025-06-13 at 09.30.37_557383d8.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <button id="soundToggle" class="sound-toggle">
+      <i class="fas fa-volume-mute"></i>
+    </button>
+  </div>
 
 <h1 class="faqH1 scroll-animate">Frequently Asked Questions</h1>
 

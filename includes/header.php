@@ -36,8 +36,43 @@ if ($isLoggedIn) {
     <div class="loader"></div>
 </div>
 
+<!-- Top Awareness Bar -->
+<div class="awareness-bar">
+    <canvas id="gradient-canvas"></canvas>
+    <script src="assets/js/gradient.js"></script>
+    <div class="awareness-grid">
+        <ul>    
+        <li><a href="#">Anxiety and Depression Help</a></li>
+            <li><a href="#">Therapy and Wellness</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="#">Community Mental Health</a></li>
+            <li><a href="#">Emotional Resilience</a></li>
+        </ul>
+
+        <!-- Middle Image -->
+        <div class="awareness-image">
+            <img src="images\uptime.gif" alt="Mental Health Awareness">
+        </div>
+
+        <ul>
+            <li><a href="#">Mindfulness and Self-Care</a></li>
+            <li><a href="#">Stress Management</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="#">Suicide Prevention Resources</a></li>
+            <li><a href="#">Psychological Support</a></li>
+        </ul>
+    </div>
+</div>
+
+
 
         <div class="navbar">
+    <canvas id="gradient-canvas"></canvas>
+    <script src="assets/js/gradient.js"></script>
         <a href="#" class="logo">
             <img src="images/kazi-mind-high-resolution-logo-transparent.png" alt="Kazimind Logo">
         </a>
