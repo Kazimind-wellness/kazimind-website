@@ -42,6 +42,59 @@ $pageTitle = "Book Now";
 
 
 <div class="topic-handled">
+          <div class="bubble-container">
+            <!-- Bubbles will be added here dynamically -->
+        </div>
+            <script>
+        const container = document.querySelector('.bubble-container');
+        const bubbleCount = 50;
+
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+
+            const size = Math.random() * 40 + 15 + 'px';
+            const left = Math.random() * 100 + '%';
+            const delay = Math.random() * 8 + 's';
+            const duration = Math.random() * 10 + 8 + 's';
+            const sway = Math.random() > 0.5 ? 1 : -1;
+
+            bubble.style.setProperty('--size', size);
+            bubble.style.setProperty('--left', left);
+            bubble.style.setProperty('--delay', delay);
+            bubble.style.setProperty('--duration', duration);
+            bubble.style.setProperty('--sway', sway);
+
+            bubble.style.animationDuration = duration;
+
+            // Add slight color variation
+            if (Math.random() > 0.7) {
+                bubble.style.background = `radial-gradient(
+                    circle at 30% 30%, 
+                    rgba(255, 255, 255, 0.9) 5%, 
+                    rgba(200, 230, 255, 0.6) 30%, 
+                    rgba(170, 220, 255, 0.3) 90%
+                )`;
+            }
+
+            container.appendChild(bubble);
+
+            // Remove bubble after animation completes
+            setTimeout(() => {
+                if (bubble.parentNode) {
+                    bubble.remove();
+                }
+            }, parseFloat(duration) * 1000 + parseFloat(delay) * 1000);
+        }
+
+        // Create initial bubbles
+        for (let i = 0; i < bubbleCount; i++) {
+            setTimeout(createBubble, Math.random() * 2000);
+        }
+
+        // Continue creating bubbles
+        setInterval(createBubble, 500);
+    </script>
   <p class="topic-intro">
     Our team members have experience working with a variety of topics and challenges, 
     and can support you with whatever is going on for you including the following: 
