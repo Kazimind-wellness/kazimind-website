@@ -100,7 +100,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     z-index: 2;
-    background: linear-gradient(90deg, rgba(0, 83, 156, 0.8) 0%, rgba(0, 83, 156, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(0, 83, 156, .1) 0%, rgba(94, 137, 175, 0.9) 100%);
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
@@ -445,6 +445,19 @@ body {
 .card:hover::before {
     opacity: 0.9;
     transform: scale(1.02);
+}
+
+.card-team::before{
+    background-image: url('../../images/hands.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card-services::before{
+    background-image: url('../../images/two-hands.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .card-content {

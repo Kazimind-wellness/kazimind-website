@@ -5,43 +5,49 @@
     <link rel="stylesheet" href="assets/css/indexStyles.css">
 </head>
 
-<div class="footer-dark">
-  <div class="footer-container">
-    
-    <div class="footer-column">
-      <h3>Kazimind Wellness</h3>
-      <p>Cultivate Your Mind</p>
+    <div class="footer-dark">
+        <div class="footer-container">
+            
+            <div class="footer-column">
+                <h3>Kazimind Wellness</h3>
+                <p>Cultivate Your Mind</p>
+                <p>Mental Wellness Experts</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><img src="images/location-dot.jpg" alt="Location"> <span>Nanyuki, Kenya</span></p>
+                <p><img src="images/mail-icon.png" alt="Email"> <span>kazimindw@gmail.com</span></p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Call Us</h3>
+                <p><img src="images/whstapp-icon.png" alt="Phone"> <span>+254 700 479 944</span></p>
+                <p><img src="images/call-icon.png"  alt="WhatsApp"> <span>+254 202 020 830</span></p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-row">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/KaziMindWellness"><img src="images/facebook-icon.png" alt="Facebook"></a>
+                        <a href="https://x.com/kazimindw"><img src="images/X-icon.png" alt="Twitter/X"></a>
+                        <a href="https://www.instagram.com/invites/contact/"><img src="images/ig-icon.jpg" alt="Instagram"></a>
+                    </div>
+                </div>
+                <div class="social-row">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/kazi-mind-wellness-04434a308/"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="https://www.tiktok.com/@kazimindwellness"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+                        <a href="www.youtube.com/@KaziMindHub"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="copyR">&copy; 2025 Kazimind Wellness. All rights reserved.</p>
     </div>
-
-    <div class="footer-column">
-      <h3>Contact Us</h3>
-      <p><img src="images/location-dot.jpg" alt=""> <span>Nanyuki town, Kenya</span></p>
-      <p><img src="images/call-icon.png" alt=""> <span>+254 700 479 944</span></p>
-      <p><img src="images/phone-icon.png" alt=""> <span>+254 202 020 830</span></p>
-      <p><img src="images/whstapp-icon.png" alt=""> <span>+254 700 479 944</span></p>
-      <p><img src="images/mail-icon.png" alt=""> <span>kazimindw@gmail.com</span></p>
-    </div>
-
-
-    <div class="footer-column">
-      <h3>Follow Us</h3>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/KaziMindWellness"><img src="images/facebook-icon.png" alt=""></i></a>
-        <a href="https://x.com/kazimindw?t=C2wK7H9IVccb4RXcf9fK9A&s=08"><img src="images/X-icon.png" alt=""></i></a>
-        <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=nsq9ae0"><img src="images/ig-icon.jpg" alt=""></i></a>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/kazi-mind-wellness-04434a308/"><img src="images/linkedin-icon.png" alt=""></a>
-        <a href="https://www.tiktok.com/@kazimindwellness?is_from_webapp=1&sender_device=pc"><img src="images/tiktok-icon.png" alt=""></i></a>
-        <a href="www.youtube.com/@KaziMindHub"><img src="images/youtube-icon.png" alt=""></a>
-      </div>
-    </div>
-
-  </div>
-
-       <p class="copyR">&copy; 2025 Kazimind Wellness. All rights reserved.</p>
-
-</div>
 
 
 <div class="whatsapp-float">
