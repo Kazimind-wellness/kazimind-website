@@ -41,7 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['promo_subject'], $_PO
     $body = nl2br(trim($_POST['promo_message']));
 
     // Get all active subscribers
-    $stmt = $pdo->query("SELECT email FROM subscribers WHERE WHERE unsubscribed = FALSE OR unsubscribed = 0");
+if ($dbType === 'pgsql') {
+    $stmt = $pdo->query("SELECT email FROM subscribers WHERE unsubscribed = FALSE");
+} else {
+    $stmt = $pdo->query("SELECT email FROM subscribers WHERE unsubscribed = 0");
+}
     $subscribers = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
     if ($subscribers) {
