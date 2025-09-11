@@ -15,11 +15,15 @@ if (!isset($_SESSION['admin_logged_in'])) {
 // Total users
 $totalUsers = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn();
 // Total subscribers
-$totalSubscribers = $pdo->query("
-    SELECT COUNT(*) 
-    FROM subscribers 
-    WHERE unsubscribed = FALSE OR unsubscribed = 0
-")->fetchColumn();
+if ($dbType === 'pgsql') {
+    // Postgres uses true/false
+    $sql = "SELECT COUNT(*) FROM subscribers WHERE unsubscribed = FALSE";
+} else {
+    // MySQL uses 0/1
+    $sql = "SELECT COUNT(*) FROM subscribers WHERE unsubscribed = 0";
+}
+
+$totalSubscribers = $pdo->query($sql)->fetchColumn();
 
 
 
