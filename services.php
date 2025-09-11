@@ -62,8 +62,10 @@ $pageTitle = "Book Now";
       </div>
       <h3>Organizational Development</h3>
       <p>
-       We love engaging the community and organisations, we advocate on prioritizing Mental health at work places.
-      </p>
+      Our OD programs integrate mental health expertise with corporate strategies to build resilience, boost 
+      productivity, and nurture positive workplace cultures through tailored training, wellness programs, team 
+      building, and leadership development. </p>
+            <a href="OrganizationalDevelopmentServices.php" class="service-button">Organizational Development Services</a>
     </div>
 </section>
 
@@ -101,7 +103,7 @@ $pageTitle = "Book Now";
     </div>
 </section>
 
-  <div class="background" id="background">
+  <div class="background" id="background" style="display: none;">
     <video autoplay muted loop playsinline id="bgVideo">
       <source src="uploads/WhatsApp Video 2025-06-13 at 09.30.37_557383d8.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -112,7 +114,7 @@ $pageTitle = "Book Now";
     </button>
   </div>
 
-<h1 class="faqH1 scroll-animate">Frequently Asked Questions</h1>
+<h1 class="faqH1 scroll-animate" id="faqH1">Frequently Asked Questions</h1>
 
 <div class="faq-container scroll-animate">
     <div class="faq-item scroll-animate">

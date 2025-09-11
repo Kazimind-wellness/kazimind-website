@@ -37,8 +37,7 @@ if ($isLoggedIn) {
 </div>
 
 <!-- Top Awareness Bar -->
-<div class="awareness-bar">
-    <canvas id="gradient-canvas"></canvas>
+<!-- <div class="awareness-bar">
     <script src="assets/js/gradient.js"></script>
     <div class="awareness-grid">
         <ul>    
@@ -50,8 +49,6 @@ if ($isLoggedIn) {
             <li><a href="#">Community Mental Health</a></li>
             <li><a href="#">Emotional Resilience</a></li>
         </ul>
-
-        <!-- Middle Image -->
         <div class="awareness-image">
             <img src="images\uptime.gif" alt="Mental Health Awareness">
         </div>
@@ -66,13 +63,11 @@ if ($isLoggedIn) {
             <li><a href="#">Psychological Support</a></li>
         </ul>
     </div>
-</div>
+</div> -->
 
 
 
         <div class="navbar">
-    <canvas id="gradient-canvas"></canvas>
-    <script src="assets/js/gradient.js"></script>
         <a href="#" class="logo">
             <img src="images/kazi-mind-high-resolution-logo-transparent.png" alt="Kazimind Logo">
         </a>
@@ -81,36 +76,29 @@ if ($isLoggedIn) {
 
         <ul class="nav-links">
             <li><a href="index.php">Home</a></li>
-            <li><a href="aboutUs.php">About Us</a></li>
             <li class="dropdown">
-                <a href="services.php">Services</a>
+                <a href="services.php">Who We Are</a>
                 <ul class="dropdown-content">
-                    <li><a href="services.php">All Services</a></li>
-                    <li><a href="PsychotherapyServices.php">Psychotherapy Services</a></li>
-                </ul>
-            </li>
-            <li><a href="ourTeam.php">Our Team</a></li>
-            <li><a href="upComingEvents.php">Upcoming Events Calendar</a></li>
-            <li class="dropdown">
-                <a href="areasOfFocus.php">Areas Of Focus</a>
-                <ul class="dropdown-content">
+                    <li><a href="aboutUs.php">About Us</a></li>
+                    <li><a href="ourTeam.php">Our Team</a></li>
                     <li><a href="areasOfFocus.php">Areas Of Focus</a></li>
-                    <li><a href="axietyandDep.php">Anxiety and Depression</a></li>
-                    <li><a href="selfHarm.php">Suicide and Self-Harm</a></li>
-                    <li><a href="stressMag.php">Stress Management</a></li>
-                    <li><a href="genderAndS.php">Gender and Sexuality</a></li>
-                    <li><a href="bodyAndMind.php">Body And Mind Connection</a></li>
-                    <li><a href="trauma.php">Trauma</a></li>
-                    <li><a href="mariage-prep.php">Marriage Preparation</a></li>
-                    <li><a href="couples.php">Couples Therapy</a></li>
-                    <li><a href="child.php">Child and Youth Therapy</a></li>
-                    <li><a href="perinatalHealth.php">Perinatal Health and Post-Partum Support</a></li>
-                    <li><a href="griefAndLoss.php">Grief and Loss</a></li>
                 </ul>
             </li>
-            <li><a href="contactUs.php">Contact Us</a></li>
+            <li class="dropdown">
+                <a href="services.php">What We Do</a>
+                <ul class="dropdown-content">
+                    <li><a href="upComingEvents.php">Upcoming Events Calendar</a></li>
+                    <li><a href="services.php">Services</a></li>
+                    <li><a href="services.php#faqH1">FAQs</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="services.php">Connect With Us</a>
+                <ul class="dropdown-content">
+                    <li><a href="contactUs.php">Contact Us</a></li>
+                </ul>
+            </li>
             <li><a href="bookAppointment.php">Book An Appointment</a></li>
-
             <?php if ($isLoggedIn): ?>
             <div class="nav-item">
             <li> <a href="profile.php">profile</a> </li>
@@ -124,7 +112,7 @@ if ($isLoggedIn) {
         </ul>
     </div>
 
-    <div class="hero-section">
+    <!-- <div class="hero-section">
         <video autoplay muted loop playsinline class="bg-video">
             <source src="uploads/header-vid.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -132,12 +120,57 @@ if ($isLoggedIn) {
         <div class="overlay"></div>
         <div class="hero-content">
             <h1><span>Cultivate</span> Your <span>Mind</span></h1>
-            <!-- <p>Cultivating The Minds Of Our Generation</p> -->
+            <p>Cultivating The Minds Of Our Generation</p>
             <a href="contactUs.php" class="nasdaq-btn"><strong>Reach</strong> Out To <strong>Us</strong> </a>
         </div>
-    </div>
+    </div> -->
+  <style>
+    .parallax-container {
+      position: relative;
+      width: 100%;
+      height: 370px; /* adjust depending on design */
+      overflow: hidden;
+      margin-top: 3rem;
+      border-radius: 8px;
+    }
 
+    .parallax-container img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      /* keeps aspect ratio, crops nicely */
+      object-position: center; /* center focus */
+      transform: translate(-50%, 0px); 
+      transition: transform 0.1s linear;
+    }
 
+    @media (max-width: 768px) {
+      .parallax-container {
+        height: 200px; /* smaller on phones */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .parallax-container {
+        height: 150px;
+      }
+    }
+  </style>
+
+  <div class="parallax-container">
+    <img src="images/smile.jpg" alt="Leaves">
+  </div>
+
+  <script>
+    const img = document.querySelector('.parallax-container img');
+
+    window.addEventListener('scroll', () => {
+      let offset = window.scrollY * 0.3; 
+      img.style.transform = `translate(-50%, ${offset}px)`; 
+    });
+  </script>
 
 <script>
         // Enhanced Mobile menu toggle with animation control

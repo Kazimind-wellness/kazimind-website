@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       Please submit your information below and our administrative team can assist you.
     </p>
     <p>
-      If you are ready see one of our therapist we invite you to email or <a href="#" class="contact-link">book</a> with them directly.
+      If you are ready see one of our therapist we invite you to email or <a href="bookAppointment.php" class="contact-link">book</a> with us directly.
     </p>
     <p>
       All messages sent through this contact form pass through our administrative team, so please don't share anything confidential in this form.

@@ -5,6 +5,120 @@
     <link rel="stylesheet" href="assets/css/indexStyles.css">
 </head>
 
+<section class="feedback-section">
+    <h2>Customer Feedback</h2>
+
+    <div class="feedback-steps">
+      <div class="step active" data-feedback="1">1</div>
+      <div class="step" data-feedback="2">2</div>
+      <div class="step" data-feedback="3">3</div>
+      <div class="step" data-feedback="4">4</div>
+    </div>
+
+    <div class="feedback-content active" id="feedback-1">
+      <h3>Brian Kanja</h3>
+      <div class="stars">★★★★☆</div>
+      <p>
+        Everyone needs to debrief, away from the norm, away from usual routine, 
+        to make the work place and work relationships better and that place is KaziMind...
+      </p>
+    </div>
+
+    <div class="feedback-content" id="feedback-2">
+      <h3>Elizabeth Muiruri</h3>
+      <div class="stars">★★★★★</div>
+      <p>
+        First off it's a friendly environment with friendly kind hearted people... 
+        loved everything about it.
+      </p>
+    </div>
+
+    <div class="feedback-content" id="feedback-3">
+      <h3>Margaret Kariuki</h3>
+      <div class="stars">★★★★☆</div>
+      <p>
+        A wellness center that brings out life in its clients. Solution oriented wellness center.
+      </p>
+    </div>
+
+    <div class="feedback-content" id="feedback-4">
+      <h3>Ruth</h3>
+      <div class="stars">★★★★★</div>
+      <p>
+        My interaction with Njoki was a life changing one. Thank you for your time 
+        and from the heart connection. High level of professionalism. Thumbs up.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const steps = document.querySelectorAll('.step');
+    const feedbacks = document.querySelectorAll('.feedback-content');
+    let current = 0;
+    let autoSlide = setInterval(nextFeedback, 5000); // auto rotate every 5s
+
+    function showFeedback(index) {
+      // remove active from all
+      steps.forEach(s => s.classList.remove('active'));
+      feedbacks.forEach(f => f.classList.remove('active'));
+
+      // activate current
+      steps[index].classList.add('active');
+      feedbacks[index].classList.add('active');
+      current = index;
+
+      // reset auto timer
+      resetAutoSlide();
+    }
+
+    function nextFeedback() {
+      let next = (current + 1) % feedbacks.length;
+      showFeedback(next);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      autoSlide = setInterval(nextFeedback, 5000);
+    }
+
+    // handle click on numbers
+    steps.forEach((step, index) => {
+      step.addEventListener('click', () => showFeedback(index));
+    });
+  </script>
+
+
+  <section class="signup-section">
+    <h2>Sign Up For Updates and Promotions</h2>
+    <p>Sign up with your email address to receive news, updates and promotions as they’re announced.</p>
+      <form class="signup-form" id="signupForm">
+        <input type="email" name="email" id="email" placeholder="Email Address" required>
+        <button type="submit">SIGN UP</button>
+      </form>
+      <div id="message"></div>
+  </section>
+
+<script>
+document.getElementById('signupForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+
+  fetch('subscribe.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('message').innerHTML = data;
+    this.reset();
+  })
+  .catch(err => {
+    document.getElementById('message').innerHTML = "❌ Error submitting form.";
+  });
+});
+</script>
+
     <div class="footer-dark">
         <div class="footer-container">
             
@@ -17,7 +131,7 @@
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <p><img src="images/location-dot.jpg" alt="Location"> <span>Nanyuki, Kenya</span></p>
-                <p><img src="images/mail-icon.png" alt="Email"> <span>kazimindw@gmail.com</span></p>
+                <p><img src="images/mail-icon.png" alt="Email"> <span>kazimindadmin@gmail.com</span></p>
             </div>
 
             <div class="footer-column">

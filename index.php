@@ -18,16 +18,17 @@ $pageTitle = "Book Now";
 </head>
 
 <p class="brief-overview">
-  Kazimind Wellness Centre is a mental health and wellness centre focused on providing mental related services to individuals, 
-    groups and families across Kenya. Our therapists provide services for clients in office, in the community and online so that no matter where you reside
-    you're able to get the support you need.
+  “At KaziMind Wellness, we believe that every mind has the potential to grow, heal, and thrive. Just like a garden, the mind requires care, patience, and the right tools to flourish.
+
+Our work is rooted in cultivating resilience, clarity, and balance guiding individuals, families, and organizations to discover strength within themselves. When we cultivate minds, we nurture communities, workplaces, and generations to come.” <br>
+
+“When we cultivate minds, we cultivate life.”
     <hr>
 </p>
 
 <div class="welcome" id="welcome">
   <div class="background-overlay bg1" id="bg1"></div>
   <div class="background-overlay bg2" id="bg2"></div>
-  <div class="overlay" style="background:  rgba(17, 157, 204, 0.15);"></div>
   <div class="welcome-content">
     <h1 class="welcome-title">Welcome to Our Centre</h1>
     <p class="welcome-subtitle">Professional care in a compassionate environment where healing begins and growth is nurtured</p>
@@ -96,8 +97,9 @@ $pageTitle = "Book Now";
         setInterval(createBubble, 500);
     </script>
   <p class="topic-intro">
-    Our team members have experience working with a variety of topics and challenges, 
-    and can support you with whatever is going on for you including the following: 
+    In our therapy sessions, we address a wide range of topics designed to enhance mental and 
+    emotional well-being. Guided by our philosophy of Cultivating Minds, we focus on the areas 
+    below to support growth, healing, and resilience.  
   </p>
 
   <div class="topic-handled-lists">
@@ -107,36 +109,36 @@ $pageTitle = "Book Now";
       <li><span>Stress Management</span></li>
       <li><span>Trauma, PTSD and C-PTSD</span></li>
       <li><span>Gender and Sexuality</span></li>
-      <li><span>Nutrition Planning and Counselling</span></li>
+      <li><span>Eating Disorders</span></li>
       <li><span>Body Image</span></li>
-      <li><span>Mind-Body Connection</span></li>
-      <li><span>Corporate Mental Health Talks</span></li>
+      <!-- <li><span>Corporate Mental Health Talks</span></li> -->
     </ul>
 
     <ul>
       <li><span>Self-Esteem</span></li>
-      <li><span>Communication</span></li>
+      <li><span>Communication and social skills</span></li>
       <li><span>Marriage Preparation</span></li>
       <li><span>Anger Management</span></li>
       <li><span>Neurodiversity, ADHD and ASD</span></li>
       <li><span>Suicide and Self-Harm</span></li>
-      <li><span>Attachment</span></li>
-      <li><span>One On One Therapy</span></li>
-      <li><span>Teen Therapy</span></li>
+      <!-- <li><span>One On One Therapy</span></li> -->
+      <!-- <li><span>Teen Therapy</span></li> -->
     </ul>
     
     <ul>
       <li><span>Grief and Loss</span></li>
-      <li><span>Perinatal Health and Post-Partum Support</span></li>
+      <li><span>Prenatal Health and Post-Partum Support</span></li>
       <li><span>Substance Use and Recovery</span></li>
-      <li><span>Couples Therapy</span></li>
-      <li><span>Family Therapy</span></li>
-      <li><span>Child therapy</span></li>
-      <li><span>Youth Training workshop</span></li>
-      <li><span>Student Personal Therapy</span></li>
+      <li><span>Attachment Disorders / Attachment styles</span></li>
+      <li><span>Mind-Body Connection</span></li>
+      <!-- <li><span>Couples Therapy</span></li> -->
+      <!-- <li><span>Family Therapy</span></li> -->
+      <!-- <li><span>Child therapy</span></li> -->
+      <!-- <li><span>Youth Training workshop</span></li> -->
+      <!-- <li><span>Student Personal Therapy</span></li> -->
     </ul>
   </div>
-  <a href="contactUs.php" class="topic-link">Reach out to us to book your consult today.</a>
+  <a href="contactUs.php" class="topic-link">Cultivate Today.</a>
 </div>
 
 <div class="section-cards">
@@ -144,7 +146,7 @@ $pageTitle = "Book Now";
     <div class="card-content">
       <h2>Meet Our Team</h2>
       <p>
-        Great therapy requires a great connection. Take a look at the therapists that work with us and
+        Great therapy requires a great connection. Take a look at the team that work with us and
         we're sure you'll find someone you'll feel good about.
       </p>
       <a href="ourTeam.php" class="card-btn">Our Team</a>
@@ -231,8 +233,8 @@ const images = [
     "images/imageB.jpg",
     "images/imageB1.jpg",
     "images/imageB2.jpg",
+    "images/imageB3.jpg",
     "images/imageB4.jpg",
-    "images/imageb3.jpg",
     "images/imageB5.jpg",
     "images/imageB6.jpg",
     "images/imageB7.jpg"

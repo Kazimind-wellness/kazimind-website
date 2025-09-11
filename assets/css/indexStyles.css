@@ -2083,8 +2083,8 @@ mark {
 }
 
 .contact-image img {
-    max-width: 300px;
-    height: 20rem;
+    width: 450px;
+    height: 25rem;
     border-radius: 4px;
     object-fit: cover;
     transition: all 0.5s ease;

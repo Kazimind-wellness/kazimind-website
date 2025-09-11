@@ -24,14 +24,14 @@ $pageTitle = "Book Now";
                         <img src="images/fenis.png" alt="">
                         <h3>Fenis Akinyi</h3>
                         <p>
-                            Fenis Akinyi, a clinical counseling psychologist specializing in addiction. Passionate about mental health advocacy, she excels in outreach and collaborative care, advancing KaziMind's wellness mission.
+                            clinical counseling psychologist.
                         </p>
                     </div>
                     <div class="swiper-slide box">
                         <img src="images/njoki.jpg" alt="">
                         <h3>Njoki Kamau</h3>
                         <p>
-                            Njoki, Best Psychologist in Kenya 2024, brings 10+ years of clinical and corporate mental health expertise, specializing in counseling and holistic care.
+                            Best Psychologist in Kenya 2024.
                         </p>
                     </div>
                     <div class="swiper-slide box">
@@ -42,10 +42,10 @@ $pageTitle = "Book Now";
                         </p>
                     </div>
                     <div class="swiper-slide box">
-                        <img src="images/kel.png" alt="">
-                        <h3>Kelsey Wairimu</h3>
+                        <img src="images/maryMaiko.png" alt="">
+                        <h3>Mary Wanjiku</h3>
                         <p>
-                            Our Counselling Phycologist, passionate with children.
+                            Spiritual & Psychological Counselor.
                         </p>
 
                     </div>
