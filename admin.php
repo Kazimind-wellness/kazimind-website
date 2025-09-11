@@ -15,7 +15,12 @@ if (!isset($_SESSION['admin_logged_in'])) {
 // Total users
 $totalUsers = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn();
 // Total subscribers
-$totalSubscribers = $pdo->query("SELECT COUNT(*) FROM subscribers WHERE unsubscribed = 0")->fetchColumn();
+$totalSubscribers = $pdo->query("
+    SELECT COUNT(*) 
+    FROM subscribers 
+    WHERE unsubscribed = FALSE OR unsubscribed = 0
+")->fetchColumn();
+
 
 
 // Define "online" threshold (e.g., last 5 mins)
@@ -32,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['promo_subject'], $_PO
     $body = nl2br(trim($_POST['promo_message']));
 
     // Get all active subscribers
-    $stmt = $pdo->query("SELECT email FROM subscribers WHERE unsubscribed = 0");
+    $stmt = $pdo->query("SELECT email FROM subscribers WHERE WHERE unsubscribed = FALSE OR unsubscribed = 0");
     $subscribers = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
     if ($subscribers) {
