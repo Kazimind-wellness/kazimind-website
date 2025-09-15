@@ -128,7 +128,7 @@ if ($isLoggedIn) {
     .parallax-container {
       position: relative;
       width: 100%;
-      height: 370px; /* adjust depending on design */
+      height: 290px; /* adjust depending on design */
       overflow: hidden;
       margin-top: 3rem;
       border-radius: 8px;
