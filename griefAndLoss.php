@@ -18,7 +18,6 @@ $pageTitle = "Grief and Loss";
 </head>
 
 <div class="mainB">
-
     <div class="section-container section scroll-animate">
         <h1 class="main-heading">Grief and Loss</h1>
         <p class="intro-paragraph">
