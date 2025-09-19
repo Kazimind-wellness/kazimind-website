@@ -126,7 +126,7 @@
 }
 
 .description {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 2;
     text-align: center;
     margin: 3rem 10rem;
@@ -141,7 +141,7 @@
 
 .therapy-list ul {
     padding-left: 20%;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 2.2;
     list-style-type: none;
 }

@@ -36,7 +36,7 @@ $pageTitle = "Suicide and Self-Harm Support";
             Therapy offers a space to begin unpacking these experiences and emotions. At Kazimind wellness Centre, our goal is to help you understand what you're going through and guide you toward healthier ways of coping and healing so you can find relief, hope, and a renewed sense of purpose without resorting to thoughts or plans of ending your life. You're not alone, and support is available.
         </p>
     </div>
-
+    
     <div class="section-container scroll-animate">
         <h2 class="sub-heading">What is Self-Harm?</h2>
         <p class="description">

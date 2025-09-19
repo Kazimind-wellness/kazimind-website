@@ -131,7 +131,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
             <div class="footer-column">
                 <h3>Contact Us</h3>
                 <p><img src="images/location-dot.jpg" alt="Location"> <span>Nanyuki, Kenya</span></p>
-                <p><img src="images/mail-icon.png" alt="Email"> <span>kazimindadmin@gmail.com</span></p>
+                <p><img src="images/mail-icon.png" alt="Email"> <span>admin@kazimind.com</span></p>
             </div>
 
             <div class="footer-column">
@@ -151,9 +151,9 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
                 </div>
                 <div class="social-row">
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/kazi-mind-wellness-04434a308/"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-                        <a href="https://www.tiktok.com/@kazimindwellness"><img src="images/tiktok-icon.png" alt="TikTok"></a>
-                        <a href="www.youtube.com/@KaziMindHub"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                        <a href="https://www.linkedin.com/company/kazimind-wellness/"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="https://vm.tiktok.com/ZMA2SKHWp/"><img src="images/tiktok-icon.png" alt="TikTok"></a>
+                        <a href="https://youtube.com/@kazimindhub?si=WPfCRa8_7OiyrpwN"><img src="images/youtube-icon.png" alt="YouTube"></a>
                     </div>
                 </div>
             </div>
