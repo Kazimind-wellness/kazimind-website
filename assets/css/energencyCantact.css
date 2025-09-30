@@ -1,0 +1,73 @@
+    body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background: #282828;
+        padding: 40px;
+        border-radius: 10px;
+        text-align: center;
+        width: 100%;
+        color: white;
+        margin: 2rem 0;
+    }
+
+    select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        background: #282828;
+        color: white;
+    }
+
+    #countrySelect {
+        width: 50%;
+        margin-left: 0;
+        border: 3px solid white;
+    }
+
+    .info-box {
+        background: white;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: left;
+        color: #282828;
+    }
+
+    .info-box h2 {
+        margin-top: 0;
+        color: #006fd1;
+    }
+
+    .info-box p {
+        margin: 6px 0;
+    }
+
+    .emergency {
+        color: red;
+        font-weight: bold;
+    }
+
+    .ambulance,
+    .police {
+        font-weight: bold;
+    }
+
+    .responsibility {
+        color: #ddd;
+        margin-top: 20px;
+        line-height: 1.5;
+    }
+
+    .responsibility a {
+        color: #006fd1;
+        text-decoration: none;
+    }

@@ -27,18 +27,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fullName       = $firstName . ' ' . $lastName;
             $emailAddress   = $_POST['email'];
             $location       = $_POST['location'];
-            $phone          = $_POST['phone'];
+            $county       = $_POST['county'];
+            $phone          = $_POST['fullPhone'];
             $reason         = $_POST['reason']; 
             $service        = $_POST['service'];
             $message        = $_POST['message'];
 
         // Construct email message
         $subject = "client reach out: kazimind wellness";
-        $body = "Hello there!\n\nA new booking has been submitted with the following details:\n
+        $body = "Hello there!\n\nA new contact has been submitted with the following details:\n
                   Name: $fullName
                   Email: $emailAddress
                   Phone: $phone
-                  Location: $location
+                  country: $location
+                  county: $county
                   Reason for Contact: $reason
                   Service: $service
                   Message: $message
@@ -93,6 +95,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/indexStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" href="assets/css/h-footer.css">
     <title>Kazimind</title>
 </head>
@@ -118,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <img src="images/fenis.jpg" alt="Office Desk" />
   </div>
   <p class="disclaimer scroll-animate">
-    <em class="disclaimer scroll-animate">Please note if you are in crisis or need immediate support, these messages may not be immediately seen, <br> and in such situations you should reach out to a supportive person or emergency services. <br> If you need immediate support please reach out to your local distress line.</em>
+    <em class="disclaimer scroll-animate">If you are in crisis or someone may be in danger, please do not use this site, as messages may not be reviewed immediately, <br> Instead, please use <a href="emergencyAssistance.php">These resources</a> can provide you with immediate help.</em>
   </p>
 </div>
 
@@ -142,14 +146,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group scroll-animate">
-      <label for="location">Location <span>(required)</span></label>
-      <small>Your province or city</small>
+      <label for="location">Country <span>(required)</span></label>
+      <small>Your Country or state</small>
       <input type="text" id="location" name="location" required>
+    </div>
+
+    <div class="form-group scroll-animate">
+      <label for="county">County <span>(required)</span></label>
+      <small>Your province or city</small>
+      <input type="text" id="county" name="county" required>
     </div>
 
     <div class="form-group scroll-animate">
       <label for="phone">Phone</label>
       <input type="tel" id="phone" name="phone">
+      <input type="hidden" id="fullPhone" name="fullPhone">
     </div>
 
     <div class="form-group scroll-animate">
@@ -183,6 +194,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <button type="submit" class="submit-button" name="submit" >SUBMIT</button>
     </div>
   </form>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const input = document.querySelector("#phone");
+    const fullPhoneInput = document.querySelector("#fullPhone");
+    const form = document.querySelector("form"); // get the form itself
+
+    const iti = window.intlTelInput(input, {
+        initialCountry: "auto",
+        geoIpLookup: (success, failure) => {
+            fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE")
+                .then(res => res.json())
+                .then(data => success(data.country))
+                .catch(() => success("ke")); // fallback: Kenya
+        },
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+    });
+
+    // On form submit, set hidden field
+    form.addEventListener("submit", function () {
+        fullPhoneInput.value = iti.getNumber(); // always gives +254...
+    });
+});
+</script>
 
 </div>
 
@@ -191,15 +226,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="office-info scroll-animate">
     <h2>Our Office</h2>
     <p><strong>Kazimind Wellness Centre</strong><br>
-      Mt kenya road<br>
-      Nanyuki, Sportsman Arms Hotel</p>
+      Mt kenya road, Nanyuki<br>
+      </p>
 
-    <p>Phone: 070 0479 944</p>
-    <p>Email: <a href="mailto:kazimindw@gmail.com">kazimindw@gmail.com</a></p>
+    <p>Phone: 0700 479 944 | 020 202 0830</p>
+    <p>Email: <a href="mailto:admin@kazimind.com">admin@kazimind.com</a></p>
 
     <div class="map">
       <iframe 
-        src="https://www.google.com/maps?q=Kazimind+Sportmans+Arms+Hotel+Nanyuki+Kenya&output=embed" 
+        src="https://www.google.com/maps?q=KaziMind+Wellness+Nanyuki+Kenya&output=embed" 
         width="100%" 
         height="200" 
         style="border:0;" 
@@ -209,22 +244,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 
-  <div class="office-hours scroll-animate">
-    <h2>Our Hours</h2>
-    <ul>
-      <li><strong>Mondays</strong> 8am - 5pm</li>
-      <li><strong>Tuesdays</strong> 8am - 5pm</li>
-      <li><strong>Wednesdays</strong> 8am - 5pm</li>
-      <li><strong>Thursdays</strong> 8am - 5pm</li>
-      <li><strong>Fridays</strong> 8am - 5pm</li>
-      <li><strong>Saturdays</strong> 9m to 5pm</li>
-      <li><strong>Sundays</strong> closed</li>
-    </ul>
-    <p>Closed on Sundays Only.</p>
-    <p>Open to appointment On Public Holidays</p>
-    <p><em>Our therapists work a variety of hours, the above hours indicate when our administrative support is available for you in-office and online.</em></p>
-    <p><em>Please note emails sent to the administrative desk on weekends may not be responded to until Monday.</em></p>
-  </div>
+    <div class="office-hours scroll-animate">
+        <h2>Our Office Hours</h2>
+        <ul>
+            <li><strong>Mondays to Fridays: </strong> 8am to 5pm</li>
+            <li><strong>Saturdays: </strong> 9m to 4:30pm </li>
+            <li><strong>Sundays: </strong> closed</li>
+            </ul>
+        <p><em>Our therapists work flexible hours; however, the times listed above reflect when our administrative support is available both in-office and online.</em></p>
+        <p><em>Please note that emails sent to our administrative desk over the weekend may not receive a response until Monday. </em></p>
+    </div>
 </div>
 
 <div class="travel-info scroll-animate">

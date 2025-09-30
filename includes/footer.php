@@ -6,7 +6,7 @@
 </head>
 
 <section class="feedback-section">
-    <h2>Customer Feedback</h2>
+    <h2>Client Reviews</h2>
 
     <div class="feedback-steps">
       <div class="step active" data-feedback="1">1</div>
@@ -34,20 +34,20 @@
     </div>
 
     <div class="feedback-content" id="feedback-3">
-      <h3>Margaret Kariuki</h3>
-      <div class="stars">★★★★☆</div>
-      <p>
+    <h3>Margaret Kariuki</h3>
+    <div class="stars">★★★★☆</div>
+    <p>
         A wellness center that brings out life in its clients. Solution oriented wellness center.
-      </p>
+    </p>
     </div>
 
     <div class="feedback-content" id="feedback-4">
-      <h3>Ruth</h3>
-      <div class="stars">★★★★★</div>
-      <p>
+    <h3>Ruth</h3>
+    <div class="stars">★★★★★</div>
+    <p>
         My interaction with Njoki was a life changing one. Thank you for your time 
         and from the heart connection. High level of professionalism. Thumbs up.
-      </p>
+    </p>
     </div>
   </section>
 
@@ -124,8 +124,8 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
             
             <div class="footer-column">
                 <h3>Kazimind Wellness</h3>
-                <p>Cultivate Your Mind</p>
-                <p>Mental Wellness Experts</p>
+                <p>Cultivate Your Mind.</p>
+                <p>Mental Health and Wellness Experts</p>
             </div>
 
             <div class="footer-column">
@@ -171,10 +171,562 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
   </a>
 </div>
 
+<!-- CUSTOMIZATION BUTTON IMPLEMENTATION STARTS HERE -->
+<style>
+    :root {
+        --primary-color: #4361ee;
+        --secondary-color: #3A0CA3;
+        --background-color: #ffffff;
+        --text-color: #333333;
+        --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        --font-size: 16px;
+        --border-radius: 12px;
+        --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+    }
+
+    /* Customization Panel Styles */
+    .customization-panel {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 10000;
+        font-family: var(--font-family);
+    }
+
+    .customization-toggle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: var(--box-shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        transition: var(--transition);
+        animation: pulse 2s infinite;
+        z-index: 10001;
+    }
+
+    .customization-toggle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 15px 40px rgba(67, 97, 238, 0.3);
+    }
+
+    .customization-content {
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        width: 300px;
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: var(--transition);
+        z-index: 10002;
+    }
+
+    .customization-content.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .customization-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .customization-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin: 0;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #777;
+        transition: var(--transition);
+    }
+
+    .close-btn:hover {
+        color: var(--primary-color);
+        transform: rotate(90deg);
+    }
+
+    .customization-option {
+        margin-bottom: 15px;
+    }
+
+    .option-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #555;
+    }
+
+    .color-picker {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .color-option {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: var(--transition);
+    }
+
+    .color-option.active {
+        border-color: #333;
+        transform: scale(1.1);
+    }
+
+    .font-select, .theme-select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        background: white;
+        font-family: inherit;
+        transition: var(--transition);
+    }
+
+    .font-select:focus, .theme-select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+    }
+
+    .slider-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .slider {
+        flex: 1;
+        -webkit-appearance: none;
+        height: 6px;
+        border-radius: 3px;
+        background: #e0e0e0;
+        outline: none;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+    .slider::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+    }
+
+    .slider-value {
+        min-width: 30px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        font-family: inherit;
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        color: #fff !important;
+    }
+
+    .btn-primary:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+        background: #f0f0f0;
+        color: #555;
+    }
+
+    .btn-secondary:hover {
+        background: #e0e0e0;
+        transform: translateY(-2px);
+    }
+
+    /* Animation for the toggle button */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 10px rgba(67, 97, 238, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(67, 97, 238, 0);
+        }
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .customization-content {
+            width: 280px;
+            left: -10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .customization-panel {
+            bottom: 10px;
+            left: 10px;
+        }
+        
+        .customization-content {
+            width: 260px;
+            left: -20px;
+        }
+    }
+</style>
+
+<div class="customization-panel">
+    <button class="customization-toggle" id="customizationToggle">
+        <i>⚙️</i>
+    </button>
+    <div class="customization-content" id="customizationContent">
+        <div class="customization-header">
+            <h3 class="customization-title">Customize Website</h3>
+            <button class="close-btn" id="closeCustomization">&times;</button>
+        </div>
+        
+        <div class="customization-option">
+            <label class="option-label">Primary Color</label>
+            <div class="color-picker">
+                <div class="color-option active" style="background-color: #4361ee;" data-color="#4361ee"></div>
+                <div class="color-option" style="background-color: #e63946;" data-color="#e63946"></div>
+                <div class="color-option" style="background-color: #2a9d8f;" data-color="#2a9d8f"></div>
+                <div class="color-option" style="background-color: #e9c46a;" data-color="#e9c46a"></div>
+                <div class="color-option" style="background-color: #9b5de5;" data-color="#9b5de5"></div>
+            </div>
+        </div>
+        
+        <div class="customization-option">
+            <label class="option-label">Theme</label>
+            <select class="theme-select" id="themeSelect">
+                <option value="light">Light Theme</option>
+                <option value="dark">Dark Theme</option>
+                <option value="auto">Auto (System Preference)</option>
+            </select>
+        </div>
+        
+        <div class="customization-option">
+            <label class="option-label">Font Family</label>
+            <select class="font-select" id="fontSelect">
+                <option value="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Default (Segoe UI)</option>
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+                <option value="'Georgia', serif">Georgia</option>
+                <option value="'Courier New', Courier, monospace">Courier New</option>
+                <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+            </select>
+        </div>
+        
+        <div class="customization-option">
+            <label class="option-label">Font Size</label>
+            <div class="slider-container">
+                <input type="range" min="12" max="24" value="16" class="slider" id="fontSizeSlider">
+                <span class="slider-value" id="fontSizeValue">16px</span>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="btn btn-secondary" id="resetSettings">Reset</button>
+            <button class="btn btn-primary" id="applySettings">Apply</button>
+        </div>
+    </div>
+</div>
+
 <script>
-  window.addEventListener("load", function () {
+    // DOM Elements
+    const customizationToggle = document.getElementById('customizationToggle');
+    const customizationContent = document.getElementById('customizationContent');
+    const closeCustomization = document.getElementById('closeCustomization');
+    const resetSettings = document.getElementById('resetSettings');
+    const applySettings = document.getElementById('applySettings');
+    const colorOptions = document.querySelectorAll('.color-option');
+    const themeSelect = document.getElementById('themeSelect');
+    const fontSelect = document.getElementById('fontSelect');
+    const fontSizeSlider = document.getElementById('fontSizeSlider');
+    const fontSizeValue = document.getElementById('fontSizeValue');
+
+    // Toggle customization panel
+    customizationToggle.addEventListener('click', () => {
+        customizationContent.classList.toggle('active');
+    });
+
+    // Close customization panel
+    closeCustomization.addEventListener('click', () => {
+        customizationContent.classList.remove('active');
+    });
+
+    // Update font size value display
+    fontSizeSlider.addEventListener('input', () => {
+        fontSizeValue.textContent = `${fontSizeSlider.value}px`;
+    });
+
+    // Color selection
+    colorOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            // Remove active class from all options
+            colorOptions.forEach(opt => opt.classList.remove('active'));
+            // Add active class to clicked option
+            option.classList.add('active');
+        });
+    });
+
+    // Apply settings
+    applySettings.addEventListener('click', () => {
+        // Get selected color
+        const selectedColor = document.querySelector('.color-option.active').getAttribute('data-color');
+        
+        // Apply settings to common elements
+        applyStylesToWebsite(selectedColor, fontSelect.value, fontSizeSlider.value, themeSelect.value);
+        
+        // Save settings to localStorage
+        saveSettings();
+        
+        // Close the panel
+        customizationContent.classList.remove('active');
+        
+        // Show confirmation
+        showNotification('Settings applied successfully!');
+    });
+
+    // Reset settings
+    resetSettings.addEventListener('click', () => {
+        // Reset to default values
+        resetWebsiteStyles();
+        
+        // Reset UI elements
+        colorOptions.forEach(opt => opt.classList.remove('active'));
+        document.querySelector('.color-option[data-color="#4361ee"]').classList.add('active');
+        themeSelect.value = 'light';
+        fontSelect.value = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+        fontSizeSlider.value = '16';
+        fontSizeValue.textContent = '16px';
+        
+        // Clear saved settings
+        localStorage.removeItem('websiteCustomization');
+        
+        // Show confirmation
+        showNotification('Settings reset to default!');
+    });
+
+// More comprehensive styling function
+function applyStylesToWebsite(color, fontFamily, fontSize, theme) {
+    const styleId = 'customization-styles';
+    let styleElement = document.getElementById(styleId);
+    
+    if (!styleElement) {
+        styleElement = document.createElement('style');
+        styleElement.id = styleId;
+        document.head.appendChild(styleElement);
+    }
+    
+    const isDark = theme === 'dark' || (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    const backgroundColor = isDark ? '#1a1a1a' : '#ffffff';
+    const textColor = isDark ? '#f0f0f0' : '#333333';
+    const fontSizeRem = (fontSize / 16) + 'rem'; // Convert px to rem
+    
+    const css = `
+        /* Base styles */
+        body, p, div, span, li, td, th {
+            font-family: ${fontFamily} !important;
+            font-size: ${fontSize}px !important;
+            color: ${textColor} !important;
+        }
+        
+        body {
+            background-color: ${backgroundColor} !important;
+        }
+        
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: ${color} !important;
+            font-family: ${fontFamily} !important;
+        }
+        
+        /* Links */
+        a, .link, [class*="link"] {
+            color: ${color} !important;
+        }
+        
+        /* Buttons */
+        button, .btn, input[type="button"], input[type="submit"], [class*="button"] {
+            background-color: ${color} !important;
+            border-color: ${color} !important;
+            font-family: ${fontFamily} !important;
+        }
+        
+        /* Color classes */
+        .primary-color, .accent-color, .highlight, [class*="primary"], [class*="accent"] {
+            color: ${color} !important;
+        }
+        
+        .primary-bg, .accent-bg, .highlight-bg, [class*="primary-bg"], [class*="accent-bg"] {
+            background-color: ${color} !important;
+        }
+        
+        /* Specific classes from your website */
+        .brief-overview, .text-content, .content, .description, .text, .copy {
+            font-size: ${fontSize}px !important;
+            font-family: ${fontFamily} !important;
+            color: ${textColor} !important;
+            line-height: 1.6 !important;
+        }
+        
+        /* Any element with overview in class name */
+        [class*="overview"] {
+            font-size: ${fontSize}px !important;
+            font-family: ${fontFamily} !important;
+        }
+        
+        /* Any element with text in class name */
+        [class*="text"] {
+            font-size: ${fontSize}px !important;
+        }
+    `;
+    
+    styleElement.textContent = css;
+}
+
+    // Reset website styles
+    function resetWebsiteStyles() {
+        const styleElement = document.getElementById('customization-styles');
+        if (styleElement) {
+            styleElement.remove();
+        }
+    }
+
+    // Save settings to localStorage
+    function saveSettings() {
+        const settings = {
+            primaryColor: document.querySelector('.color-option.active').getAttribute('data-color'),
+            theme: themeSelect.value,
+            fontFamily: fontSelect.value,
+            fontSize: fontSizeSlider.value
+        };
+        
+        localStorage.setItem('websiteCustomization', JSON.stringify(settings));
+    }
+
+    // Load settings from localStorage
+    function loadSettings() {
+        const savedSettings = localStorage.getItem('websiteCustomization');
+        
+        if (savedSettings) {
+            const settings = JSON.parse(savedSettings);
+            
+            // Apply saved settings
+            applyStylesToWebsite(settings.primaryColor, settings.fontFamily, settings.fontSize, settings.theme);
+            
+            // Update UI elements
+            colorOptions.forEach(opt => opt.classList.remove('active'));
+            document.querySelector(`.color-option[data-color="${settings.primaryColor}"]`).classList.add('active');
+            themeSelect.value = settings.theme;
+            fontSelect.value = settings.fontFamily;
+            fontSizeSlider.value = settings.fontSize;
+            fontSizeValue.textContent = `${settings.fontSize}px`;
+        }
+    }
+
+    // Show notification
+    function showNotification(message) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 10001;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Remove notification after 3 seconds
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    }
+
+    // Initialize - load saved settings on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSettings();
+        
+        // Listen for system theme changes if auto theme is selected
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const savedSettings = localStorage.getItem('websiteCustomization');
+            if (savedSettings) {
+                const settings = JSON.parse(savedSettings);
+                if (settings.theme === 'auto') {
+                    applyStylesToWebsite(settings.primaryColor, settings.fontFamily, settings.fontSize, 'auto');
+                }
+            }
+        });
+    });
+</script>
+
+<!-- CUSTOMIZATION BUTTON IMPLEMENTATION ENDS HERE -->
+
+<script>
+window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
     if (preloader) preloader.style.display = "none";
-  });
+});
 </script>
 

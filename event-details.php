@@ -147,8 +147,16 @@ $events = $data['items'] ?? [];
           <div class="event-card-content">
             <h2><?php echo htmlspecialchars($title); ?></h2>
             <div class="meta">
-              <strong>Starts:</strong> <?php echo date("D, M j, Y g:i A", strtotime($start)); ?><br>
-              <strong>Ends:</strong> <?php echo date("D, M j, Y g:i A", strtotime($end)); ?><br>
+              <?php
+                $startDate = new DateTime($start);
+                $endDate = new DateTime($end);
+
+                // Force the timezone to Nairobi (UTC+3)
+                $startDate->setTimezone(new DateTimeZone('Africa/Nairobi'));
+                $endDate->setTimezone(new DateTimeZone('Africa/Nairobi'));
+              ?>
+              <strong>Starts:</strong> <?php echo $startDate->format("D, M j, Y g:i A"); ?><br>
+              <strong>Ends:</strong> <?php echo $endDate->format("D, M j, Y g:i A"); ?><br>
               <strong>Location:</strong> <?php echo htmlspecialchars($location); ?>
             </div>
             <p><?php echo htmlspecialchars(trim($description)); ?></p>

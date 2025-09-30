@@ -8,6 +8,7 @@
     --theme-text: #333;
     --theme-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --theme-mustered: #FFDB58;
+    --font-size: 16px;
     --transition-duration: 0.4s;
     --transition-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -447,7 +448,7 @@ body {
     opacity: 1;
 }
 
-.topic-handled a {
+.topic-handled .topic-link {
     display: block;
     font-size: 1.1rem;
     padding: 1rem 2rem;
@@ -811,7 +812,6 @@ mark {
 }
 /* Articles Section */
 .articles {
-    font-family: 'Helvetica Neue', sans-serif;
     color: #1a1a1a;
     display: flex;
     flex-wrap: wrap;

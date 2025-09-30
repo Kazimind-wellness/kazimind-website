@@ -108,8 +108,8 @@ $pageTitle = "Psychotherapy Services";
         <div class="therapy-text">
             <h2>Student personal Therapy</h2>
             <p>
-                We offer personal therapy to students in college, universities waiting to graduate. 
-                Our services are available online and physical.
+                We provide personal therapy for students at all levels from Pre-Primary, Primary, Junior and Senior Secondary School, to college and university (including those awaiting graduation). 
+                Sessions are available both online and in-person. A valid student ID or school identification is required.  
             </p>
         </div>
     </div>

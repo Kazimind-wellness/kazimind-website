@@ -22,7 +22,7 @@ $pageTitle = "Book Now";
 
 Our work is rooted in cultivating resilience, clarity, and balance guiding individuals, families, and organizations to discover strength within themselves. When we cultivate minds, we nurture communities, workplaces, and generations to come.” <br>
 
-“When we cultivate minds, we cultivate life.”
+“When we cultivate minds, we cultivate lives.”
     <hr>
 </p>
 
@@ -109,7 +109,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
       <li><span>Stress Management</span></li>
       <li><span>Trauma, PTSD and C-PTSD</span></li>
       <li><span>Gender and Sexuality</span></li>
-      <li><span>Eating Disorders</span></li>
+      <li><span><a href="eatingDisorder.php" style="text-decoration: underline;">Eating Disorders</a></span></li>
       <li><span>Body Image</span></li>
       <!-- <li><span>Corporate Mental Health Talks</span></li> -->
     </ul>
@@ -129,7 +129,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
       <li><span>Grief and Loss</span></li>
       <li><span>Prenatal Health and Post-Partum Support</span></li>
       <li><span>Substance Use and Recovery</span></li>
-      <li><span>Attachment Disorders / Attachment styles</span></li>
+      <li><span><a href="attachmentstyles.php" style="text-decoration: underline;">Attachment Disorders / Attachment styles</a></span></li>
       <li><span>Mind-Body Connection</span></li>
       <!-- <li><span>Couples Therapy</span></li> -->
       <!-- <li><span>Family Therapy</span></li> -->
