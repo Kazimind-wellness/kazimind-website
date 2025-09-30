@@ -77,7 +77,7 @@ if ($isLoggedIn) {
         <ul class="nav-links">
             <li><a href="index.php">Home</a></li>
             <li class="dropdown">
-                <a href="services.php">Who We Are</a>
+                <a href="#">Who We Are</a>
                 <ul class="dropdown-content">
                     <li><a href="aboutUs.php">About Us</a></li>
                     <li><a href="ourTeam.php">Our Team</a></li>
@@ -85,7 +85,7 @@ if ($isLoggedIn) {
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="services.php">What We Do</a>
+                <a href="#">What We Do</a>
                 <ul class="dropdown-content">
                     <li><a href="upComingEvents.php">Upcoming Events Calendar</a></li>
                     <li><a href="services.php">Services</a></li>
@@ -93,7 +93,7 @@ if ($isLoggedIn) {
                 </ul>
             </li>
             <li class="dropdown">
-                <a href="services.php">Connect With Us</a>
+                <a href="#">Connect With Us</a>
                 <ul class="dropdown-content">
                     <li><a href="contactUs.php">Contact Us</a></li>
                 </ul>

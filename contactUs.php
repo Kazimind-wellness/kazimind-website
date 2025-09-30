@@ -250,6 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <li><strong>Mondays to Fridays: </strong> 8am to 5pm</li>
             <li><strong>Saturdays: </strong> 9m to 4:30pm </li>
             <li><strong>Sundays: </strong> closed</li>
+            <li><strong>Public Holidays:  </strong> Open by appointment only</li>
             </ul>
         <p><em>Our therapists work flexible hours; however, the times listed above reflect when our administrative support is available both in-office and online.</em></p>
         <p><em>Please note that emails sent to our administrative desk over the weekend may not receive a response until Monday. </em></p>
