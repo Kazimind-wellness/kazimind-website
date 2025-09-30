@@ -43,7 +43,7 @@ $pageTitle = "Book Now";
                     </div>
                     <div class="swiper-slide box">
                         <img src="images/maryMaiko.png" alt="">
-                        <h3>Mary Wanjiku</h3>
+                        <h3>Mary Mycle</h3>
                         <p>
                             Spiritual & Psychological Counselor.
                         </p>
