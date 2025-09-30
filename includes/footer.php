@@ -137,7 +137,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
             <div class="footer-column">
                 <h3>Call Us</h3>
                 <p><img src="images/whstapp-icon.png" alt="Phone"> <span>+254 700 479 944</span></p>
-                <p><img src="images/call-icon.png"  alt="WhatsApp"> <span>+254 202 020 830</span></p>
+                <p><img src="images/phone-icon.png"  alt="WhatsApp"> <span>+254 202 020 830</span></p>
             </div>
 
             <div class="footer-column">
