@@ -138,7 +138,8 @@ $pageTitle = "Community Sensitization";
         }
 
         .image-container {
-            width: 100%;
+            width: 80%;
+            height: 60%;
             margin: 2rem 0;
             text-align: center;
         }

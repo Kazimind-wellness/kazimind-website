@@ -87,9 +87,9 @@ if ($isLoggedIn) {
             <li class="dropdown">
                 <a href="#">What We Do</a>
                 <ul class="dropdown-content">
-                    <li><a href="upComingEvents.php">Upcoming Events Calendar</a></li>
                     <li><a href="services.php">Services</a></li>
                     <li><a href="services.php#faqH1">FAQs</a></li>
+                    <li><a href="upComingEvents.php">Upcoming Events Calendar</a></li>
                 </ul>
             </li>
             <li class="dropdown">

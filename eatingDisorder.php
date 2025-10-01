@@ -16,9 +16,39 @@ $pageTitle = "Eating Disorders";
     <link rel="stylesheet" href="assets/css/areasOfFocus.css">
     <title>Kazimind - Eating Disorders</title>
 </head>
-
 <style>
-    /* Floating Download Button */
+/* Reduced font sizes for headers */
+.main-heading {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.sub-heading {
+    font-size: 1.4rem !important;
+    margin:  0.5rem 0 !important;
+}
+
+/* Reduced spacing between sections */
+.section-container {
+    margin-bottom: .5rem !important;
+    padding: .4rem !important;
+    height: 20%;
+}
+
+/* Reduced paragraph spacing */
+.intro-paragraph,
+.description {
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+
+/* Contact button spacing */
+.contact-button-container {
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Floating Download Button */
 .floating-download-btn {
     position: fixed;
     top: 20px;
@@ -86,6 +116,40 @@ $pageTitle = "Eating Disorders";
     .floating-download-btn .tooltip {
         font-size: 12px;
         padding: 6px 10px;
+    }
+
+    /* Further reduce sizes on mobile */
+    .main-heading {
+        font-size: 1.8rem !important;
+    }
+    
+    .sub-heading {
+        font-size: 1.3rem !important;
+    }
+    
+    .section-container {
+        margin-bottom: 1rem !important;
+        padding: 0.75rem !important;
+    }
+    .intro-paragraph{
+        margin-bottom: 4rem; 
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 1.6rem !important;
+    }
+    
+    .sub-heading {
+        font-size: 1.2rem !important;
+        margin-bottom: 0;
+    }
+    .section-container {
+        margin-bottom: 0.75rem !important;
+        padding: 0.5rem !important;
+        height: 20%;
     }
 }
 </style>

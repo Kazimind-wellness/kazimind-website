@@ -15,78 +15,137 @@ $pageTitle = "Attachment Disorders and Styles";
     <link rel="stylesheet" href="assets/css/h-footer.css">
     <link rel="stylesheet" href="assets/css/areasOfFocus.css">
     <title>Kazimind - Attachment Disorders and Styles</title>
-    <style>
-        /* Floating Download Button */
-        .floating-download-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: #3498db;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+<style>
+/* Reduced font sizes for headers */
+.main-heading {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+}
 
-        .floating-download-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
+.sub-heading {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.75rem !important;
+}
 
-        .floating-download-btn i {
-            font-size: 24px;
-        }
+/* Reduced spacing between sections */
+.section-container {
+    margin-bottom: 1.5rem !important;
+    padding: 1rem !important;
+}
 
-        .floating-download-btn .tooltip {
-            position: absolute;
-            top: 50%;
-            left: 70px;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
+/* Reduced paragraph spacing */
+.intro-paragraph,
+.description {
+    margin-bottom: 0.75rem !important;
+    line-height: 1!important;
+}
 
-        .floating-download-btn:hover .tooltip {
-            opacity: 1;
-            visibility: visible;
-            left: 75px;
-        }
+/* Contact button spacing */
+.contact-button-container {
+    margin-top: 2rem !important;
+    margin-bottom: 1rem !important;
+}
 
-        /* Responsive styles for floating button */
-        @media (max-width: 768px) {
-            .floating-download-btn {
-                width: 50px;
-                height: 50px;
-                top: 15px;
-                left: 15px;
-            }
-            
-            .floating-download-btn i {
-                font-size: 20px;
-            }
-            
-            .floating-download-btn .tooltip {
-                font-size: 12px;
-                padding: 6px 10px;
-            }
-        }
-    </style>
+/* Floating Download Button */
+.floating-download-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #3498db;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.floating-download-btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.floating-download-btn i {
+    font-size: 24px;
+}
+
+.floating-download-btn .tooltip {
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.floating-download-btn:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    left: 75px;
+}
+
+/* Responsive styles for floating button */
+@media (max-width: 768px) {
+    .floating-download-btn {
+        width: 50px;
+        height: 50px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .floating-download-btn i {
+        font-size: 20px;
+    }
+    
+    .floating-download-btn .tooltip {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    /* Further reduce sizes on mobile */
+    .main-heading {
+        font-size: 1.8rem !important;
+    }
+    
+    .sub-heading {
+        font-size: 1.3rem !important;
+    }
+    
+    .section-container {
+        margin-bottom: 1rem !important;
+        padding: 0.75rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 1.6rem !important;
+    }
+    
+    .sub-heading {
+        font-size: 1.2rem !important;
+    }
+    
+    .section-container {
+        margin-bottom: 0.75rem !important;
+        padding: 0.5rem !important;
+    }
+}
+</style>
 </head>
 
 <div class="mainB">
@@ -97,8 +156,8 @@ $pageTitle = "Attachment Disorders and Styles";
     </a>
 
     <div class="section-container section scroll-animate">
-        <h1 class="main-heading">Understanding Attachment Disorders and Attachment Styles</h1>
-        <p class="intro-paragraph">
+        <h2 class="main-heading">Understanding Attachment Disorders and Attachment Styles</h1>
+        <p class="description">
             <strong>Healthy relationships begin with how we bond.</strong> The way a child connects with a caregiver shapes how they view themselves, others, and the world. When this bonding process is disrupted, it may lead to attachment disorders in childhood. Later in life, early experiences often shape our attachment styles as adults.
             <br><br>
             At <strong>KaziMind Wellness</strong>, we believe that understanding both is the first step toward healing and cultivating healthier connections.

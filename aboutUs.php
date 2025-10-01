@@ -14,7 +14,7 @@ $pageTitle = "About Us";
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/indexStyles.css">
     <link rel="stylesheet" href="assets/css/h-footer.css">
-    <title>About Us | Kazimind</title>
+    <title>About Us | KaziMind</title>
 </head>
 <body>
   
@@ -31,12 +31,12 @@ $pageTitle = "About Us";
         <div class="text-justify">
             <h3 class="animate-on-scroll">What's the meaning of our name?</h3>
             <div class="offers-list animate-on-scroll">
-                Kazi is a Swahili word for work. Mind refers the mental and emotional aspect of a person.
+                KAZI is a Swahili word for work. Mind refers the mental and emotional aspect of a person.
                 WELLNESS is the state of being in good health in all aspects of your life, especially as an actively pursued goal.
             </div>
 
-            <h3 class="animate-on-scroll">Kazi Mind Wellness</h3>
-            <p class="animate-on-scroll">Kazi Mind Wellness is a company that provides mental health and wellness services, including psychological counseling and therapy. They may offer a range of services aimed at promoting psychological well-being, such as individual and group therapy, couples counseling, and cognitive-behavioral therapy.</p>
+            <h3 class="animate-on-scroll">KaziMind Wellness</h3>
+            <p class="animate-on-scroll">KaziMind Wellness is an organization that provides mental health and wellness services, including psychological counseling and therapy. They may offer a range of services aimed at promoting psychological well-being, such as individual and group therapy, couples counseling, and cognitive-behavioral therapy.</p>
             
             <h2 class="review-title animate-on-scroll">About Our Centre</h2>
             <br>
@@ -60,7 +60,7 @@ $pageTitle = "About Us";
                 <p class="animate-on-scroll">Our approach integrates clinical expertise with community empowerment, ensuring that mental wellness is not only a personal journey but also a collective responsibility. Through workshops, psychoeducation programs, corporate wellness programs, and school-based initiatives, we bring mental health services closer to the people especially underserved populations.</p>
                 <p class="animate-on-scroll">At KaziMind, we believe that mental health is a right, not a privilege, and we work tirelessly to build a society where emotional and psychological well-being are prioritized across all sectors.</p>
 			</div> 
-            <h3 class="animate-on-scroll">Our People</h3>
+            <h3 class="animate-on-scroll">Our Team</h3>
             <p class="animate-on-scroll">We are group of professionals who are dedicated and passionate about supporting growth, empowering individuals, communities and organizations to effectively manage the mental health challenges for enhanced well being and productivity. We are psychotherapists who have specialized in various mental health sectors, counsellors, IT specialist.</p>
             <p class="animate-on-scroll">Our team is made up of people from different ages, cultures, genders, religion, abilities. All of our team members advocate for work to build practices that advocates for Mental Health.</p>
             

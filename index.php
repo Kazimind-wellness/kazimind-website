@@ -204,10 +204,10 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
       </div>
       <h3>Community Sensitization: Building Awareness, Breaking Barriers</h3>
       <p class="excerpt">
-        At KaziMind Wellness, we believe that mental health begins in the community. That belief came alive today as we partnered with the Kenya Red Cross, Nanyuki Office, to carry out a market sensitization on wellness and mental health.
+        At KaziMind Wellness, we believe that mental health begins in the community. That belief came alive today as we partnered with 
       </p>
       <div class="read-more-overlay">
-        <span><a href="redcrossEventArticle.php">Read More</a></span>
+        <span><a href="redcrossEventArticle.php" style="color: black;">Read More</a></span>
       </div>
     </div>
 
