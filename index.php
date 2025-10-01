@@ -200,14 +200,14 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
   <div class="articles-grid">
     <div class="article-card">
       <div class="article-image-container">
-        <img src="images/junkfood.jpg" alt="Emotional Eating" class="article-image">
+        <img src="images/redcrossArticle.jpg" alt="Emotional Eating" class="article-image">
       </div>
-      <h3>Break Free from Emotional Eating</h3>
+      <h3>Community Sensitization: Building Awareness, Breaking Barriers</h3>
       <p class="excerpt">
-        Emotional eating is something many of us struggle with—turning to food for comfort, stress relief, or to cope with difficult emotions...
+        At KaziMind Wellness, we believe that mental health begins in the community. That belief came alive today as we partnered with the Kenya Red Cross, Nanyuki Office, to carry out a market sensitization on wellness and mental health.
       </p>
       <div class="read-more-overlay">
-        <span>Read More</span>
+        <span><a href="redcrossEventArticle.php">Read More</a></span>
       </div>
     </div>
 
