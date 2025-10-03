@@ -22,7 +22,7 @@ $pageTitle = "Book Now";
 
 Our work is rooted in cultivating resilience, clarity, and balance guiding individuals, families, and organizations to discover strength within themselves. When we cultivate minds, we nurture communities, workplaces, and generations to come.” <br>
 
-“When we cultivate minds, we cultivate lives.”
+<!-- “When we cultivate minds, we cultivate lives.” -->
     <hr>
 </p>
 
