@@ -207,20 +207,21 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
         At KaziMind Wellness, we believe that mental health begins in the community. That belief came alive today as we partnered with 
       </p>
       <div class="read-more-overlay">
-        <span><a href="redcrossEventArticle.php" style="color: black;">Read More</a></span>
+        <span><a href="redcrossEventArticle.php" style="color: white;">Read More</a></span>
       </div>
     </div>
 
     <div class="article-card">
       <div class="article-image-container">
-        <img src="images/axietyDisOrder.jpg" alt="CBT for Anxiety" class="article-image">
+        <img src="https://www.inspyrsolutions.com/wp-content/uploads/2024/09/World-Mental-Health-Day.jpg" alt="CBT for Anxiety" class="article-image">
       </div>
-      <h3>Cognitive-Behavioural Therapy (CBT) for Social Anxiety Disorder</h3>
+      <h3>World Mental Health Day – October 10th</h3>
       <p class="excerpt">
-        One of the most well-known psychological treatments for anxiety disorders is cognitive-behavioural therapy...
-      </p>
+        October 10th, the world unites to mark World Mental Health Day.
+        It is a day when nations, organizations, and individuals pause to reflect on a truth we ...      
+        </p>
       <div class="read-more-overlay">
-        <span>Read More</span>
+        <span><a href="worldMentalHealthDay-10-10-2025.php" style="color: white;">Read More</a></span>
       </div>
     </div>
   </div>
