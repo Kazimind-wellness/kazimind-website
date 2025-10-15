@@ -169,7 +169,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="">Select an option</option>
         <option value="consult">Free Consult</option>
         <option value="inquiry">General Inquiry</option>
+        <option value="inquiry">Internship</option>
         <option value="follow-up">Follow-up</option>
+        <option value="follow-up">Practicum</option>
+        <option value="follow-up">Communicate with team member</option>
+        <option value="follow-up">Concerns or feedback</option>
+        <option value="follow-up">Other.</option>
       </select>
     </div>
 
@@ -180,10 +185,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <option value="therapy">Therapy</option>
         <option value="counseling">Counseling</option>
         <option value="coaching">Coaching</option>
+        <option value="follow-up">Practicum</option>
+        <option value="inquiry">Internship</option>
       </select>
     </div>
 
-     <div class="form-group scroll-animate">
+    <div class="form-group scroll-animate">
       <label for="message">
         Tell us about yourself and what service you're interested in
         <span>(required)</span>

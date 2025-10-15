@@ -38,6 +38,43 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
   <div class="moving-message">
     <p>Our goal is to create a safe and supportive environment to help both clients and therapists grow to their full potential.  • Compassion • Understanding • Growth • Healing </p>
   </div>
+  <style>
+      .nav-buttons {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: translateY(-50%);
+      padding: 0 30px; /* space from edges */
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .nav-btn {
+      pointer-events: auto; /* re-enable clicks on buttons */
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 1.8rem;
+      padding: 12px 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.8);
+      color: #000;
+    }
+  </style>
+
+<div class="nav-buttons">
+  <button id="prevBtn" class="nav-btn">❮</button>
+  <button id="nextBtn" class="nav-btn">❯</button>
+</div>
 </div>
 
 
@@ -138,7 +175,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
       <!-- <li><span>Student Personal Therapy</span></li> -->
     </ul>
   </div>
-  <a href="contactUs.php" class="topic-link">Cultivate Today.</a>
+  <a href="bookAppointment.php" class="topic-link">Cultivate Today.</a>
 </div>
 
 <div class="section-cards">
@@ -344,7 +381,7 @@ function initSlideshow() {
     let showingBg1 = true;
     const bg1 = document.getElementById('bg1');
     const bg2 = document.getElementById('bg2');
-    
+
     // Set initial background with zoom effect
     bg1.style.backgroundImage = `url('${images[current]}')`;
     bg1.style.transform = 'scale(1.05)';
@@ -412,8 +449,28 @@ function initSlideshow() {
         }
     }
     
-    setInterval(crossFadeBackground, 8000);
-    
+    let slideshowInterval = setInterval(crossFadeBackground, 8000);
+    // Manual navigation controls
+      const nextBtn = document.getElementById('nextBtn');
+      const prevBtn = document.getElementById('prevBtn');
+
+      function showNext() {
+        clearInterval(slideshowInterval);
+        crossFadeBackground();
+        slideshowInterval = setInterval(crossFadeBackground, 8000);
+      }
+
+      function showPrevious() {
+        clearInterval(slideshowInterval);
+        // Step back one image (since crossFadeBackground increments +1)
+        current = (current - 2 + images.length) % images.length;
+        crossFadeBackground();
+        slideshowInterval = setInterval(crossFadeBackground, 8000);
+      }
+
+      nextBtn.addEventListener('click', showNext);
+      prevBtn.addEventListener('click', showPrevious);
+
     // Start animation for initial background
     startAnimation(bg1);
 }

@@ -19,15 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fullName = $_POST['full-name'];
         $emailAddress = $_POST['email'];
         $location = $_POST['location'];
-        $phone = $_POST['phone'];
-        $countryCode = $_POST['country-code'];
-        $phoneWithCode = $countryCode . $phone;
-        
+        $phone = $_POST['fullPhone']; // Changed to use fullPhone with country code
         $kinName = $_POST['kin'];
-        $kinPhone = $_POST['kinCel'];
-        $kinCountryCode = $_POST['kin-country-code'];
-        $kinPhoneWithCode = $kinCountryCode . $kinPhone;
-        
+        $kinPhone = $_POST['kinFullPhone']; // Changed to use kinFullPhone with country code
         $dateOfBirth = $_POST['date'];
         $gender = $_POST['Gender'];
         $nationality = $_POST['Nationality'];
@@ -59,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $body .= "PERSONAL INFORMATION:\n";
         $body .= "Full Name: $fullName\n";
         $body .= "Email: $emailAddress\n";
-        $body .= "Phone: $phoneWithCode\n";
+        $body .= "Phone: $phone\n";
         $body .= "Date of Birth: $dateOfBirth\n";
         $body .= "Gender: $gender\n";
         $body .= "Nationality: $nationality\n";
@@ -70,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $body .= "CONTACT & BACKGROUND INFORMATION:\n";
         $body .= "Next of Kin Name: $kinName\n";
-        $body .= "Next of Kin Phone: $kinPhoneWithCode\n";
+        $body .= "Next of Kin Phone: $kinPhone\n";
         $body .= "Marital Status: $maritalStatus\n";
         $body .= "Occupation/Business: $occupation\n";
         $body .= "Reason for Therapy: $therapyReason\n";
@@ -145,6 +139,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/indexStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" href="assets/css/h-footer.css">
     <title>Kazimind</title>
     <style>
@@ -392,21 +388,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="Nationality">Nationality <span>(required)</span></label>
-                    <select id="Nationality" name="Nationality" required>
-                        <option value="">Select an option</option>
-                        <option value="Kenyan">Kenyan</option>
-                        <option value="Tanzanian">Tanzanian</option>
-                        <option value="Ugandan">Ugandan</option>
-                        <option value="British">British</option>
-                        <option value="American">American</option>
-                        <option value="German">German</option>
-                        <option value="Bavarian">Bavarian</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <input type="text" id="Nationality" placeholder="Nationality" name="Nationality" required>
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="Country">Country <span>(required)</span></label>
-                    <input type="text" id="Country" name="Country" required>
+                      <select id="Country" name="Country" required>
+                        <option value="">Select your country</option>
+                    </select>
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="location">Place of residence / Ward <span>(required)</span></label>
@@ -422,37 +410,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="phone">Primary Cellphone number <span>(required)</span></label>
-                    <div class="phone-input-group">
-                        <div class="country-code">
-                            <select id="country-code" name="country-code" required>
-                                <option value="+254">Kenya (+254)</option>
-                                <option value="+255">Tanzania (+255)</option>
-                                <option value="+256">Uganda (+256)</option>
-                                <option value="+44">UK (+44)</option>
-                                <option value="+1">USA/Canada (+1)</option>
-                                <option value="+49">Germany (+49)</option>
-                                <option value="+27">South Africa (+27)</option>
-                                <option value="+234">Nigeria (+234)</option>
-                                <option value="+91">India (+91)</option>
-                                <option value="+86">China (+86)</option>
-                                <option value="+61">Australia (+61)</option>
-                                <option value="+33">France (+33)</option>
-                                <option value="+39">Italy (+39)</option>
-                                <option value="+34">Spain (+34)</option>
-                                <option value="+55">Brazil (+55)</option>
-                                <option value="+52">Mexico (+52)</option>
-                                <option value="+81">Japan (+81)</option>
-                                <option value="+82">South Korea (+82)</option>
-                                <option value="+7">Russia (+7)</option>
-                                <option value="+90">Turkey (+90)</option>
-                                <option value="+20">Egypt (+20)</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="phone-number">
-                            <input type="tel" id="phone" name="phone" placeholder="Phone number" required>
-                        </div>
-                    </div>
+                    <input type="tel" id="phone" name="phone">
+                    <input type="hidden" id="fullPhone" name="fullPhone">
                 </div>
             </div>
 
@@ -464,37 +423,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="kinCel">Next of kin cellphone number (Family/Friend) <span>(required)</span></label>
-                    <div class="phone-input-group">
-                        <div class="country-code">
-                            <select id="kin-country-code" name="kin-country-code" required>
-                                <option value="+254">Kenya (+254)</option>
-                                <option value="+255">Tanzania (+255)</option>
-                                <option value="+256">Uganda (+256)</option>
-                                <option value="+44">UK (+44)</option>
-                                <option value="+1">USA/Canada (+1)</option>
-                                <option value="+49">Germany (+49)</option>
-                                <option value="+27">South Africa (+27)</option>
-                                <option value="+234">Nigeria (+234)</option>
-                                <option value="+91">India (+91)</option>
-                                <option value="+86">China (+86)</option>
-                                <option value="+61">Australia (+61)</option>
-                                <option value="+33">France (+33)</option>
-                                <option value="+39">Italy (+39)</option>
-                                <option value="+34">Spain (+34)</option>
-                                <option value="+55">Brazil (+55)</option>
-                                <option value="+52">Mexico (+52)</option>
-                                <option value="+81">Japan (+81)</option>
-                                <option value="+82">South Korea (+82)</option>
-                                <option value="+7">Russia (+7)</option>
-                                <option value="+90">Turkey (+90)</option>
-                                <option value="+20">Egypt (+20)</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="phone-number">
-                            <input type="tel" id="kinCel" name="kinCel" placeholder="Phone number" required>
-                        </div>
-                    </div>
+                    <input type="tel" id="kinCel" name="kinCel">
+                    <input type="hidden" id="kinFullPhone" name="kinFullPhone">
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="Status">Marital Status <span>(required)</span></label>
@@ -670,21 +600,91 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h3>Travelling to our office:</h3>
         <p>Located right in the heart of Nanyuki town, on Lenana Road. Within Sportsmans Arms Hotel.</p>
     </div>
+        <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const countrySelect = document.getElementById("Country");
+
+            try {
+            const response = await fetch("https://restcountries.com/v3.1/all?fields=name");
+            const countries = await response.json();
+
+            // Sort countries alphabetically
+            const sortedCountries = countries.sort((a, b) =>
+                a.name.common.localeCompare(b.name.common)
+            );
+
+            // Populate dropdown
+            sortedCountries.forEach(country => {
+                const option = document.createElement("option");
+                option.value = country.name.common;
+                option.textContent = country.name.common;
+                countrySelect.appendChild(option);
+            });
+            } catch (error) {
+            console.error("Error loading countries:", error);
+            const option = document.createElement("option");
+            option.textContent = "Unable to load countries";
+            countrySelect.appendChild(option);
+            }
+        });
+        </script>
 
     <script>
-document.getElementById('time').addEventListener('change', function() {
-    // Convert 24h to 12h format for display
-    const timeValue = this.value;
-    if (timeValue) {
-        const [hours, minutes] = timeValue.split(':');
-        let hour12 = parseInt(hours) % 12 || 12;
-        const ampm = parseInt(hours) >= 12 ? 'PM' : 'AM';
-        this.value = timeValue; // Keep 24h format for submission
-        // Optional: Show formatted time somewhere else
-        console.log(`${hour12}:${minutes} ${ampm}`);
-    }
-});
-</script>
+        // Initialize phone inputs with international dialing codes
+        document.addEventListener('DOMContentLoaded', function () {
+            // Primary phone input
+            const phoneInput = document.querySelector("#phone");
+            const fullPhoneInput = document.querySelector("#fullPhone");
+            
+            // Next of kin phone input
+            const kinPhoneInput = document.querySelector("#kinCel");
+            const kinFullPhoneInput = document.querySelector("#kinFullPhone");
+            
+            const form = document.querySelector("#booking-form");
+
+            // Initialize primary phone input
+            const itiPhone = window.intlTelInput(phoneInput, {
+                initialCountry: "auto",
+                geoIpLookup: (success, failure) => {
+                    fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE")
+                        .then(res => res.json())
+                        .then(data => success(data.country))
+                        .catch(() => success("ke")); // fallback: Kenya
+                },
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+            });
+
+            // Initialize next of kin phone input
+            const itiKinPhone = window.intlTelInput(kinPhoneInput, {
+                initialCountry: "auto",
+                geoIpLookup: (success, failure) => {
+                    fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE")
+                        .then(res => res.json())
+                        .then(data => success(data.country))
+                        .catch(() => success("ke")); // fallback: Kenya
+                },
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+            });
+
+            // On form submit, set hidden fields with full phone numbers
+            form.addEventListener("submit", function () {
+                fullPhoneInput.value = itiPhone.getNumber(); // gives +254...
+                kinFullPhoneInput.value = itiKinPhone.getNumber(); // gives +254...
+            });
+
+            // Time format conversion
+            document.getElementById('time').addEventListener('change', function() {
+                const timeValue = this.value;
+                if (timeValue) {
+                    const [hours, minutes] = timeValue.split(':');
+                    let hour12 = parseInt(hours) % 12 || 12;
+                    const ampm = parseInt(hours) >= 12 ? 'PM' : 'AM';
+                    this.value = timeValue; // Keep 24h format for submission
+                    console.log(`${hour12}:${minutes} ${ampm}`);
+                }
+            });
+        });
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
