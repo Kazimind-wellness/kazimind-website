@@ -195,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Tell us about yourself and what service you're interested in
         <span>(required)</span>
       </label>
-      <textarea id="message" name="message" placeholder="If you are unsure of the clinician that would be best for you please let us know what you're hoping to address in therapy and we'll try to connect you with an appropriate therapist." required></textarea>
+      <textarea id="message" name="message" required></textarea>
     </div>
     <div class="form-group scroll-animate">
       <button type="submit" class="submit-button" name="submit" >SUBMIT</button>

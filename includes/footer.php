@@ -424,7 +424,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
 <div class="customization-panel">
     <button class="customization-toggle" id="customizationToggle">
-        <i>⚙️</i>
+    <i class="fas fa-user-cog"></i>
     </button>
     <div class="customization-content" id="customizationContent">
         <div class="customization-header">

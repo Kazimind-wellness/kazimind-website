@@ -230,7 +230,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
     </p>
     <p>
       If there's any content you'd like to know more about feel free to 
-      <a href="contactUs.php" class="reach-out"><strong>reach out</strong></a> to us to let us know!
+      <a href="https://www.linkedin.com/company/kazimind-wellness/" class="reach-out"><strong>visit our Social medias </strong></a> for more information!
     </p>
   </div>
 
@@ -250,9 +250,9 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
 
     <div class="article-card">
       <div class="article-image-container">
-        <img src="https://www.inspyrsolutions.com/wp-content/uploads/2024/09/World-Mental-Health-Day.jpg" alt="CBT for Anxiety" class="article-image">
+        <img src="images/World Mental Health Day.png" alt="CBT for Anxiety" class="article-image">
       </div>
-      <h3>World Mental Health Day – October 10th</h3>
+      <h3>World Mental Health Day - October 10th</h3>
       <p class="excerpt">
         October 10th, the world unites to mark World Mental Health Day.
         It is a day when nations, organizations, and individuals pause to reflect on a truth we ...      
@@ -278,22 +278,22 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
   z-index: 9999;
-}
-.cookie-banner button {
-  margin: 0 10px;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.cookie-banner button:first-child {
-  background: #4CAF50;
-  color: #fff;
-}
-.cookie-banner button:last-child {
-  background: #f44336;
-  color: #fff;
-}
+ }
+  .cookie-banner button {
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .cookie-banner button:first-child {
+    background: #4CAF50;
+    color: #fff;
+  }
+  .cookie-banner button:last-child {
+    background: #f44336;
+    color: #fff;
+  }
 
 </style>
 
@@ -307,43 +307,43 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
 
 <script>
 // Check if user has already made a choice
-window.onload = function() {
-  if (getCookie("cookieConsent")) {
-    // document.getElementById("cookie-banner").style.display = "none";
-  }
-};
+    window.onload = function() {
+      if (getCookie("cookieConsent")) {
+        // document.getElementById("cookie-banner").style.display = "none";
+      }
+    };
 
-function acceptCookies() {
-  setCookie("cookieConsent", "accepted", 365);
-  document.getElementById("cookie-banner").style.display = "none";
-}
+    function acceptCookies() {
+      setCookie("cookieConsent", "accepted", 365);
+      document.getElementById("cookie-banner").style.display = "none";
+    }
 
-function declineCookies() {
-  setCookie("cookieConsent", "declined", 365);
-  document.getElementById("cookie-banner").style.display = "none";
-}
+    function declineCookies() {
+      setCookie("cookieConsent", "declined", 365);
+      document.getElementById("cookie-banner").style.display = "none";
+    }
 
-// Helper functions
-function setCookie(name, value, days) {
-  let expires = "";
-  if (days) {
-    let date = new Date();
-    date.setTime(date.getTime() + (days*24*60*60*1000));
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-}
+    // Helper functions
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
 
-function getCookie(name) {
-  let nameEQ = name + "=";
-  let ca = document.cookie.split(';');
-  for(let i=0;i < ca.length;i++) {
-    let c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-  }
-  return null;
-}
+    function getCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for(let i=0;i < ca.length;i++) {
+        let c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
 
 </script>
 <!-- COOKIES WE VALUE YOUR PRIVACY BANNER POP-UP CODE ENDS HERE  -->

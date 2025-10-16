@@ -229,12 +229,12 @@ $pageTitle = "Community Sensitization";
 <body>
     <div class="container">
         <div class="article-content">
-            <h1>World Mental Health Day – October 10th</h1>
+            <h1>World Mental Health Day - October 10th</h1>
 
             <p class="paragraph">
                 Today, October 10th, the world unites to mark World Mental Health Day.
                 It is a day when nations, organizations, and individuals pause to reflect on a truth we cannot ignore:
-                wellbeing is not optional—it is a global priority.
+                wellbeing is not optional; it is a global priority.
             </p>
 
             <p class="paragraph">
@@ -276,11 +276,11 @@ $pageTitle = "Community Sensitization";
 
             <p class="paragraph">
                 Think of a child reading <em>Wonder</em> by R.J. Palacio, discovering kindness and empathy.<br>
-                Or an adult reading <em>Reasons to Stay Alive</em> by Matt Haig—a powerful, honest story about
+                Or an adult reading <em>Reasons to Stay Alive</em> by Matt Haig; a powerful, honest story about
                 surviving depression and rediscovering hope.<br>
-                Or <em>The Things You Can See Only When You Slow Down</em> by Haemin Sunim—a guide on mindfulness,
+                Or <em>The Things You Can See Only When You Slow Down</em> by Haemin Sunim; a guide on mindfulness,
                 calm, and balance in a fast-paced world.<br>
-                Or <em>Personality Plus</em> by Florence Littauer—a practical look at understanding yourself
+                Or <em>Personality Plus</em> by Florence Littauer; a practical look at understanding yourself
                 and others through the four personality types, helping you build healthier relationships
                 and emotional awareness.
             </p>
@@ -327,7 +327,7 @@ $pageTitle = "Community Sensitization";
             </blockquote>
 
             <p class="paragraph">
-                Because when we cultivate minds, we don’t just build readers—we raise healthy,
+                Because when we cultivate minds, we don’t just build readers; we raise healthy,
                 creative, and resilient human beings.
             </p>
         </div>
