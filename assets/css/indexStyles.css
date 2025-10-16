@@ -464,11 +464,12 @@ body {
     animation: fadeIn 1s ease-out 0.7s forwards;
     opacity: 0;
 }
+.topic-handled li span a{
+    padding: 0;
+}
 
 .topic-handled a:hover {
-    background-color: var(--theme-dark-blue);
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 111, 209, 0.4);
 }
 
 
