@@ -31,7 +31,7 @@ $pageTitle = "Book Now";
                         <img src="images/njoki.jpg" alt="">
                         <h3>Njoki Kamau</h3>
                         <p>
-                            Best Psychologist in Kenya 2024.
+                            Psychologist Kazimind Wellness.
                         </p>
                     </div>
                     <div class="swiper-slide box">
@@ -69,10 +69,10 @@ $pageTitle = "Book Now";
                     </div>
 
                     <div class="swiper-slide box">
-                        <img src="images/ken.png" alt="">
-                        <h3>Ken Kagunda</h3>
+                        <img src="images/irene.jpg" alt="">
+                        <h3>Irene Maina</h3>
                         <p>
-                            Head Of Technology and Innovation Department
+                            Technology and Innovation Intern
                         </p>
                     </div>
 
