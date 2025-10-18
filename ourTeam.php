@@ -31,7 +31,7 @@ $pageTitle = "Book Now";
                         <img src="images/njoki.jpg" alt="">
                         <h3>Njoki Kamau</h3>
                         <p>
-                            Psychologist Kazimind Wellness.
+                            Organization Psychologist.
                         </p>
                     </div>
                     <div class="swiper-slide box">

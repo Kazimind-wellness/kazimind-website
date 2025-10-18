@@ -160,7 +160,7 @@ if ($isLoggedIn) {
   </style>
 
   <div class="parallax-container">
-    <img src="images/smile.jpg" alt="Leaves">
+    <img src="images/WhatsApp Image 2025-10-18 at 13.34.45_14744611.jpg" alt="Leaves">
   </div>
 
   <script>
