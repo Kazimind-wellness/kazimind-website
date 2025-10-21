@@ -219,6 +219,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .form-group {
             margin-bottom: 20px;
         }
+        /* Paybill image styling */
+        .paybill-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 15px auto;
+        border-radius: 10px;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Optional: center alignment within form */
+        .form-page img.paybill-image {
+        width: 90%;
+        max-width: 400px;
+        }
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
@@ -363,21 +380,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Page 1: Personal Information -->
             <div class="form-page active" data-page="1">
                 <div class="form-group scroll-animate">
-                    <label for="email">Email Address <span>(required)</span></label>
+                    <label for="email">Email Address <span>*</span></label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group two-columns scroll-animate">
                     <div>
-                        <label for="full-name">Full Name <span>(required)</span></label>
+                        <label for="full-name">Full Name <span>*</span></label>
                         <input type="text" id="full-name" placeholder="Full Name" name="full-name" required>
                     </div>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="date">Date of Birth <span>(required)</span></label>
+                    <label for="date">Date of Birth <span>*</span></label>
                     <input type="date" id="date" name="date" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Gender">Gender <span>(required)</span></label>
+                    <label for="Gender">Gender <span>*</span></label>
                     <select id="Gender" name="Gender" required>
                         <option value="">Select an option</option>
                         <option value="Male">Male</option>
@@ -387,29 +404,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Nationality">Nationality <span>(required)</span></label>
+                    <label for="Nationality">Nationality <span>*</span></label>
                     <input type="text" id="Nationality" placeholder="Nationality" name="Nationality" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Country">Country <span>(required)</span></label>
+                    <label for="Country">Country <span>*</span></label>
                       <select id="Country" name="Country" required>
                         <option value="">Select your country</option>
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="location">Place of residence / Ward <span>(required)</span></label>
+                    <label for="location">Place of residence / Ward <span>*</span></label>
                     <input type="text" id="location" name="location" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Town">Town <span>(required)</span></label>
+                    <label for="Town">Town <span>*</span></label>
                     <input type="text" id="Town" name="Town" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="County">County <span>(required)</span></label>
+                    <label for="County">County <span>*</span></label>
                     <input type="text" id="County" name="County" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="phone">Primary Cellphone number <span>(required)</span></label>
+                    <label for="phone">Primary Cellphone number <span>*</span></label>
                     <input type="tel" id="phone" name="phone">
                     <input type="hidden" id="fullPhone" name="fullPhone">
                 </div>
@@ -418,16 +435,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Page 2: Contact & Background Information -->
             <div class="form-page" data-page="2">
                 <div class="form-group scroll-animate">
-                    <label for="kin">Next of kin name (Family/Friend) <span>(required)</span></label>
+                    <label for="kin">Next of kin name (Family/Friend) <span>*</span></label>
                     <input type="text" id="kin" name="kin" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="kinCel">Next of kin cellphone number (Family/Friend) <span>(required)</span></label>
+                    <label for="kinCel">Next of kin cellphone number (Family/Friend) <span>*</span></label>
                     <input type="tel" id="kinCel" name="kinCel">
                     <input type="hidden" id="kinFullPhone" name="kinFullPhone">
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Status">Marital Status <span>(required)</span></label>
+                    <label for="Status">Marital Status <span>*</span></label>
                     <select id="Status" name="Status" required>
                         <option value="">Select an option</option>
                         <option value="Single">Single</option>
@@ -442,15 +459,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="business">Occupation/ business <span>(required)</span></label>
+                    <label for="business">Occupation/ business <span>*</span></label>
                     <input type="text" id="business" name="business" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Reason">Reason for seeking Therapy <span>(required)</span></label>
+                    <label for="Reason">Reason for seeking Therapy <span>*</span></label>
                     <input type="text" id="Reason" name="Reason" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="referred">Who referred you? <span>(required)</span></label>
+                    <label for="referred">Who referred you? <span>*</span></label>
                     <select id="referred" name="referred" required>
                         <option value="">Select an option</option>
                         <option value="Friend or Family Member">Friend or Family Member</option>
@@ -466,7 +483,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="before">If you been in Therapy before? <span>(required)</span></label>
+                    <label for="before">If you been in Therapy before? <span>*</span></label>
                     <select id="before" name="before" required>
                         <option value="">Select an option</option>
                         <option value="Yes">Yes</option>
@@ -482,7 +499,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" id="therapistloc" name="therapistloc">
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="medication">Currently on medication? <span>(required)</span></label>
+                    <label for="medication">Currently on medication? <span>*</span></label>
                     <select id="medication" name="medication" required>
                         <option value="">Select an option</option>
                         <option value="Yes">Yes</option>
@@ -498,7 +515,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Page 3: Appointment Details -->
             <div class="form-page" data-page="3">
                 <div class="form-group scroll-animate">
-                    <label for="usage">Any alcohol/Drug usage? <span>(required)</span></label>
+                    <label for="usage">Any alcohol/Drug usage? <span>*</span></label>
                     <select id="usage" name="usage" required>
                         <option value="">Select an option</option>
                         <option value="Yes">Yes</option>
@@ -506,15 +523,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="available">Date you're available for Therapy <span>(required)</span></label>
+                    <label for="available">Date you're available for Therapy <span>*</span></label>
                     <input type="date" id="available" name="available" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="time">Preferred Time <span>(required)</span></label>
+                    <label for="time">Preferred Time <span>*</span></label>
                     <input type="time" id="time" name="time" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="looking">What type of therapy are you looking forward to have with us? <span>(required)</span></label>
+                    <label for="looking">What type of therapy are you looking forward to have with us? <span>*</span></label>
                     <select id="looking" name="looking" required>
                         <option value="">Select an option</option>
                         <option value="Individual Therapy (Ksh 4,500)">Individual Therapy (Ksh 4,500)</option>
@@ -533,10 +550,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="provider">List the medical insurance provider(If applicable)</label>
                     <input type="text" id="provider" name="provider">
                 </div>
-                <h2>After registering for your session, proceed with payment through the following method:</h2>
-                <h2>PAYBILL NUMBER: <span style="color: red;">247 247 </span>; BUSINESS NUMBER:<span style="color: red;"> 502 450 </span></h2>
+                <img src="images/paybill_image.jpg" alt="paybillimage" class="paybill-image">
                 <div class="form-group scroll-animate">
-                    <label for="confirmation">Please provide your payment confirmation ID / NAME <span>(required)</span></label>
+                    <label for="confirmation">Please provide your payment confirmation ID / NAME <span>*</span></label>
                     <input type="text" id="confirmation" name="confirmation" required>
                 </div>
             </div>
@@ -544,11 +560,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Page 4: Final Details -->
             <div class="form-page" data-page="4">
                 <div class="form-group scroll-animate">
-                    <label for="reference">Our reference number (Write in the following format KMW/Id Number) <span>(required)</span></label>
+                    <label for="reference">Our reference number (Write in the following format KMW/Id Number) <span>*</span></label>
                     <input type="text" id="reference" name="reference" required>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="payment">Mode of payment <span>(required)</span></label>
+                    <label for="payment">Mode of payment <span>*</span></label>
                     <select id="payment" name="payment" required>
                         <option value="">Select an option</option>
                         <option value="Cash">Cash</option>
@@ -560,8 +576,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Psychotherapist">Name of Psychotherapist <span>(required)</span></label>
-                    <input type="text" id="Psychotherapist" name="Psychotherapist" required>
+                    <label for="Psychotherapist">Name of Psychotherapist </label>
+                    <input type="text" id="Psychotherapist" name="Psychotherapist">
                 </div>
             </div>
 

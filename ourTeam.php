@@ -64,7 +64,7 @@ $pageTitle = "Book Now";
                         <img src="images/steven.png" alt="">
                         <h3>Steven Macharia</h3>
                         <p>
-                            Software Engineer (Web-developer)
+                            Software Engineer
                         </p>
                     </div>
 
@@ -88,7 +88,7 @@ $pageTitle = "Book Now";
                         <img src="images/ken.png" alt="">
                         <h3>Ken Kagunda</h3>
                         <p>
-                            Head Of Technology and Innovation Department
+                            Chief Technology Officer
                         </p>
                     </div>
         </div>
