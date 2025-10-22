@@ -114,6 +114,33 @@ $pageTitle = "Psychotherapy Services";
         </div>
     </div>
 </div>
+<div class="therapy-section animate-on-scroll">
+    <div class="therapy-content">
+        <div class="therapy-image">
+            <img src="images/psychological-evaluation.jpg" alt="Therapy image">
+        </div>
+        <div class="therapy-text">
+            <h2>KaziMind Psychological Assessment</h2>
+            <p>
+                Our evidence-based assessments provide clear insights into cognitive, emotional, and behavioral functioning  helping individuals and organizations make informed decisions. Conducted by licensed psychologists using validated tools, we assess areas such as mental health, personality, cognition, and workplace suitability.  
+            </p>
+        </div>
+    </div>
+</div>
+<div class="therapy-section animate-on-scroll">
+    <div class="therapy-content">
+        <div class="therapy-image">
+            <img src="images/rentRoom.jpg" alt="Therapy image">
+        </div>
+        <div class="therapy-text">
+            <h2>Rent a Space</h2>
+            <p>
+                Our rent a space service offers fully furnished, private therapy and consultation rooms designed for psychologists, counselors, coaches, and wellness practitioners. Our space provides a serene, confidential, and professional environment for client sessions or assessments.
+                Flexible hourly, daily, and monthly packages are available by <strong>prior booking only</strong>.  
+            </p>
+        </div>
+    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

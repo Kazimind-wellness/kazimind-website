@@ -219,6 +219,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
 <div class="event-buttons">
   <a href="services.php"><button>VIEW ALL OUR GROUPS AND PROGRAMS</button></a> 
   <a href="upComingEvents.php"><button>VIEW OUR UPCOMING EVENTS CALENDAR</button></a> 
+  <a href="Kazimind_blogs.php"><button>VIEW OUR BLOGS</button></a> 
 </div>
 
 <div class="articles">

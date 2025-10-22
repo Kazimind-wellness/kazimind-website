@@ -90,6 +90,7 @@ if ($isLoggedIn) {
                     <li><a href="services.php">Services</a></li>
                     <li><a href="services.php#faqH1">FAQs</a></li>
                     <li><a href="upComingEvents.php">Upcoming Events Calendar</a></li>
+                    <li><a href="Kazimind_blogs.php">Blogs</a></li>
                 </ul>
             </li>
             <li class="dropdown">
