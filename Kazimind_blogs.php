@@ -83,15 +83,15 @@ $blogs = getBlogs();
                             <?= nl2br(htmlspecialchars($blog['content'])) ?>
                         </div>
                         
-                        <button class="read-more-btn" onclick="toggleBlogContent('<?= $blog['id'] ?>')">
+                        <button class="read-more-btn" onclick="toggleBlogContent(this, '<?= $blog['id'] ?>')">
                             Read More
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14"></path>
                                 <path d="M12 5l7 7-7 7"></path>
                             </svg>
                         </button>
-                        
-                        <button class="read-less-btn" onclick="toggleBlogContent('<?= $blog['id'] ?>')">
+
+                        <button class="read-less-btn" onclick="toggleBlogContent(this, '<?= $blog['id'] ?>')">
                             Read Less
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14"></path>
@@ -106,22 +106,22 @@ $blogs = getBlogs();
 </div>
 
 <script>
-    function toggleBlogContent(blogId) {
+    function toggleBlogContent(clickedButton, blogId) {
         const blogCard = document.getElementById(`blog-${blogId}`);
-        const excerpt = blogCard.querySelector('.blog-excerpt');
-        const fullContent = blogCard.querySelector('.blog-full-content');
-        const readMoreBtn = blogCard.querySelector('.read-more-btn');
-        const readLessBtn = blogCard.querySelector('.read-less-btn');
         
-        if (excerpt.style.display === 'none') {
+        // Find elements relative to the clicked button for more reliability
+        const blogContent = clickedButton.closest('.blog-content');
+        const excerpt = blogContent.querySelector('.blog-excerpt');
+        const fullContent = blogContent.querySelector('.blog-full-content');
+        const readMoreBtn = blogContent.querySelector('.read-more-btn');
+        const readLessBtn = blogContent.querySelector('.read-less-btn');
+        
+        if (excerpt.style.display === 'none' || excerpt.style.display === '') {
             // Show excerpt, hide full content
             excerpt.style.display = '-webkit-box';
             fullContent.style.display = 'none';
             readMoreBtn.style.display = 'inline-flex';
             readLessBtn.style.display = 'none';
-            
-            // Scroll to top of blog card
-            blogCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         } else {
             // Show full content, hide excerpt
             excerpt.style.display = 'none';

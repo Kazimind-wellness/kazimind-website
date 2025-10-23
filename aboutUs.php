@@ -17,9 +17,7 @@ $pageTitle = "About Us";
     <title>About Us | KaziMind</title>
 </head>
 <body>
-  
-
-
+    
 <div class="review-container">
     <div class="review-header">
         <h2 class="review-title animate-on-scroll">
@@ -66,7 +64,7 @@ $pageTitle = "About Us";
             
             <h3 class="animate-on-scroll">Location</h3>
             <div class="offers-list animate-on-scroll">
-                Located right in the heart of Nanyuki town, on Lenana Road, off Mt Kenya National Park Road, just off the main Nairobi–Nanyuki Highway. Within Sportsmans Arms Hotel.
+                Located right in the heart of Nanyuki town, on Lenana Road, off Mt Kenya Road, just off the main Nairobi–Nanyuki Highway. Within Sportsmans Arms Hotel.
             </div>    
         </div>
     </div>

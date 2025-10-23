@@ -364,6 +364,15 @@ form {
     .login-btn {
         padding: 16px;
     }
+
+    .logo-container{
+        width: 60%;
+        height: 30%;
+    }
+
+    .logo-container img {
+        width: 100%;
+    }
 }
 
 /* Animation for error message */

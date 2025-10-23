@@ -124,64 +124,87 @@ function handleImageUpload($file, $writerName) {
 $blogMessage = '';
 $blogs = getBlogs();
 
-// Create or Update Blog
+// Create or Update Blog - CORRECTED VERSION
+// Create or Update Blog - COMPLETELY REWRITTEN VERSION
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['blog_title'])) {
-    $id = $_POST['blog_id'] ?? uniqid();
+    $isEdit = isset($_POST['blog_id']) && !empty($_POST['blog_id']);
+    $id = $isEdit ? $_POST['blog_id'] : uniqid();
     $title = trim($_POST['blog_title']);
     $content = trim($_POST['blog_content']);
     $writer = trim($_POST['writer_name']);
     
     try {
-        // FIX: Better default avatar handling
+        // Handle image upload
         $writerImage = 'assets/images/default-avatar.png';
         
-        // Check if we're editing and have existing image
-        if (isset($_POST['existing_writer_image']) && !empty($_POST['existing_writer_image'])) {
+        if ($isEdit && isset($_POST['existing_writer_image']) && !empty($_POST['existing_writer_image'])) {
             $writerImage = $_POST['existing_writer_image'];
         }
         
-        // Check if new image was uploaded
         if (isset($_FILES['writer_image']) && 
             $_FILES['writer_image']['error'] === 0 && 
             !empty($_FILES['writer_image']['tmp_name'])) {
             $writerImage = handleImageUpload($_FILES['writer_image'], $writer);
         }
         
-        // FIX: Proper date handling
+        // Handle dates
         $currentTime = date('Y-m-d H:i:s');
-        $createdAt = $_POST['existing_created_at'] ?? $currentTime;
         
-        // Ensure the date is valid, if not use current time
-        if (empty($createdAt) || strtotime($createdAt) === false) {
+        if ($isEdit) {
+            // Find the existing blog to preserve its creation date
+            $existingBlogIndex = null;
+            foreach ($blogs as $index => $blog) {
+                if ($blog['id'] === $id) {
+                    $existingBlogIndex = $index;
+                    break;
+                }
+            }
+            
+            if ($existingBlogIndex !== null) {
+                $createdAt = $blogs[$existingBlogIndex]['created_at'];
+            } else {
+                $createdAt = $currentTime;
+            }
+        } else {
             $createdAt = $currentTime;
         }
         
+        // Create blog data
         $blogData = [
             'id' => $id,
             'title' => $title,
             'content' => $content,
             'writer_name' => $writer,
-            'writer_image' => $writerImage, // This will always have a value now
+            'writer_image' => $writerImage,
             'created_at' => $createdAt,
             'updated_at' => $currentTime
         ];
         
-        // Update existing or add new
-        $found = false;
-        foreach ($blogs as $index => $blog) {
-            if ($blog['id'] === $id) {
-                $blogs[$index] = $blogData;
-                $found = true;
-                break;
+        if ($isEdit) {
+            // Update existing blog
+            $updated = false;
+            foreach ($blogs as $index => &$blog) {
+                if ($blog['id'] === $id) {
+                    $blogs[$index] = $blogData;
+                    $updated = true;
+                    break;
+                }
             }
-        }
-        
-        if (!$found) {
+            
+            if ($updated) {
+                saveBlogs($blogs);
+                header("Location: admin.php?message=updated&blog_id=" . $id);
+                exit;
+            } else {
+                $blogMessage = "<div class='message error'>⚠️ Blog not found for updating.</div>";
+            }
+        } else {
+            // Add new blog
             $blogs[] = $blogData;
+            saveBlogs($blogs);
+            header("Location: admin.php?message=published");
+            exit;
         }
-        
-        saveBlogs($blogs);
-        $blogMessage = "<div class='message success'>✅ Blog " . (isset($_POST['blog_id']) ? 'updated' : 'published') . " successfully!</div>";
         
     } catch (Exception $e) {
         $blogMessage = "<div class='message error'>⚠️ " . $e->getMessage() . "</div>";
@@ -466,7 +489,26 @@ if (isset($_GET['edit_blog'])) {
     <!-- Blog Management Section -->
     <div class="blog-management">
         <h3 style="margin-bottom: 2rem; color: #1f2937; font-size: 2rem;">Blog Content Management</h3>
-        <?= $blogMessage ?>
+        <?php
+        // Handle redirect messages with debug info
+        if (isset($_GET['message'])) {
+            if ($_GET['message'] === 'published') {
+                echo "<div class='message success'>✅ Blog published successfully!</div>";
+            } elseif ($_GET['message'] === 'updated') {
+                echo "<div class='message success'>✅ Blog updated successfully! (ID: " . ($_GET['blog_id'] ?? 'unknown') . ")</div>";
+            } elseif ($_GET['message'] === 'deleted') {
+                echo "<div class='message success'>✅ Blog deleted successfully!</div>";
+            }
+        } else {
+            echo $blogMessage;
+        }
+
+        // DEBUG: Show current blog IDs and data
+        echo "<!-- DEBUG: Blog count: " . count($blogs) . " -->";
+        foreach ($blogs as $index => $blog) {
+            echo "<!-- DEBUG: Blog $index - ID: '{$blog['id']}', Title: '{$blog['title']}' -->";
+        }
+        ?>
         
         <form method="POST" enctype="multipart/form-data" class="blog-form">
             <input type="hidden" name="blog_id" value="<?= $editBlog['id'] ?? '' ?>">
@@ -476,8 +518,8 @@ if (isset($_GET['edit_blog'])) {
             <div class="form-group">
                 <label for="blog_title">Blog Title</label>
                 <input type="text" id="blog_title" name="blog_title" class="form-control" 
-                       value="<?= htmlspecialchars($editBlog['title'] ?? '') ?>" required
-                       placeholder="Enter an engaging blog title...">
+                    value="<?= htmlspecialchars($editBlog['title'] ?? '') ?>" required
+                    placeholder="Enter an engaging blog title...">
             </div>
             
             <div class="form-group">
@@ -516,7 +558,7 @@ if (isset($_GET['edit_blog'])) {
         </form>
         
         <!-- Existing Blogs -->
-        <div class="blogs-list">
+       <div class="blogs-list">
             <h4 style="color: #374151; margin-bottom: 2rem; font-size: 1.5rem;">Published Blogs (<?= count($blogs) ?>)</h4>
             <?php if (empty($blogs)): ?>
                 <div style="text-align: center; padding: 3rem; color: #6b7280; background: #f8fafc; border-radius: 12px;">
@@ -524,7 +566,11 @@ if (isset($_GET['edit_blog'])) {
                     <p style="margin: 0;">Start by creating your first blog post above!</p>
                 </div>
             <?php else: ?>
-                <?php foreach (array_reverse($blogs) as $blog): ?>
+                <?php 
+                // FIX: Create a reversed copy without affecting the original array keys
+                $reversedBlogs = array_reverse($blogs);
+                foreach ($reversedBlogs as $blog): 
+                ?>
                     <div class="blog-item">
                         <div class="blog-header">
                             <h5 class="blog-title"><?= htmlspecialchars($blog['title']) ?></h5>
@@ -563,7 +609,7 @@ if (isset($_GET['edit_blog'])) {
                                 Edit
                             </a>
                             <a href="admin.php?delete_blog=<?= $blog['id'] ?>" class="btn-sm btn-delete" 
-                               onclick="return confirm('Are you sure you want to delete this blog?')">
+                            onclick="return confirm('Are you sure you want to delete the blog &quot;<?= addslashes($blog['title']) ?>&quot;?')">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M3 6h18"></path>
                                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
