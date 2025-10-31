@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="icon" type="image/png" href="images/icon_K.png">
 </head>
 <body>
 
@@ -77,7 +78,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="https://developers.google.com/identity/images/g-logo.png" alt="Google Logo">
                 <span>Sign in with Google</span>
             </a>
-
+            <!-- <a class="google-signin" id="fbLoginBtn">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDy_BNkPSR9l2X5I074rtb6j-z-i2Iz2yblw&s" alt="Google Logo">
+                <span>Sign in with Facebook</span>
+            </a> -->
+            <script src="assets\js\fbLogin.js"></script>
             
             <div class="support-info">
                 <p><i class="fas fa-shield-alt"></i> Your privacy and security are our priority</p>

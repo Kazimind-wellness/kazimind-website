@@ -529,6 +529,14 @@ body {
     .register-btn {
         padding: 18px;
     }
+    .logo-container {
+        width: 60%;
+        height: 30%;
+    }
+
+    .logo-container img {
+        width: 100%;
+    }
 }
 
 /* Focus states for accessibility */

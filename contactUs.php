@@ -71,8 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                       $mail->send();
                       sleep(1);
 
-                       header('Location: thank_you.html');
-                       exit();
+                      header('Location: thank_you.html');
+                      exit();
                       
             }catch  (Exception $e){
                    // Log the error and show a user-friendly message
@@ -131,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <form method="post">
     <div class="form-group two-columns scroll-animate">
       <div>
-        <label for="first-name">Name <span>(required)</span></label>
+        <label for="first-name">Name <span>*</span></label>
         <input type="text" id="first-name" placeholder="First Name" name="first-name" required>
       </div>
       <div>
@@ -141,18 +141,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group scroll-animate">
-      <label for="email">Email Address <span>(required)</span></label>
+      <label for="email">Email Address <span>*</span></label>
       <input type="email" id="email" name="email" required>
     </div>
 
     <div class="form-group scroll-animate">
-      <label for="location">Country <span>(required)</span></label>
+      <label for="location">Country <span>*</span></label>
       <small>Your Country or state</small>
       <input type="text" id="location" name="location" required>
     </div>
 
     <div class="form-group scroll-animate">
-      <label for="county">County <span>(required)</span></label>
+      <label for="county">County <span>*</span></label>
       <small>Your province or city</small>
       <input type="text" id="county" name="county" required>
     </div>
@@ -164,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group scroll-animate">
-      <label for="reason">Reason for Contact <span>(required)</span></label>
+      <label for="reason">Reason for Contact <span>*</span></label>
       <select id="reason" name="reason" required>
         <option value="">Select an option</option>
         <option value="consult">Free Consult</option>
@@ -179,7 +179,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <div class="form-group scroll-animate">
-      <label for="service">Related to which service? <span>(required)</span></label>
+      <label for="service">Related to which service? <span>*</span></label>
       <select id="service" name="service" required>
         <option value="">Select an option</option>
         <option value="therapy">Therapy</option>
@@ -193,7 +193,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="form-group scroll-animate">
       <label for="message">
         Tell us about yourself and what service you're interested in
-        <span>(required)</span>
+        <span>*</span>
       </label>
       <textarea id="message" name="message" required></textarea>
     </div>
