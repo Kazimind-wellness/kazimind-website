@@ -1,9 +1,15 @@
 <?php
 ob_start();
 session_start();
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require __DIR__ . '/vendor/autoload.php';
+
+
 require 'db.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['verify_code'])) {
     $name     = trim($_POST['name']);
     $email    = trim($_POST['email']);
     $password = $_POST['password'];
@@ -16,23 +22,81 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($password !== $confirm) {
         $error = "Passwords do not match.";
     } else {
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
-        $stmt->execute([$email]);
-        $existingUser = $stmt->fetch();
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $existingUser = $stmt->fetch();
 
-        if ($existingUser) {
-            $error = "An account with this email already exists.";
+    if ($existingUser) {
+        $error = "An account with this email already exists.";
+    } else {
+        // Step 1: Generate and email verification code
+        $verification_code = rand(100000, 999999);
+        $_SESSION['pending_user'] = [
+            'name' => $name,
+            'email' => $email,
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+            'code' => $verification_code
+        ];
+
+        // Send email with PHPMailer
+        $mail = new PHPMailer(true);
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com'; // Change if needed
+            $mail->SMTPAuth = true;
+            $mail->Username = $_ENV['EMAIL_USERNAME']; // your email
+            $mail->Password = $_ENV['EMAIL_PASSWORD'];   // your app password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+
+            $mail->setFrom($_ENV['EMAIL_USERNAME'], 'Kazimind Wellness');
+            $mail->addAddress($email, $name);
+            $mail->isHTML(true);
+            $mail->Subject = 'Your Kazimind Verification Code';
+            $mail->Body = "
+                <p>Hi <b>$name</b>,</p>
+                <p>Your Kazimind verification code is:</p>
+                <h2 style='color:#2B6CB0;'>$verification_code</h2>
+                <p>Enter this code on the registration page to verify your account.</p>
+            ";
+
+            $mail->send();
+            $success = "A 6-digit verification code has been sent to your email. Please enter it below to complete registration.";
+        } catch (Exception $e) {
+            $error = "Verification email could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    }
+    }
+}
+
+if (isset($_POST['verify_code'])) {
+    $entered_code = trim($_POST['verification_code']);
+
+    if (!isset($_SESSION['pending_user'])) {
+        $error = "Your session expired or no pending registration found. Please register again.";
+    } else {
+        $pending = $_SESSION['pending_user'];
+        if ($entered_code === $pending['code']) {
+            try {
+                $stmt = $pdo->prepare("INSERT INTO users (name, email, password, auth_provider) VALUES (?, ?, ?, ?)");
+                $stmt->execute([$pending['name'], $pending['email'], $pending['password'], 'local']);
+                unset($_SESSION['pending_user']);
+                $_SESSION['user'] = [
+                    'name' => $pending['name'],
+                    'email' => $pending['email']
+                ];
+                header('Location: index.php');
+                exit;
+            } catch (Exception $e) {
+                $error = "An error occurred while completing your registration. Please try again.";
+            }
         } else {
-            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("INSERT INTO users (name, email, password, auth_provider) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$name, $email, $hashedPassword, 'local']);
-
-            $_SESSION['user'] = ['name' => $name, 'email' => $email];
-            header('Location: index.php');
-            exit;
+            $error = "❌ Invalid verification code. Please try again later.";
         }
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -124,6 +188,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </button>
             </form>
+
+            <?php if (isset($success)) : ?>
+                <div class="success-message">
+                    <i class="fas fa-check-circle"></i>
+                    <span><?= htmlspecialchars($success) ?></span>
+                </div>
+
+                <form method="POST" class="verification-form">
+                    <div class="input-group">
+                        <i class="fas fa-key"></i>
+                        <input type="text" name="verification_code" placeholder="Enter 6-digit code" maxlength="6" required>
+                    </div>
+                    <button type="submit" name="verify_code" class="register-btn">
+                        <span class="btn-text">Verify & Complete Registration</span>
+                    </button>
+                </form>
+            <?php endif; ?>
 
             <div class="divider">
                 <span>Already have an account?</span>
