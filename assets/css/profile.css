@@ -31,7 +31,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -130,6 +130,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 50;
 }
 
 .btn-secondary:hover {
@@ -191,6 +192,8 @@ body {
     cursor: pointer;
     border-radius: 50%;
     transition: all 0.3s ease;
+    z-index: 2;
+    overflow: hidden;
 }
 
 .avatar-container:hover {
@@ -427,6 +430,7 @@ body {
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    z-index: 0;
 }
 
 .upload-preview {

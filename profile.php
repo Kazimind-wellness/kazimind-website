@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>My Profile - Kazimind Wellness</title>
     <link rel="stylesheet" href="assets/css/profile.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icon_K.png">
 </head>
 <body>
     <div class="profile-container">
