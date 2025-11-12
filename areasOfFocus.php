@@ -21,7 +21,7 @@ $pageTitle = "Book Now";
 <div class="areasOfFocusIntro scroll-animate">
   <h2>Areas of Focus</h2>
   <p>
-    Our team at The Kazimnd Therapy Centre can support you with a variety of mental,
+    Our team at The Kazimind Therapy Centre can support you with a variety of mental,
     physical, emotional and spiritual challenges. Some of the areas of focus that we support clients with
     can be seen below, along with information about which of our therapists works with that presenting need.
   </p>
