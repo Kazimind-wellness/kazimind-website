@@ -602,9 +602,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="office-hours scroll-animate">
             <h2>Our Office Hours</h2>
             <ul>
-                <li><strong>Mondays to Fridays: </strong> 8am to 5pm</li>
-                <li><strong>Saturdays: </strong> 9am to 4:30pm </li>
-                <li><strong>Sundays: </strong> closed</li>
+                <li><strong>Monday-Friday: </strong> 8:00am-5:00pm</li>
+                <li><strong>Saturday: </strong> 9:00am-4:30pm </li>
+                <li><strong>Sunday: </strong> closed</li>
                 <li><strong>Public Holidays:  </strong> Open by appointment only</li>
             </ul>
             <p><em>Our therapists work flexible hours; however, the times listed above reflect when our administrative support is available both in-office and online.</em></p>
