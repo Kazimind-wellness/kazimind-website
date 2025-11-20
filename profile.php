@@ -15,23 +15,45 @@ $success = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $photoBlob = $user['profile_photo'] ?? null;
-
+    $uploadError = '';
+    
     if (!empty($_FILES['photo']['tmp_name'])) {
-        $photoBlob = file_get_contents($_FILES['photo']['tmp_name']);
+        // Validate file size (max 2MB)
+        $maxFileSize = 2 * 1024 * 1024; // 2MB in bytes
+        if ($_FILES['photo']['size'] > $maxFileSize) {
+            $uploadError = "File size too large. Maximum allowed size is 2MB.";
+        } 
+        // Validate file type
+        elseif (!in_array($_FILES['photo']['type'], ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'])) {
+            $uploadError = "Invalid file type. Only JPEG, PNG, GIF, and SVG are allowed.";
+        }
+        // Validate upload errors
+        elseif ($_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
+            $uploadError = "File upload failed. Please try again.";
+        }
+        // If validation passes, process the file
+        else {
+            $photoBlob = file_get_contents($_FILES['photo']['tmp_name']);
+        }
     }
 
-    $stmt = $pdo->prepare("UPDATE users SET name = ?, profile_photo = ? WHERE email = ?");
-    $stmt->bindParam(1, $name);
-    $stmt->bindParam(2, $photoBlob, PDO::PARAM_LOB);
-    $stmt->bindParam(3, $email);
-    
-    if ($stmt->execute()) {
-        // Update session
-        $_SESSION['user']['name'] = $name;
-        $_SESSION['user']['profile_photo'] = $photoBlob;
-        $success = "Profile updated successfully!";
+    // Only proceed with database update if there are no upload errors
+    if (empty($uploadError)) {
+        $stmt = $pdo->prepare("UPDATE users SET name = ?, profile_photo = ? WHERE email = ?");
+        $stmt->bindParam(1, $name);
+        $stmt->bindParam(2, $photoBlob, PDO::PARAM_LOB);
+        $stmt->bindParam(3, $email);
+        
+        if ($stmt->execute()) {
+            // Update session
+            $_SESSION['user']['name'] = $name;
+            $_SESSION['user']['profile_photo'] = $photoBlob;
+            $success = "Profile updated successfully!";
+        } else {
+            $success = "Error updating profile. Please try again.";
+        }
     } else {
-        $success = "Error updating profile. Please try again.";
+        $success = $uploadError;
     }
 }
 ?>
@@ -157,7 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="file-upload-box">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <p>Click to upload or drag and drop</p>
-                                    <span>SVG, PNG, JPG or GIF (max. 5MB)</span>
+                                    <span>SVG, PNG, JPG or GIF (max. 2MB)</span>
                                     <input type="file" id="photo" name="photo" accept="image/*" class="file-input">
                                 </div>
                                 <div class="upload-preview" id="upload-preview"></div>
@@ -244,6 +266,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 document.querySelector('.profile-card').style.transform = 'translateY(0)';
             }, 100);
         });
+
+        // Add file size validation
+fileInput.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const maxSize = 2 * 1024 * 1024; // 2MB in bytes
+    
+    if (file) {
+        // Check file size
+        if (file.size > maxSize) {
+            alert('File size too large. Maximum allowed size is 2MB.');
+            this.value = ''; // Clear the file input
+            return;
+        }
+        
+        // Check file type
+        const validTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'];
+        if (!validTypes.includes(file.type)) {
+            alert('Invalid file type. Please select an image file (JPEG, PNG, GIF, or SVG).');
+            this.value = ''; // Clear the file input
+            return;
+        }
+
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            // Update main avatar preview
+            avatarPreview.src = e.target.result;
+            
+            // Show upload preview
+            uploadPreview.innerHTML = `
+                <div class="preview-item">
+                    <img src="${e.target.result}" alt="Preview">
+                    <span>${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
+                    <button type="button" onclick="removePreview()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+        }
+        
+        reader.readAsDataURL(file);
+    }
+});
     </script>
 </body>
 </html>
