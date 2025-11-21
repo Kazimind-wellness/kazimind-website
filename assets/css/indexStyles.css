@@ -909,12 +909,19 @@ mark {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 111, 209, 0.8), transparent);
+    background: linear-gradient(to right, rgba(0, 111, 209, 0.8), transparent);
     color: white;
     padding: 20px;
     transform: translateY(100%);
     transition: all var(--transition-duration) var(--transition-easing);
     opacity: 0;
+}
+
+.read-more-overlay span a{
+    color: #faf8f8;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .article-card:hover .read-more-overlay {

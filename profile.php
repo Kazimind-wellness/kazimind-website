@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uploadError = '';
     
     if (!empty($_FILES['photo']['tmp_name'])) {
-        // Validate file size (max 2MB)
-        $maxFileSize = 2 * 1024 * 1024; // 2MB in bytes
+        // Validate file size (max 1.5MB to be safe)
+        $maxFileSize = 1.5 * 1024 * 1024; // 1.5MB in bytes
         if ($_FILES['photo']['size'] > $maxFileSize) {
-            $uploadError = "File size too large. Maximum allowed size is 2MB.";
+            $uploadError = "File size too large. Maximum allowed size is 1.5MB.";
         } 
-        // Validate file type
+        // Validate file type using extension and MIME type
         elseif (!in_array($_FILES['photo']['type'], ['image/jpeg', 'image/png', 'image/gif', 'image/svg+xml'])) {
             $uploadError = "Invalid file type. Only JPEG, PNG, GIF, and SVG are allowed.";
         }
@@ -31,26 +31,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         elseif ($_FILES['photo']['error'] !== UPLOAD_ERR_OK) {
             $uploadError = "File upload failed. Please try again.";
         }
+        // Additional security check - getimagesize
+        elseif (!getimagesize($_FILES['photo']['tmp_name'])) {
+            $uploadError = "Invalid image file. Please upload a valid image.";
+        }
         // If validation passes, process the file
         else {
-            $photoBlob = file_get_contents($_FILES['photo']['tmp_name']);
+            $fileContent = file_get_contents($_FILES['photo']['tmp_name']);
+            
+            // Double-check the size after reading the file
+            if (strlen($fileContent) > $maxFileSize) {
+                $uploadError = "File size too large after processing. Maximum allowed size is 1.5MB.";
+            } else {
+                $photoBlob = $fileContent;
+            }
         }
     }
 
     // Only proceed with database update if there are no upload errors
     if (empty($uploadError)) {
-        $stmt = $pdo->prepare("UPDATE users SET name = ?, profile_photo = ? WHERE email = ?");
-        $stmt->bindParam(1, $name);
-        $stmt->bindParam(2, $photoBlob, PDO::PARAM_LOB);
-        $stmt->bindParam(3, $email);
-        
-        if ($stmt->execute()) {
-            // Update session
-            $_SESSION['user']['name'] = $name;
-            $_SESSION['user']['profile_photo'] = $photoBlob;
-            $success = "Profile updated successfully!";
-        } else {
-            $success = "Error updating profile. Please try again.";
+        try {
+            $stmt = $pdo->prepare("UPDATE users SET name = ?, profile_photo = ? WHERE email = ?");
+            $stmt->bindParam(1, $name);
+            $stmt->bindParam(2, $photoBlob, PDO::PARAM_LOB);
+            $stmt->bindParam(3, $email);
+            
+            if ($stmt->execute()) {
+                // Update session
+                $_SESSION['user']['name'] = $name;
+                $_SESSION['user']['profile_photo'] = $photoBlob;
+                $success = "Profile updated successfully!";
+            } else {
+                $success = "Error updating profile. Please try again.";
+            }
+        } catch (PDOException $e) {
+            // Handle database errors specifically
+            if (strpos($e->getMessage(), 'max_allowed_packet') !== false) {
+                $success = "File too large for database. Please try a smaller image (under 1MB).";
+            } else {
+                $success = "Database error: " . $e->getMessage();
+            }
         }
     } else {
         $success = $uploadError;
@@ -179,7 +199,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="file-upload-box">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                     <p>Click to upload or drag and drop</p>
-                                    <span>SVG, PNG, JPG or GIF (max. 2MB)</span>
+                                    <span>SVG, PNG, JPG or GIF (max. 1.5MB)</span>
                                     <input type="file" id="photo" name="photo" accept="image/*" class="file-input">
                                 </div>
                                 <div class="upload-preview" id="upload-preview"></div>
@@ -267,16 +287,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }, 100);
         });
 
-        // Add file size validation
+// Add file size validation
 fileInput.addEventListener('change', function(e) {
     const file = e.target.files[0];
-    const maxSize = 2 * 1024 * 1024; // 2MB in bytes
+    const maxSize = 1.5 * 1024 * 1024; // 1.5MB in bytes - matches PHP
     
     if (file) {
         // Check file size
         if (file.size > maxSize) {
-            alert('File size too large. Maximum allowed size is 2MB.');
+            alert('File size too large. Maximum allowed size is 1.5MB.');
             this.value = ''; // Clear the file input
+            removePreview();
             return;
         }
         
@@ -285,6 +306,7 @@ fileInput.addEventListener('change', function(e) {
         if (!validTypes.includes(file.type)) {
             alert('Invalid file type. Please select an image file (JPEG, PNG, GIF, or SVG).');
             this.value = ''; // Clear the file input
+            removePreview();
             return;
         }
 
@@ -304,6 +326,15 @@ fileInput.addEventListener('change', function(e) {
                     </button>
                 </div>
             `;
+        }
+        
+        reader.onloadend = function() {
+            // Additional check after file is read
+            if (file.size > maxSize) {
+                alert('File appears to be too large after processing. Please select a smaller image.');
+                fileInput.value = '';
+                removePreview();
+            }
         }
         
         reader.readAsDataURL(file);

@@ -245,7 +245,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
         At KaziMind Wellness, we believe that mental health begins in the community. That belief came alive today as we partnered with 
       </p>
       <div class="read-more-overlay">
-        <span><a href="redcrossEventArticle.php" style="color: white;">Read More</a></span>
+        <span><a href="redcrossEventArticle.php">Read More</a></span>
       </div>
     </div>
 
@@ -259,7 +259,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
         It is a day when nations, organizations, and individuals pause to reflect on a truth we ...      
         </p>
       <div class="read-more-overlay">
-        <span><a href="worldMentalHealthDay-10-10-2025.php" style="color: white;">Read More</a></span>
+        <span><a href="worldMentalHealthDay-10-10-2025.php">Read More</a></span>
       </div>
     </div>
   </div>
