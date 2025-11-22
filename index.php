@@ -361,7 +361,6 @@ const images = [
     "images/imageB4.jpg",
     "images/imageB6.jpg",
     "images/imageB7.jpg",
-    "images/imageB8.jpg",
     "images/imageB9.jpg",
     "images/imageB10.jpg"
 ];
