@@ -53,23 +53,32 @@ try {
     $user = $stmt->fetch();
 
     if (!$user) {
-        $stmt = $pdo->prepare("INSERT INTO users (auth_provider, google_id, name, email) VALUES (?, ?, ?, ?)");
-        $stmt->execute(['google', $userInfo->id, $userInfo->name, $userInfo->email]);
+        $stmt = $pdo->prepare("INSERT INTO users (auth_provider, google_id, name, email, profile_photo) VALUES (?, ?, ?, ?)");
+        $stmt->execute(['google', $userInfo->id, $userInfo->name, $userInfo->email, $userInfo->picture]);
     } elseif (empty($user['google_id'])) {
-        $stmt = $pdo->prepare("UPDATE users SET google_id = ?, auth_provider = ? WHERE email = ?");
-        $stmt->execute([$userInfo->id, 'google', $userInfo->email]);
+        $stmt = $pdo->prepare("UPDATE users SET google_id = ?, auth_provider = ?, profile_photo = ? WHERE email = ?");
+        $stmt->execute([$userInfo->id, 'google', $userInfo->picture, $userInfo->email]);
     }
 
-    $stmt = $pdo->prepare("SELECT profile_photo FROM users WHERE email = ?");
+    // Get complete user data from database
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->execute([$userInfo->email]);
     $dbUser = $stmt->fetch();
 
+    // Use custom name if user has changed it, otherwise Google name
+    $displayName = !empty($dbUser['name']) ? $dbUser['name'] : $userInfo->name;
+
+    // Use custom profile photo if user uploaded one
+    $profilePhoto = !empty($dbUser['profile_photo']) ? $dbUser['profile_photo'] : $userInfo->picture;
+
+    // Save updated session WITHOUT overwriting custom info
     $_SESSION['user'] = [
-        'name' => $userInfo->name,
-        'email' => $userInfo->email,
+        'id' => $dbUser['id'],
+        'name' => $displayName,
+        'email' => $dbUser['email'],  // use DB email
         'auth_provider' => 'google',
-        'picture' => $userInfo->picture,
-        'profile_photo' => $dbUser['profile_photo'] ?? null
+        'picture' => $profilePhoto,   // ALWAYS use custom image if exists
+        'profile_photo' => $profilePhoto
     ];
 
     // Send confirmation email

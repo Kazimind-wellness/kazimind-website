@@ -47,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const firstDay = new Date(year, month, 1).getDay();
-    const lastDate = new Date(year, month + 1, 0).getDate();
+    const lastDate = new Date(year, month + 1, 0, 23, 59, 59).getDate();
 
     calendar.innerHTML = "";
 
     const start = new Date(year, month, 1);
-    const end = new Date(year, month + 1, 0);
+    const end = new Date(year, month + 1, 0, 23, 59, 59);
 
     fetchEvents(start, end).then(events => {
       const eventMap = {};
