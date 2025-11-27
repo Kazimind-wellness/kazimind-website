@@ -4,7 +4,45 @@
     <link rel="stylesheet" href="assets/css/h-footer.css">
     <link rel="stylesheet" href="assets/css/indexStyles.css">
 </head>
-
+<div class="awards-section">
+    <h2>Awards</h2>
+    <div class="awards-container">
+        <!-- <div class="award-item">
+            <div class="award-badge runner-up">1st</div>
+            <p class="award-description">Runner Up</p>
+            <p class="award-title">Overall Best Insurance Broker of the Year</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge runner-up">1st</div>
+            <p class="award-description">Runner Up</p>
+            <p class="award-title">The Most Customer Centric Broker</p>
+        </div> -->
+        <div class="award-item">
+            <div class="award-badge runner-up">1st</div>
+            <p class="award-description">Runner Up</p>
+            <p class="award-title"></p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge runner-up">1st</div>
+            <p class="award-description"> 1st Place</p>
+            <p class="award-title">Best Physcologist In Kenya</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge winner">
+                <img src="https://cdn-icons-png.flaticon.com/128/4012/4012470.png" alt="Laurel Wreath">
+                <span>1st Place </span>
+            </div>
+            <p class="award-title"> NABLA | Social Impact Award: 2025</p>
+        </div>
+        <div class="award-item">
+            <div class="award-badge winner">
+                <img src="https://cdn-icons-png.flaticon.com/128/11387/11387934.png" alt="Laurel Wreath">
+                <span>1st Place</span>
+            </div>
+            <p class="award-title">BestCustomer Service</p>
+        </div>
+    </div>
+</div>
 <section class="feedback-section">
     <h2>Client Reviews</h2>
 

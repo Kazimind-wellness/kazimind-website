@@ -5,6 +5,26 @@ $pageTitle = "Book Now";
 ?>
 
 <head>
+    <title>Kazimind Wellness | Official Wellness & Therapy Centre</title>
+
+    <meta name="description" content="Kazimind Wellness Centre provides professional mental health services, therapy, counseling, and holistic wellness programs. Visit the official Kazimind website for services, appointments, and resources.">
+
+    <meta name="keywords" content="Kazimind, Kazimind Wellness, wellness center Kenya, therapy Kenya, counseling services, mental health Kenya, Kazimind Nanyuki">
+
+    <meta name="author" content="Kazimind Wellness">
+
+    <!--====== OPEN GRAPH (For Social Media Sharing) ======-->
+    <meta property="og:title" content="Kazimind Wellness | Official Website">
+    <meta property="og:description" content="Kazimind Wellness Centre provides mental health, therapy, and wellness services in Kenya.">
+    <meta property="og:url" content="https://kazimind.com">
+    <meta property="og:type" content="website">
+
+    <!--====== TWITTER CARD ======-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kazimind Wellness | Official Website">
+    <meta name="twitter:description" content="Kazimind Wellness Centre provides mental health, therapy, and wellness services in Kenya.">
+    <meta name="twitter:image" content="https://kazimind.com/images/yourmainimage.jpg">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">

@@ -441,6 +441,167 @@
     }
 
      /* Footer Styles */
+/* --- Global & Container Styles --- */
+
+.awards-section {
+    /* Subtle background gradient for depth */
+    background: linear-gradient(180deg, #f0f4f8 0%, #e0e6ec 100%);
+    padding: 60px 20px 80px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    /* A modern, clean font */
+    color: #2c3e50;
+    /* Deep charcoal blue for text */
+}
+
+.awards-section h2 {
+    font-size: 3em;
+    font-weight: 700;
+    color: #1a5276;
+    /* Professional deep blue for heading */
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.awards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    /* Increased space for visual breathing room */
+}
+
+/* --- Individual Award Item Styles --- */
+
+.award-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: default;
+}
+
+.award-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(30, 18, 145, 0.1);
+}
+
+/* --- Badge Base Styles --- */
+
+.award-badge {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    font-weight: 800;
+    margin-bottom: 20px;
+
+    /* Transition for subtle effect when combined with hover on award-item */
+    transition: all 0.3s ease;
+}
+
+/* --- Runner-Up (Silver/White) Styles --- */
+
+.award-badge.runner-up {
+    /* White with a very light blue inner circle for professionalism */
+    background: #ffffff;
+
+    /* Silver/light grey border */
+    box-shadow: 0 0 0 5px rgba(189, 195, 199, 0.4),
+        /* Subtle outer glow */
+        inset 0 0 10px rgba(0, 0, 0, 0.05);
+    /* Inner shadow for depth */
+
+    color: #4b6584;
+    /* Medium blue-grey text */
+    font-size: 3em;
+}
+
+.award-badge.runner-up:hover {
+    /* Slight pulse/color shift on badge hover */
+    box-shadow: 0 0 0 5px rgba(189, 195, 199, 0.7),
+        inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Winner (Gold) Styles --- */
+
+.award-badge.winner {
+    /* Rich, warm gold gradient */
+    background: linear-gradient(145deg, #ffd700, #daa520);
+
+    /* Elegant gold border/shadow */
+    box-shadow: 0 0 0 5px rgba(255, 223, 0, 0.5),
+        /* Gold outer glow */
+        inset 0 0 20px rgba(255, 255, 255, 0.7);
+    /* Bright inner reflection */
+}
+
+.award-badge.winner:hover {
+    /* Slight rotate and stronger glow for winner */
+    transform: rotate(-3deg);
+    box-shadow: 0 0 0 8px rgba(255, 223, 0, 0.8),
+        inset 0 0 25px rgba(255, 255, 255, 0.9);
+}
+
+.award-badge.winner img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    /* Optional: Give the wreath a dark border for contrast */
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4)) saturate(1.2);
+    transition: transform 0.5s ease;
+}
+
+.award-badge.winner:hover img {
+    /* Subtle rotation effect on the image inside */
+    transform: scale(1.05);
+}
+
+.award-badge.winner span {
+    position: relative;
+    z-index: 1;
+    font-size: 1.6em;
+    color: #795548;
+    /* Dark brown/bronze for contrast */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+/* --- Text Styles --- */
+
+.award-description {
+    font-size: 0.9em;
+    color: #8e8e8e;
+    /* Soft grey */
+    margin-top: -15px;
+    /* Pull text slightly into the badge space */
+    font-weight: 500;
+}
+
+.award-title {
+    font-size: 1.1em;
+    /* Slightly larger, easier to read */
+    color: #2c3e50;
+    line-height: 1.4;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+.award-item:hover .award-title {
+    /* Emphasize the title on hover */
+    color: #1a5276;
+}
+     
 .feedback-section {
     text-align: center;
     padding: 1.5rem 1rem;
