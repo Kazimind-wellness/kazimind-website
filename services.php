@@ -118,64 +118,135 @@ $pageTitle = "Book Now";
 
 <div class="faq-container scroll-animate">
     <div class="faq-item scroll-animate">
-  <div class="faq-question">Q: How long will I be in therapy?</div>
-  <div class="faq-answer">
-    <strong>A:</strong> Truthfully, treatment processes vary by client. The goal is not to adopt you as a therapy client forever, but instead to assist you in reaching your goals. Therapy is a commitment to yourself that requires time and effort, and the decision to engage in the process is yours. We work with clients interested in regular weekly participation in the therapeutic process, as this will increase the likelihood of better and quicker results. We will work as a team to assess the progress you are making in achieving your goals and explore any barriers that may arise. Once consistent improvement is observed, discussion to begin the discharge process occurs and sessions move from weekly to bi-weekly, then monthly.
-  </div>
-</div>
+        <div class="faq-question">Q: Do I need a referral to see a psychologist?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> No, you don’t need a referral to see a psychologist or counsellor at KaziMind Wellness. You can contact us directly and schedule an appointment whenever you feel therapy or coaching would be helpful.
+        </div>
+    </div>
 
-        <div class="faq-item scroll-animate">
-          <div class="faq-question">Q: Do you take my insurance?</div>
-          <div class="faq-answer">
-            <strong>A:</strong> We do not take insurance and would be considered an "out-of-network provider". As an "out-of-network" provider Kazi Mind Wellness Services is a fee-for-service company and only accepts our full fee for services. You should always check with your insurance company to see whether you are covered for out-of-network services for mental health. Typically, if you have the terms PPO, POS, or out-or-network on your insurance card, you may be able to receive reimbursement for services at the insurance companies rate of reimbursement.<br><br>
-            Questions to ask your insurance provider:
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: If I have a referral, what types do you accept?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> At KaziMind Wellness, we accept referrals from your General Practitioner (GP) under a Mental Health Care Plan, as well as from private and public schools.<br><br>
+            If a school counsellor, nurse, or guidance teacher identifies that a student may need professional support, they can also refer the student to us.<br><br>
+            You may be eligible for discounted rates for individual sessions if you provide a valid referral letter.<br><br>
+            Please note that this applies only to individual therapy sessions, not to couples counselling, group programs, or career development services.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: What is a valid referral?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> A valid referral is typically prepared by your GP after a mental health assessment. During this process, your GP will discuss your emotional wellbeing and any challenges you've been facing, such as anxiety, stress, or depression.<br><br>
+            Similarly, schools may issue a referral through a school counsellor, nurse, or guidance teacher when they believe a student could benefit from professional psychological support.<br><br>
+            The referral outlines your treatment goals and the recommended number of sessions. You'll receive a referral letter from your GP or school guidance office specifying the number of sessions approved under the plan.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Can I claim therapy sessions through my medical cover?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Yes. Depending on your insurance provider and plan, you may be eligible to claim reimbursement for therapy sessions. Some medical covers include outpatient mental health benefits that apply to counselling or psychology sessions.<br><br>
+            Since coverage differs by provider, we recommend contacting your insurer to confirm what services are included under your plan.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Do you accept insurance?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Yes. At KaziMind Wellness, we do accept clients with medical insurance. However, coverage for mental health services depends on your insurer and plan.<br><br>
+            Some insurance companies offer direct billing, while others require you to pay first and then claim reimbursement. We're happy to provide receipts and supporting documents to help with your claim.<br><br>
+            Before booking, confirm with your insurance provider:
             <ol>
-              <li>Are mental health benefits covered in my plan?</li>
-              <li>Do I have a deductible? If yes, how much is it?</li>
-              <li>Do I have coverage for an "out-of-network" provider?</li>
-              <li>What is the rate of reimbursement for the following codes? 90832 (30 min. individual therapy), 90834 (45 min. individual therapy), 90837 (60 min. individual therapy), 90853 (group therapy)</li>
-              <li>Do I have a co-pay/co-insurance amount? If yes, how much is it?</li>
-              <li>Is an authorization required for me to receive services?</li>
-              <li>Is there a limit to the number of sessions I can participate in?</li>
-              <li>How do I submit claims for out-of-network reimbursement?</li>
+                <li>Are mental health or counselling services covered in my plan?</li>
+                <li>Do I need a referral or pre-authorization?</li>
+                <li>Does my plan cover outpatient therapy or out-of-network providers?</li>
+                <li>What percentage of the fee is reimbursed?</li>
+                <li>How do I submit claims for reimbursement?</li>
             </ol>
-          </div>
+            Our team can help you understand your coverage and provide the paperwork required by your insurer.
         </div>
+    </div>
 
-        <div class="faq-item scroll-animate">
-          <div class="faq-question">Q: What Payment Options can I use?</div>
-          <div class="faq-answer">
-            <strong>A:</strong> We accept mobile money, credit/debit cards as payment for services. We will provide you with a monthly statement that you can use to submit to your insurance company for reimbursement that will include all of the relevant information necessary. Some options for claims submission include: Directly to insurer via mail or electronically.
-          </div>
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: What payment options can I use?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> We aim to make payments simple and flexible. At KaziMind Wellness, you can pay for sessions using:
+            <ul>
+                <li>Cash payments at our office</li>
+                <li>M-Pesa (Paybill or Till Number)</li>
+                <li>Bank transfer (details available on request)</li>
+            </ul>
+            Our fees are transparent and shared upfront, with no hidden charges. We also offer sliding-scale or discounted rates in special circumstances to ensure therapy remains accessible.
         </div>
+    </div>
 
-        <div class="faq-item scroll-animate">
-          <div class="faq-question">Q: How long are my appointments?</div>
-          <div class="faq-answer">
-            <strong>A:</strong> 
-            Phone Consultation (free): 15-20 minutes<br><br>
-            Initial Evaluation/Diagnostic: 55-60 minutes<br><br>
-            Individual Session: 45-60 minutes<br><br>
-            Couples Session: 55-60 minutes<br><br>
-            Group Sessions: 60-75 minutes<br>
-          </div>
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Do you provide virtual services?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Yes. We offer virtual therapy sessions for clients who prefer or require online support. These sessions are conducted securely through trusted telehealth platforms to ensure privacy and convenience.
         </div>
+    </div>
 
-        <div class="faq-item scroll-animate">
-          <div class="faq-question">Q: Will you give me advice?</div>
-          <div class="faq-answer">
-            <strong>A:</strong> The short answer is "No". Contrary to the belief of many, therapy is not about giving advice. Instead, it is a safe place that allows you to work toward changing your life through the exploration of behavior patterns, thought processes, and feelings. We will work as a team to examine these inner conflicts that may be impeding your ability to enjoy life.
-          </div>
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: How long are my appointments?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Session length varies depending on the type of service and your individual needs. Typical durations are:<br><br>
+            Phone Consultation (Free): 15 minutes<br><br>
+            Initial Evaluation / Diagnostic Session: 55–60 minutes<br><br>
+            Individual Therapy Session: 45–60 minutes<br><br>
+            Couples Therapy Session: 55–60 minutes<br><br>
+            Group Therapy Session: 60–75 minutes<br><br>
+            We value your time and aim to ensure each session provides meaningful support and progress.
         </div>
+    </div>
 
-        <div class="faq-item scroll-animate">
-          <div class="faq-question">Q: Do you provide virtual services?</div>
-          <div class="faq-answer">
-            <strong>A:</strong> Yes, virtual therapy services are available.
-          </div>
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Will you give me advice?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Not exactly. Therapy isn't about giving advice or telling you what to do. Instead, it's a safe, supportive space where we work together to help you explore your thoughts, emotions, and behavior patterns.<br><br>
+            Our goal is to help you gain deeper insight, identify what's holding you back, and build practical tools for positive, lasting change.
         </div>
-    <!-- Additional FAQ items here with same structure -->
-    
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: How long will I be in therapy?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> The length of therapy depends on your individual needs and goals. Our aim is not to keep you in therapy indefinitely but to help you reach a place of stability and growth.<br><br>
+            We often begin with weekly sessions to build momentum. As progress continues, sessions may reduce to bi-weekly or monthly.<br><br>
+            Together, we'll review your progress regularly and decide when it's appropriate to conclude or adjust the frequency of sessions.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Can I choose my therapist, and what if I don't feel comfortable with them?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Yes, you have the freedom to choose a therapist who feels like the right fit for you. The therapeutic relationship is built on trust, comfort, and mutual understanding these are essential for progress.<br><br>
+            If at any point you feel that your current therapist isn't the best match, you're welcome to request a change. We'll support you in finding another professional within our team who aligns better with your needs and preferences. Your comfort and wellbeing always come first.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Is everything I share in therapy confidential?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Yes. Your privacy is fully protected. Information shared in therapy remains confidential, except in cases where there is a risk of harm to yourself or others, or if disclosure is required by law.<br><br>
+            All confidentiality terms are clearly explained during your first session.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: Are your services inclusive and culturally sensitive?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> Yes. KaziMind Wellness provides inclusive, culturally responsive, and non-judgmental care. We respect every client's background, faith, identity, and personal values.
+        </div>
+    </div>
+
+    <div class="faq-item scroll-animate">
+        <div class="faq-question">Q: What if therapy doesn't work for me?</div>
+        <div class="faq-answer">
+            <strong>A:</strong> If a particular approach or therapist doesn't seem effective, we'll review your progress and adjust the treatment plan or connect you with another specialist if needed. Therapy is a process, and finding the right fit is key to success.
+        </div>
+    </div>
 </div>
 
 <div class="sure scroll-animate">
