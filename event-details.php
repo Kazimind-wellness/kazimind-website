@@ -158,7 +158,6 @@ $events = $data['items'] ?? [];
               <strong>Starts:</strong> <?php echo $startDate->format("D, M j, Y g:i A"); ?><br>
               <strong>Ends:</strong> <?php echo $endDate->format("D, M j, Y g:i A"); ?><br>
               <strong>Location:</strong> <?php echo htmlspecialchars($location); ?><br>
-              <strong><a href="https://docs.google.com/forms/d/1PKefO5Ad2ILHerBeUSyRWI9WY50vBxWQbwhz4Q5dNPg">click here to register for mental health boot camp</a></strong>
             </div>
             <p><?php echo htmlspecialchars(trim($description)); ?></p>
           </div>
