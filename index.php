@@ -38,9 +38,9 @@ $pageTitle = "Book Now";
 </head>
 
 <p class="brief-overview">
-  “At KaziMind Wellness, we believe that every mind has the potential to grow, heal, and thrive. Just like a garden, the mind requires care, patience, and the right tools to flourish.
+  At KaziMind Wellness, we believe that every mind has the potential to grow, heal, and thrive. Just like a garden, the mind requires care, patience, and the right tools to flourish.
 
-Our work is rooted in cultivating resilience, clarity, and balance guiding individuals, families, and organizations to discover strength within themselves. When we cultivate minds, we nurture communities, workplaces, and generations to come.” <br>
+Our work is rooted in cultivating resilience, clarity, and balance guiding individuals, families, and organizations to discover strength within themselves. When we cultivate minds, we nurture communities, workplaces, and generations to come. <br>
 
 <!-- “When we cultivate minds, we cultivate lives.” -->
     <hr>
@@ -50,8 +50,8 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
   <div class="background-overlay bg1" id="bg1"></div>
   <div class="background-overlay bg2" id="bg2"></div>
   <div class="welcome-content">
-    <h1 class="welcome-title">Welcome to Our Centre</h1>
-    <p class="welcome-subtitle">Professional care in a compassionate environment where healing begins and growth is nurtured</p>
+    <!-- <h1 class="welcome-title">Welcome to Our Centre</h1>
+    <p class="welcome-subtitle">Professional care in a compassionate environment where healing begins and growth is nurtured</p> -->
     <!-- <button class="cta-button">Schedule a Consultation</button> -->
   </div>
 
@@ -104,7 +104,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
             <!-- Bubbles will be added here dynamically -->
         </div>
             <script>
-        const container = document.querySelector('.bubble-container');
+        // const container = document.querySelector('.bubble-container');
         const bubbleCount = 50;
 
         function createBubble() {
@@ -201,22 +201,22 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
 <div class="section-cards">
   <div class="card card-team">
     <div class="card-content">
-      <h2>Meet Our Team</h2>
+      <!-- <h2>Meet Our Team</h2>
       <p>
         Great therapy requires a great connection. Take a look at the team that work with us and
         we're sure you'll find someone you'll feel good about.
-      </p>
+      </p> -->
       <a href="ourTeam.php" class="card-btn">Our Team</a>
     </div>
   </div>
 
   <div class="card card-services">
     <div class="card-content">
-      <h2>What We Offer</h2>
+      <!-- <h2>What We Offer</h2>
       <p>
         Are you dealing with physical, mental, spiritual or emotional pain? We can help. Check out our
         services to explore the options we offer.
-      </p>
+      </p> -->
       <a href="services.php" class="card-btn">Our Services</a>
     </div>
   </div>
