@@ -171,9 +171,8 @@ $pageTitle = "Book Now";
     <div class="faq-item scroll-animate">
         <div class="faq-question">Q: What payment options can I use?</div>
         <div class="faq-answer">
-            <strong>A:</strong> We aim to make payments simple and flexible. At KaziMind Wellness, you can pay for sessions using:
+            <strong>A:</strong> We aim to make payments simple and flexible. At KaziMind Wellness, we do not accept cash payments at our office. you can pay for sessions using:
             <ul>
-                <li>Cash payments at our office</li>
                 <li>M-Pesa (Paybill or Till Number)</li>
                 <li>Bank transfer (details available on request)</li>
             </ul>
