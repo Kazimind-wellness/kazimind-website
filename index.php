@@ -380,7 +380,6 @@ const images = [
     "images/imageB3.jpg",
     "images/imageB6.jpg",
     "images/imageB7.jpg",
-    "images/imageB9.jpg",
     "images/imageB10.jpg"
 ];
 

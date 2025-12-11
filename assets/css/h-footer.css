@@ -786,7 +786,7 @@
             display: inline-block;
         }
 
-        .footer-column h3::after {
+        /* .footer-column h3::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -794,7 +794,7 @@
             width: 35px;
             height: 2px;
             background: linear-gradient(90deg, #ffd700, transparent);
-        }
+        } */
 
         .footer-column p {
             margin-bottom: 0.7rem;

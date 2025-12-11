@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </p>
   </div>
   <div class="contact-image scroll-animate">
-    <img src="images/fenis.jpg" alt="Office Desk" />
+    <img src="images/reception.jpg" alt="Office Desk" />
   </div>
   <p class="disclaimer scroll-animate">
     <em class="disclaimer scroll-animate">If you are in crisis or someone may be in danger, please do not use this site, as messages may not be reviewed immediately, <br> Instead, please use <a href="emergencyAssistance.php">These resources</a> can provide you with immediate help.</em>
