@@ -371,197 +371,197 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Background image crossfade (keep existing)
-const images = [
-    "images/imageB.jpg",
-    "images/imageB1.jpg",
-    "images/imageB2.jpg",
-    "images/imageB3.jpg",
-    "images/imageB6.jpg",
-    "images/imageB7.jpg",
-    "images/imageB10.jpg"
-];
+    document.addEventListener('DOMContentLoaded', function () {
+      // Background image crossfade (keep existing)
+    const images = [
+        "images/imageB.jpg",
+        "images/imageB1.jpg",
+        "images/imageB2.jpg",
+        "images/imageB3.jpg",
+        "images/imageB6.jpg",
+        "images/imageB7.jpg",
+        "images/imageB10.jpg"
+    ];
 
-// Preload images with callback when all are loaded
-let loadedImages = 0;
-images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => {
-        loadedImages++;
-        if (loadedImages === images.length) {
-            // All images loaded, start slideshow
-            initSlideshow();
-        }
-    };
-});
-
-function initSlideshow() {
-    let current = 0;
-    let showingBg1 = true;
-    const bg1 = document.getElementById('bg1');
-    const bg2 = document.getElementById('bg2');
-
-    // Set initial background with zoom effect
-    bg1.style.backgroundImage = `url('${images[current]}')`;
-    bg1.style.transform = 'scale(1.05)';
-    setTimeout(() => {
-        bg1.style.transform = 'scale(1)';
-    }, 100);
-
-    function crossFadeBackground() {
-        current = (current + 1) % images.length;
-        const nextImage = images[current];
-        
-        if (showingBg1) {
-            bg2.style.backgroundImage = `url('${nextImage}')`;
-            bg2.style.opacity = 1;
-            bg2.style.transform = 'scale(1.05)';
-            bg1.style.opacity = 0;
-            
-            setTimeout(() => {
-                bg2.style.transform = 'scale(1)';
-            }, 100);
-        } else {
-            bg1.style.backgroundImage = `url('${nextImage}')`;
-            bg1.style.opacity = 1;
-            bg1.style.transform = 'scale(1.05)';
-            bg2.style.opacity = 0;
-            
-            setTimeout(() => {
-                bg1.style.transform = 'scale(1)';
-            }, 100);
-        }
-        showingBg1 = !showingBg1;
-    }
-    
-    // Function to start the automatic animation
-    function startAnimation(element) {
-        // Reset any existing animation
-        stopAnimation(element);
-        
-        // Set initial state
-        element.style.transform = 'scale(1) translate(0, 0)';
-        
-        // Start the animation loop
-        element.animationInterval = setInterval(() => {
-            // Calculate progress through a 20-second cycle (can adjust timing)
-            const now = Date.now();
-            const cycleTime = 20000; // 20 seconds for full cycle
-            const progress = (now % cycleTime) / cycleTime;
-            
-            // Calculate movement values (subtle side-to-side and zoom)
-            const moveX = Math.sin(progress * Math.PI * 2) * 20; // ±20px horizontal movement
-            const moveY = Math.cos(progress * Math.PI * 2) * 10; // ±10px vertical movement
-            const scale = 1 + (Math.sin(progress * Math.PI * 4) * 0.02); // 1-1.04 scale oscillation
-            
-            // Apply the transformation
-            element.style.transform = `scale(${scale}) translate(${moveX}px, ${moveY}px)`;
-            element.style.transition = 'transform 8s linear';
-        }, 50); // Update every 50ms for smooth animation
-    }
-    
-    // Function to stop animation
-    function stopAnimation(element) {
-        if (element.animationInterval) {
-            clearInterval(element.animationInterval);
-            element.animationInterval = null;
-        }
-    }
-    
-    let slideshowInterval = setInterval(crossFadeBackground, 8000);
-    // Manual navigation controls
-      const nextBtn = document.getElementById('nextBtn');
-      const prevBtn = document.getElementById('prevBtn');
-
-      function showNext() {
-        clearInterval(slideshowInterval);
-        crossFadeBackground();
-        slideshowInterval = setInterval(crossFadeBackground, 8000);
-      }
-
-      function showPrevious() {
-        clearInterval(slideshowInterval);
-        // Step back one image (since crossFadeBackground increments +1)
-        current = (current - 2 + images.length) % images.length;
-        crossFadeBackground();
-        slideshowInterval = setInterval(crossFadeBackground, 8000);
-      }
-
-      nextBtn.addEventListener('click', showNext);
-      prevBtn.addEventListener('click', showPrevious);
-
-    // Start animation for initial background
-    startAnimation(bg1);
-}
-
-  // Event scroll buttons (keep existing)
-  const scrollContainer = document.getElementById('events-scroll');
-  const leftBtn = document.querySelector('.scroll-btn.left');
-  const rightBtn = document.querySelector('.scroll-btn.right');
-
-  leftBtn.addEventListener('click', () => {
-    scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
-  });
-
-  rightBtn.addEventListener('click', () => {
-    scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
-  });
-
-  // NEW: Enhanced Intersection Observer with reset capability
-  const animatedElements = document.querySelectorAll(
-    '.card-content, .article-card, .intro, .topic-intro, .topic-handled-lists ul, .event-card, .event-buttons, .brief-overview, mark, .upcoming-events'
-  );
-
-  const observerOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Reset animation by removing and re-adding class
-        entry.target.classList.remove('animate-visible');
-        void entry.target.offsetWidth; // Trigger reflow
-        entry.target.classList.add('animate-visible');
-        
-        // Special handling for mark elements
-        if (entry.target.tagName === 'MARK') {
-          entry.target.style.backgroundPosition = '100%';
-          void entry.target.offsetWidth;
-          entry.target.style.backgroundPosition = '0%';
-        }
-      } else {
-        // Reset the element's state when it leaves view
-        entry.target.classList.remove('animate-visible');
-        if (entry.target.tagName === 'MARK') {
-          entry.target.style.backgroundPosition = '100%';
-        }
-      }
+    // Preload images with callback when all are loaded
+    let loadedImages = 0;
+    images.forEach(src => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => {
+            loadedImages++;
+            if (loadedImages === images.length) {
+                // All images loaded, start slideshow
+                initSlideshow();
+            }
+        };
     });
-  }, observerOptions);
 
-  // Observe all elements
-  animatedElements.forEach(el => {
-    observer.observe(el);
-    // Initialize mark elements
-    if (el.tagName === 'MARK') {
-      el.style.backgroundPosition = '100%';
+    function initSlideshow() {
+        let current = 0;
+        let showingBg1 = true;
+        const bg1 = document.getElementById('bg1');
+        const bg2 = document.getElementById('bg2');
+
+        // Set initial background with zoom effect
+        bg1.style.backgroundImage = `url('${images[current]}')`;
+        bg1.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+            bg1.style.transform = 'scale(1)';
+        }, 100);
+
+        function crossFadeBackground() {
+            current = (current + 1) % images.length;
+            const nextImage = images[current];
+            
+            if (showingBg1) {
+                bg2.style.backgroundImage = `url('${nextImage}')`;
+                bg2.style.opacity = 1;
+                bg2.style.transform = 'scale(1.05)';
+                bg1.style.opacity = 0;
+                
+                setTimeout(() => {
+                    bg2.style.transform = 'scale(1)';
+                }, 100);
+            } else {
+                bg1.style.backgroundImage = `url('${nextImage}')`;
+                bg1.style.opacity = 1;
+                bg1.style.transform = 'scale(1.05)';
+                bg2.style.opacity = 0;
+                
+                setTimeout(() => {
+                    bg1.style.transform = 'scale(1)';
+                }, 100);
+            }
+            showingBg1 = !showingBg1;
+        }
+        
+        // Function to start the automatic animation
+        function startAnimation(element) {
+            // Reset any existing animation
+            stopAnimation(element);
+            
+            // Set initial state
+            element.style.transform = 'scale(1) translate(0, 0)';
+            
+            // Start the animation loop
+            element.animationInterval = setInterval(() => {
+                // Calculate progress through a 20-second cycle (can adjust timing)
+                const now = Date.now();
+                const cycleTime = 20000; // 20 seconds for full cycle
+                const progress = (now % cycleTime) / cycleTime;
+                
+                // Calculate movement values (subtle side-to-side and zoom)
+                const moveX = Math.sin(progress * Math.PI * 2) * 20; // ±20px horizontal movement
+                const moveY = Math.cos(progress * Math.PI * 2) * 10; // ±10px vertical movement
+                const scale = 1 + (Math.sin(progress * Math.PI * 4) * 0.02); // 1-1.04 scale oscillation
+                
+                // Apply the transformation
+                element.style.transform = `scale(${scale}) translate(${moveX}px, ${moveY}px)`;
+                element.style.transition = 'transform 8s linear';
+            }, 50); // Update every 50ms for smooth animation
+        }
+        
+        // Function to stop animation
+        function stopAnimation(element) {
+            if (element.animationInterval) {
+                clearInterval(element.animationInterval);
+                element.animationInterval = null;
+            }
+        }
+        
+        let slideshowInterval = setInterval(crossFadeBackground, 8000);
+        // Manual navigation controls
+          const nextBtn = document.getElementById('nextBtn');
+          const prevBtn = document.getElementById('prevBtn');
+
+          function showNext() {
+            clearInterval(slideshowInterval);
+            crossFadeBackground();
+            slideshowInterval = setInterval(crossFadeBackground, 8000);
+          }
+
+          function showPrevious() {
+            clearInterval(slideshowInterval);
+            // Step back one image (since crossFadeBackground increments +1)
+            current = (current - 2 + images.length) % images.length;
+            crossFadeBackground();
+            slideshowInterval = setInterval(crossFadeBackground, 8000);
+          }
+
+          nextBtn.addEventListener('click', showNext);
+          prevBtn.addEventListener('click', showPrevious);
+
+        // Start animation for initial background
+        startAnimation(bg1);
     }
-  });
 
-  // Hover effects for topic lists (keep existing)
-  document.querySelectorAll('.topic-handled-lists li span').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateX(5px)';
+      // Event scroll buttons (keep existing)
+      const scrollContainer = document.getElementById('events-scroll');
+      const leftBtn = document.querySelector('.scroll-btn.left');
+      const rightBtn = document.querySelector('.scroll-btn.right');
+
+      leftBtn.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+
+      rightBtn.addEventListener('click', () => {
+        scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+
+      // NEW: Enhanced Intersection Observer with reset capability
+      const animatedElements = document.querySelectorAll(
+        '.card-content, .article-card, .intro, .topic-intro, .topic-handled-lists ul, .event-card, .event-buttons, .brief-overview, mark, .upcoming-events'
+      );
+
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Reset animation by removing and re-adding class
+            entry.target.classList.remove('animate-visible');
+            void entry.target.offsetWidth; // Trigger reflow
+            entry.target.classList.add('animate-visible');
+            
+            // Special handling for mark elements
+            if (entry.target.tagName === 'MARK') {
+              entry.target.style.backgroundPosition = '100%';
+              void entry.target.offsetWidth;
+              entry.target.style.backgroundPosition = '0%';
+            }
+          } else {
+            // Reset the element's state when it leaves view
+            entry.target.classList.remove('animate-visible');
+            if (entry.target.tagName === 'MARK') {
+              entry.target.style.backgroundPosition = '100%';
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements
+      animatedElements.forEach(el => {
+        observer.observe(el);
+        // Initialize mark elements
+        if (el.tagName === 'MARK') {
+          el.style.backgroundPosition = '100%';
+        }
+      });
+
+      // Hover effects for topic lists (keep existing)
+      document.querySelectorAll('.topic-handled-lists li span').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateX(5px)';
+        });
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateX(0)';
+        });
+      });
     });
-    item.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateX(0)';
-    });
-  });
-});
 </script>
 
 <?php

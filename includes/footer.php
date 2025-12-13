@@ -200,7 +200,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 <style>
     :root {
         --primary-color: #4361ee;
-        --secondary-color: #3A0CA3;
+        --secondary-color: #006fd1;
         --background-color: #ffffff;
         --text-color: #333333;
         --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

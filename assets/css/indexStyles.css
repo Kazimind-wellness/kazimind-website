@@ -625,7 +625,7 @@ body {
 }
 
 .upcoming-events h2 span {
-    color: #4434c4;
+    color: #006fd1;
 }
 
 .event-card {
@@ -719,7 +719,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    background-color: #4434c4;
+    background-color: #006fd1;
     border: none;
     color: white;
     font-size: 1.5rem;

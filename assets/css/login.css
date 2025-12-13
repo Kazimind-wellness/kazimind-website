@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Titillium Web', sans-serif;
-    background: linear-gradient(135deg, #d9e4ec 0%, #083add 100%);
+    background: linear-gradient(135deg, #d9e4ec 0%, #006fd1 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@ body {
 /* Left Section */
 .login-left {
     flex: 1;
-    background: linear-gradient(135deg, #667eea 0%, #d9e4ec 100%);
+    background: linear-gradient(135deg, #006fd1 0%, #d9e4ec 100%);
     color: white;
     padding: 60px 40px;
     display: flex;
@@ -187,7 +187,7 @@ form {
 .login-btn {
     width: 100%;
     padding: 18px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #5b78fc 0%, #006fd1 100%);
     color: white;
     border: none;
     border-radius: 14px;
