@@ -1,6 +1,6 @@
  /* Blog Page Styles */
 .blogs-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #006fd1 100%);
     color: white;
     padding: 5rem 0;
     text-align: center;
@@ -67,7 +67,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    background: linear-gradient(135deg, #8b5cf6, #006fd1);
 }
 
 .blog-card:hover {
@@ -78,7 +78,7 @@
 .blog-image-container {
     position: relative;
     height: 100px;
-    background: linear-gradient(135deg, #4f44df 0%, #666263 100%);
+    background: linear-gradient(135deg, #006fd1 0%, #006fd1 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +155,7 @@
 }
 
 .read-more-btn {
-    background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+    background: linear-gradient(135deg, #788af1, #006fd1);
     color: white;
     border: none;
     padding: 0.875rem 2rem;
@@ -218,7 +218,7 @@
 }
 
 @media (max-width: 768px) {
-    .blogs-hero {
+    gs-hero {
         padding: 3rem 0;
     }
 
