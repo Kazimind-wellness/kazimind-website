@@ -76,7 +76,7 @@ if (isset($_POST['verify_code'])) {
         $error = "Your session expired or no pending registration found. Please register again.";
     } else {
         $pending = $_SESSION['pending_user'];
-        if ($entered_code === $pending['code']) {
+        if ($entered_code == $pending['code']) {
             try {
                 $stmt = $pdo->prepare("INSERT INTO users (name, email, password, auth_provider) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$pending['name'], $pending['email'], $pending['password'], 'local']);

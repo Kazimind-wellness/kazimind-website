@@ -182,7 +182,7 @@ if ($isLoggedIn) {
   </style>
 
   <div class="parallax-container">
-    <img src="images/WhatsApp Image 2025-10-18 at 13.34.45_14744611.jpg" alt="Leaves">
+    <img src="images/HEad.jpg" alt="Leaves">
   </div>
 
   <script>
