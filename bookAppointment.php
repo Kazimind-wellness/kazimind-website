@@ -112,13 +112,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Body = $body;
 
             $mail->send();
-            echo "<script>
-                    alert('✅ Booking submitted successfully!\\\\n\\\\nThank you for choosing Kazimind Wellness. We will contact you shortly to confirm your appointment.');
-                    document.getElementById('booking-form').reset();
-                    // Reset form to first page if it's a multi-step form
-                    window.location.href = window.location.href.split('?')[0];
-                </script>";
-            exit();
+                sleep(1);
+                
+                header('Location: thank_you_for_booking.html');
+                exit();
         } catch (Exception $e) {
             // Log the error and show a user-friendly message
             echo "Mailer Error: " . $mail->ErrorInfo;
@@ -143,7 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
     <link rel="stylesheet" href="assets/css/h-footer.css">
     <title>Kazimind</title>
-    <style>
+<style>
         .booking-container {
             max-width: 800px;
             margin: 0 auto;
@@ -365,7 +362,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 padding: 8px 15px;
             }
         }
-    </style>
+</style>
 </head>
 <body>
     <div class="booking-container">
@@ -409,7 +406,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="Country">Country <span>*</span></label>
-                      <select id="Country" name="Country" required>
+                    <select id="Country" name="Country" required>
                         <option value="">Select your country</option>
                     </select>
                 </div>
@@ -576,8 +573,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="Psychotherapist">Name of Psychotherapist </label>
-                    <input type="text" id="Psychotherapist" name="Psychotherapist">
+                    <label for="Psychotherapist">Name of Psychotherapist <span>*</span></label>
+                    <select id="Psychotherapist" name="Psychotherapist" required>
+                        <option value="">Select an option</option>
+                        <option value="Njoki Kamau">Njoki Kamau</option>
+                        <option value="Fenis Akinyi">Fenis Akinyi</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
             </div>
 
