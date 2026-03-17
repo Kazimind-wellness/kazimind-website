@@ -18,7 +18,7 @@ $blogs = getBlogs();
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="assets/css/blogs.css">
+<link rel="stylesheet" href="assets/css/blogs.min.css">
 </head>
 <div class="blogs-hero">
     <div class="blogs-container">

@@ -32,8 +32,8 @@ $pageTitle = "Book Now";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
-    <link rel="stylesheet" href="assets/css/h-footer.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
     <title>Kazimind</title>
 </head>
 
@@ -105,53 +105,53 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
         </div>
             <script>
         // const container = document.querySelector('.bubble-container');
-        const bubbleCount = 50;
+        // const bubbleCount = 50;
 
-        function createBubble() {
-            const bubble = document.createElement('div');
-            bubble.classList.add('bubble');
+        // function createBubble() {
+        //     const bubble = document.createElement('div');
+        //     bubble.classList.add('bubble');
 
-            const size = Math.random() * 40 + 15 + 'px';
-            const left = Math.random() * 100 + '%';
-            const delay = Math.random() * 8 + 's';
-            const duration = Math.random() * 10 + 8 + 's';
-            const sway = Math.random() > 0.5 ? 1 : -1;
+        //     const size = Math.random() * 40 + 15 + 'px';
+        //     const left = Math.random() * 100 + '%';
+        //     const delay = Math.random() * 8 + 's';
+        //     const duration = Math.random() * 10 + 8 + 's';
+        //     const sway = Math.random() > 0.5 ? 1 : -1;
 
-            bubble.style.setProperty('--size', size);
-            bubble.style.setProperty('--left', left);
-            bubble.style.setProperty('--delay', delay);
-            bubble.style.setProperty('--duration', duration);
-            bubble.style.setProperty('--sway', sway);
+        //     bubble.style.setProperty('--size', size);
+        //     bubble.style.setProperty('--left', left);
+        //     bubble.style.setProperty('--delay', delay);
+        //     bubble.style.setProperty('--duration', duration);
+        //     bubble.style.setProperty('--sway', sway);
 
-            bubble.style.animationDuration = duration;
+        //     bubble.style.animationDuration = duration;
 
-            // Add slight color variation
-            if (Math.random() > 0.7) {
-                bubble.style.background = `radial-gradient(
-                    circle at 30% 30%, 
-                    rgba(255, 255, 255, 0.9) 5%, 
-                    rgba(200, 230, 255, 0.6) 30%, 
-                    rgba(170, 220, 255, 0.3) 90%
-                )`;
-            }
+        //     // Add slight color variation
+        //     if (Math.random() > 0.7) {
+        //         bubble.style.background = `radial-gradient(
+        //             circle at 30% 30%, 
+        //             rgba(255, 255, 255, 0.9) 5%, 
+        //             rgba(200, 230, 255, 0.6) 30%, 
+        //             rgba(170, 220, 255, 0.3) 90%
+        //         )`;
+        //     }
 
-            container.appendChild(bubble);
+        //     // container.appendChild(bubble);
 
-            // Remove bubble after animation completes
-            setTimeout(() => {
-                if (bubble.parentNode) {
-                    bubble.remove();
-                }
-            }, parseFloat(duration) * 1000 + parseFloat(delay) * 1000);
-        }
+        //     // Remove bubble after animation completes
+        //     setTimeout(() => {
+        //         if (bubble.parentNode) {
+        //             bubble.remove();
+        //         }
+        //     }, parseFloat(duration) * 1000 + parseFloat(delay) * 1000);
+        // }
 
-        // Create initial bubbles
-        for (let i = 0; i < bubbleCount; i++) {
-            setTimeout(createBubble, Math.random() * 2000);
-        }
+        // // Create initial bubbles
+        // for (let i = 0; i < bubbleCount; i++) {
+        //     setTimeout(createBubble, Math.random() * 2000);
+        // }
 
-        // Continue creating bubbles
-        setInterval(createBubble, 500);
+        // // Continue creating bubbles
+        // setInterval(createBubble, 500);
     </script>
   <p class="topic-intro">
     In our therapy sessions, we address a wide range of topics designed to enhance mental and 
@@ -258,7 +258,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
   <div class="articles-grid">
     <div class="article-card">
       <div class="article-image-container">
-        <img src="images/redcrossArticle.jpg" alt="Emotional Eating" class="article-image">
+        <img src="images/redcrossArticle.webp" loading="lazy" alt="Emotional Eating" class="article-image">
       </div>
       <h3>Community Sensitization: Building Awareness, Breaking Barriers</h3>
       <p class="excerpt">
@@ -271,7 +271,7 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
 
     <div class="article-card">
       <div class="article-image-container">
-        <img src="images/World Mental Health Day.png" alt="CBT for Anxiety" class="article-image">
+        <img src="images/World Mental Health Day.webp" loading="lazy" alt="CBT for Anxiety" class="article-image">
       </div>
       <h3>World Mental Health Day - October 10th</h3>
       <p class="excerpt">
@@ -374,13 +374,13 @@ Our work is rooted in cultivating resilience, clarity, and balance guiding indiv
     document.addEventListener('DOMContentLoaded', function () {
       // Background image crossfade (keep existing)
     const images = [
-        "images/imageB.jpg",
-        "images/imageB1.jpg",
-        "images/imageB2.jpg",
-        "images/imageB3.jpg",
-        "images/imageB6.jpg",
-        "images/imageB7.jpg",
-        "images/imageB10.jpg"
+        "images/imageB.webp",
+        "images/imageB1.webp",
+        "images/imageB2.webp",
+        "images/imageB3.webp",
+        "images/imageB6.webp",
+        "images/imageB7.webp",
+        "images/imageB10.webp"
     ];
 
     // Preload images with callback when all are loaded

@@ -12,9 +12,9 @@ $pageTitle = "Psychotherapy Services";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
-    <link rel="stylesheet" href="assets/css/h-footer.css">
-    <link rel="stylesheet" href="assets/css/therapyStyles.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
+    <link rel="stylesheet" href="assets/css/therapyStyles.min.css">
 </head>
 
 <h1 class="therapy-heading animate-on-scroll">Organizational Development Services</h1>
@@ -22,7 +22,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/org-1.jpg" alt="Therapy image">
+            <img src="images/org-1.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2> Workplace Mental Health & Wellness</h2>
@@ -38,7 +38,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/org-2.jpg" alt="Therapy image">
+            <img src="images/org-2.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Leadership & Management Development</h2>
@@ -54,7 +54,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/org-3.jpg" alt="Therapy image">
+            <img src="images/org-3.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Team Building & Group Dynamics</h2>
@@ -70,7 +70,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/org-4.jpg" alt="Therapy image">
+            <img src="images/org-4.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Organizational Culture & Performance</h2>
@@ -86,7 +86,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/org-5.jpg" alt="Therapy image">
+            <img src="images/org-5.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Training & Capacity Building</h2>
@@ -102,7 +102,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/org-6.jpg" alt="Therapy image">
+            <img src="images/org-6.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Crisis & Conflict Intervention</h2>

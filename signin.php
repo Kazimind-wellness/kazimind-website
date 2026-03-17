@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Login | Kazimind Wellness</title>
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/login.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -39,13 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-left">
         <div class="brand-section">
             <div class="logo-container">
-                <img src="images/kazi-mind-high-resolution-logo-transparent.png" alt="">
+                <img src="images/kazi-mind-high-resolution-logo-transparent.webp" loading="lazy" alt="">
             </div>
             <h1>CULTIVATE YOUR MIND</h1>
             <p>Your journey to mental wellness begins here</p>
         </div>
         <div class="illustration">
-            <img src="images/brainy_plant.jpeg" alt="Mental Wellness">
+            <img src="images/brainy_plant.webp" loading="lazy" alt="Mental Wellness">
         </div>
     </div>
     

@@ -238,7 +238,7 @@ if (isset($_GET['edit_blog'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="assets/css/adminstyle.css">
+    <link rel="stylesheet" href="assets/css/adminstyle.min.css">
     <style>
         /* Blog Management Styles */
         .blog-management {

@@ -8,8 +8,8 @@ $pageTitle = "Book Now";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
-    <link rel="stylesheet" href="assets/css/h-footer.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
     <title>Kazimind</title>
 </head>
 
@@ -21,28 +21,28 @@ $pageTitle = "Book Now";
         <div class="swiper-wrapper">
 
                     <div class="swiper-slide box">
-                        <img src="images/fenis.png" alt="">
+                        <img src="images/fenis.webp" loading="lazy" alt="">
                         <h3>Fenis Akinyi</h3>
                         <p>
                             clinical counseling psychologist.
                         </p>
                     </div>
                     <div class="swiper-slide box">
-                        <img src="images/njoki.jpg" alt="">
+                        <img src="images/njoki.webp" loading="lazy" alt="">
                         <h3>Njoki Kamau</h3>
                         <p>
                             Organization Psychologist.
                         </p>
                     </div>
                     <div class="swiper-slide box">
-                        <img src="images/mary.png" alt="">
+                        <img src="images/mary.webp" loading="lazy" alt="">
                         <h3>Mary Macharia</h3>
                         <p>
                             Family and Marriage Therapist.
                         </p>
                     </div>
                     <div class="swiper-slide box">
-                        <img src="images/maryMaiko.png" alt="">
+                        <img src="images/maryMaiko.webp" loading="lazy" alt="">
                         <h3>Mary Mycle</h3>
                         <p>
                             Spiritual & Psychological Counselor.
@@ -61,7 +61,7 @@ $pageTitle = "Book Now";
         <div class="swiper-wrapper">
 
                     <div class="swiper-slide box">
-                        <img src="images/steven.png" alt="">
+                        <img src="images/steven.webp" loading="lazy" alt="">
                         <h3>Steven Macharia</h3>
                         <p>
                             Software Engineer
@@ -69,7 +69,7 @@ $pageTitle = "Book Now";
                     </div>
 
                     <div class="swiper-slide box">
-                        <img src="images/irene.jpg" alt="">
+                        <img src="images/irene.webp" loading="lazy" alt="">
                         <h3>Irene Maina</h3>
                         <p>
                             Technology and Innovation Intern
@@ -77,7 +77,7 @@ $pageTitle = "Book Now";
                     </div>
 
                     <div class="swiper-slide box">
-                        <img src="images/ephantas.png" alt="">
+                        <img src="images/ephantas.webp" loading="lazy" alt="">
                         <h3>Ephantus Wamuyu</h3>
                         <p>
                             Graphic Desgner And Social Media Manager
@@ -85,7 +85,7 @@ $pageTitle = "Book Now";
                     </div>
 
                     <div class="swiper-slide box">
-                        <img src="images/ken.png" alt="">
+                        <img src="images/ken.webp" loading="lazy" alt="">
                         <h3>Ken Kagunda</h3>
                         <p>
                             Chief Technology Officer

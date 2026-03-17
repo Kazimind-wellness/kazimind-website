@@ -11,8 +11,8 @@ $pageTitle = "Book Now";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
-    <link rel="stylesheet" href="assets/css/h-footer.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
     <title>Kazimind</title>
 </head>
 
@@ -25,7 +25,7 @@ $pageTitle = "Book Now";
 <section class="services-offered">
     <div class="service-card scroll-animate">
       <div class="service-image">
-        <img src="images/physcoTerapyImage.jpg" alt="Psychotherapy Image">
+        <img src="images/physcoTerapyImage.webp" loading="lazy" alt="Psychotherapy Image">
       </div>
       <h3>Psychotherapy Services</h3>
       <p>
@@ -36,7 +36,7 @@ $pageTitle = "Book Now";
 
     <div class="service-card scroll-animate" id="Life">
       <div class="service-image">
-        <img src="images/lifeCoaching.jpg" alt="Life Coaching Image">
+        <img src="images/lifeCoaching.webp" loading="lazy" alt="Life Coaching Image">
       </div>
       <h3>Life Coaching Services</h3>
       <p>
@@ -48,7 +48,7 @@ $pageTitle = "Book Now";
 <section class="services-offered">
     <div class="service-card scroll-animate">
       <div class="service-image">
-        <img src="images/S-img.jpg" alt="Group Therapy Image">
+        <img src="images/S-img.webp" loading="lazy" alt="Group Therapy Image">
       </div>
       <h3>Group Therapy</h3>
       <p>
@@ -58,7 +58,7 @@ $pageTitle = "Book Now";
 
     <div class="service-card scroll-animate">
       <div class="service-image">
-        <img src="images/WhatsApp Image 2025-06-26 at 16.10.02_877e202d.jpg" alt="Organizational Development Image">
+        <img src="images/WhatsApp Image 2025-06-26 at 16.10.02_877e202d.webp" loading="lazy" alt="Organizational Development Image">
       </div>
       <h3>Organizational Development</h3>
       <p>
@@ -72,7 +72,7 @@ $pageTitle = "Book Now";
 <section class="services-offered">
     <div class="service-card scroll-animate">
       <div class="service-image">
-        <img src="images/onlineThearpy.png" alt="Online Therapy Image">
+        <img src="images/onlineThearpy.webp" loading="lazy" alt="Online Therapy Image">
       </div>
       <h3>Online therapy</h3>
       <p>
@@ -82,7 +82,7 @@ $pageTitle = "Book Now";
 
     <div class="service-card scroll-animate">
       <div class="service-image">
-        <img src="images/clinicalSupervision.png" alt="Clinical Supervision Image">
+        <img src="images/clinicalSupervision.webp" loading="lazy" alt="Clinical Supervision Image">
       </div>
       <h3>Clinical Supervision</h3>
       <p>
@@ -94,7 +94,7 @@ $pageTitle = "Book Now";
 <section class="services-offered">
     <div class="service-card scroll-animate">
       <div class="service-image">
-        <img src="images/masssageBed.png" alt="Massage Therapy Image">
+        <img src="images/masssageBed.webp" loading="lazy" alt="Massage Therapy Image">
       </div>
       <h3>Massage Therapy Services</h3>
       <p>

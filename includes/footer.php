@@ -1,8 +1,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/h-footer.css">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
 </head>
 <div class="awards-section">
     <h2>Awards</h2>
@@ -155,30 +155,30 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
             <div class="footer-column">
                 <h3>Contact Us</h3>
-                <p><img src="images/location-dot.jpg" alt="Location"> <span>Nanyuki, Kenya</span></p>
-                <p><img src="images/mail-icon.png" alt="Email"> <span>admin@kazimind.com</span></p>
+                <p><img src="images/location-dot.webp" loading="lazy" alt="Location"> <span>Nanyuki, Kenya</span></p>
+                <p><img src="images/mail-icon.webp" loading="lazy" alt="Email"> <span>admin@kazimind.com</span></p>
             </div>
 
             <div class="footer-column">
                 <h3>Call Us</h3>
-                <p><img src="images/whstapp-icon.png" alt="Phone"> <span>+254 700 479 944</span></p>
-                <p><img src="images/phone-icon.png"  alt="WhatsApp"> <span>+254 202 020 830</span></p>
+                <p><img src="images/whstapp-icon.webp" loading="lazy" alt="Phone"> <span>+254 700 479 944</span></p>
+                <p><img src="images/phone-icon.webp" loading="lazy"  alt="WhatsApp"> <span>+254 202 020 830</span></p>
             </div>
 
             <div class="footer-column">
                 <h3>Follow Us</h3>
                 <div class="social-row">
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/KaziMindWellness"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                        <a href="https://x.com/kazimindw"><img src="images/X-icon.png" alt="Twitter/X"></a>
-                        <a href="https://www.instagram.com/invites/contact/"><img src="images/ig-icon.jpg" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/KaziMindWellness"><img src="images/facebook-icon.webp" loading="lazy" alt="Facebook"></a>
+                        <a href="https://x.com/kazimindw"><img src="images/X-icon.webp" loading="lazy" alt="Twitter/X"></a>
+                        <a href="https://www.instagram.com/invites/contact/"><img src="images/ig-icon.webp" loading="lazy" alt="Instagram"></a>
                     </div>
                 </div>
                 <div class="social-row">
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/company/kazimind-wellness/"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-                        <a href="https://vm.tiktok.com/ZMA2SKHWp/"><img src="images/tiktok-icon.png" alt="TikTok"></a>
-                        <a href="https://youtube.com/@kazimindhub?si=WPfCRa8_7OiyrpwN"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                        <a href="https://www.linkedin.com/company/kazimind-wellness/"><img src="images/linkedin-icon.webp" loading="lazy" alt="LinkedIn"></a>
+                        <a href="https://vm.tiktok.com/ZMA2SKHWp/"><img src="images/tiktok-icon.webp" loading="lazy" alt="TikTok"></a>
+                        <a href="https://youtube.com/@kazimindhub?si=WPfCRa8_7OiyrpwN"><img src="images/youtube-icon.webp" loading="lazy" alt="YouTube"></a>
                     </div>
                 </div>
             </div>

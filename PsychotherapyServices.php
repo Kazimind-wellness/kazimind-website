@@ -12,9 +12,9 @@ $pageTitle = "Psychotherapy Services";
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
-    <link rel="stylesheet" href="assets/css/h-footer.css">
-    <link rel="stylesheet" href="assets/css/therapyStyles.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
+    <link rel="stylesheet" href="assets/css/therapyStyles.min.css">
 </head>
 
 <h1 class="therapy-heading animate-on-scroll">Psychotherapy Services</h1>
@@ -22,7 +22,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images\individualtherap.jpg" alt="Therapy image">
+            <img src="images\individualtherap.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Individual Therapy</h2>
@@ -39,7 +39,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images\teenTherap.jpg" alt="Therapy image">
+            <img src="images\teenTherap.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Teen Therapy and Child therapy</h2>
@@ -55,7 +55,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/couple2.jpg" alt="Therapy image">
+            <img src="images/couple2.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Couples / Partner Therapy</h2>
@@ -71,7 +71,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images\a-family.jpg" alt="Therapy image">
+            <img src="images\a-family.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Family Therapy</h2>
@@ -85,7 +85,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/walkAndTalk.jpg" alt="Therapy image">
+            <img src="images/walkAndTalk.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Walk and Talk Therapy</h2>
@@ -103,7 +103,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images\student.png" alt="Therapy image">
+            <img src="images\student.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Student personal Therapy</h2>
@@ -117,7 +117,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/psychological-evaluation.jpg" alt="Therapy image">
+            <img src="images/psychological-evaluation.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>KaziMind Psychological Assessment</h2>
@@ -130,7 +130,7 @@ $pageTitle = "Psychotherapy Services";
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">
         <div class="therapy-image">
-            <img src="images/rentRoom.jpg" alt="Therapy image">
+            <img src="images/rentRoom.webp" loading="lazy" alt="Therapy image">
         </div>
         <div class="therapy-text">
             <h2>Rent a Space</h2>

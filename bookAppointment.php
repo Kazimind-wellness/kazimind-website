@@ -135,10 +135,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-    <link rel="stylesheet" href="assets/css/h-footer.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
     <title>Kazimind</title>
 <style>
         .booking-container {
@@ -547,7 +547,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="provider">List the medical insurance provider(If applicable)</label>
                     <input type="text" id="provider" name="provider">
                 </div>
-                <img src="images/paybill_image.jpg" alt="paybillimage" class="paybill-image">
+                <img src="images/paybill_image.webp" loading="lazy" alt="paybillimage" class="paybill-image">
                 <div class="form-group scroll-animate">
                     <label for="confirmation">Please provide your payment confirmation ID / NAME <span>*</span></label>
                     <input type="text" id="confirmation" name="confirmation" required>

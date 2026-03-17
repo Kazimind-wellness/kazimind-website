@@ -243,7 +243,7 @@ $pageTitle = "Community Sensitization";
             </div>
 
             <div class="image-container">
-                <img src="images/redcrossArticle.jpg" alt="Community Mental Health Sensitization Event" class="article-image">
+                <img src="images/redcrossArticle.webp" loading="lazy" alt="Community Mental Health Sensitization Event" class="article-image">
                 <p class="image-caption">KaziMind Wellness team engaging with community members at the market sensitization event</p>
             </div>
 

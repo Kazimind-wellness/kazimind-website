@@ -94,10 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/indexStyles.css">
+    <link rel="stylesheet" href="assets/css/indexStyles.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-    <link rel="stylesheet" href="assets/css/h-footer.css">
+    <link rel="stylesheet" href="assets/css/h-footer.min.css">
     <title>Kazimind</title>
 </head>
 
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </p>
   </div>
   <div class="contact-image scroll-animate">
-    <img src="images/reception.jpg" alt="Office Desk" />
+    <img src="images/reception.webp" loading="lazy" alt="Office Desk" />
   </div>
   <p class="disclaimer scroll-animate">
     <em class="disclaimer scroll-animate">If you are in crisis or someone may be in danger, please do not use this site, as messages may not be reviewed immediately, <br> Instead, please use <a href="emergencyAssistance.php">These resources</a> can provide you with immediate help.</em>
