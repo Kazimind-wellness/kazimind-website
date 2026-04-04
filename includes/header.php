@@ -52,10 +52,10 @@ if ($isLoggedIn) {
 </head>
 
 <!-- Preloader -->
-<div id="preloader">
+<!-- <div id="preloader">
     <img src="images/logo2.webp" loading="lazy" alt="Loading..." class="loader-logo" /> 
     <div class="loader"></div>
-</div>
+</div> -->
 
 <!-- Top Awareness Bar -->
 <!-- <div class="awareness-bar">
