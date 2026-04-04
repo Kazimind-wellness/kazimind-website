@@ -101,6 +101,16 @@ $pageTitle = "Book Now";
        At KaziMind Wellness, we believe that caring for your mind must include caring for your body.
       </p>
     </div>
+    <div class="service-card scroll-animate">
+      <div class="service-image">
+        <img src="images/bootCampKids.webp" loading="lazy" alt="Massage Therapy Image">
+      </div>
+      <h3>BootCamp</h3>
+      <p>
+       At KaziMind Wellness, our Boot Camp transforms your body and mindset through powerful, goal-driven training experiences.
+      </p>
+        <a href="mentalHealthBootCamp.php" class="service-button">Mental Health bootCamp Topics</a>
+    </div>
 </section>
 
   <div class="background" id="background" style="display: none;">
