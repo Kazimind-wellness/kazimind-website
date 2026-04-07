@@ -144,7 +144,7 @@ $pageTitle = "Psychotherapy Services";
     </style>
 </head>
 
-<h1 class="therapy-heading animate-on-scroll">Boot Camp Mental Health Topics</h1>
+<h1 class="therapy-heading animate-on-scroll">Mental Health bootCamp Programs</h1>
 
 <div class="therapy-section animate-on-scroll">
     <div class="therapy-content">

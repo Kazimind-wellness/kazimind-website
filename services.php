@@ -105,7 +105,7 @@ $pageTitle = "Book Now";
       <div class="service-image">
         <img src="images/bootCampKids.webp" loading="lazy" alt="Massage Therapy Image">
       </div>
-      <h3>BootCamp</h3>
+      <h3>Mental Health bootCamps</h3>
       <p>
        At KaziMind Wellness, our Boot Camp transforms your body and mindset through powerful, goal-driven training experiences.
       </p>
