@@ -5,6 +5,100 @@
     <link rel="stylesheet" href="assets/css/indexStyles.min.css">
 </head>
 <div class="awards-section">
+ <style>
+    
+    /* Stats Section Styles */
+            .stats-section {
+                padding: 60px 20px;
+                background-color: #fcfcfc; /* Light subtle background to pop the cards */
+            }
+
+            .stats-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                gap: 30px;
+                justify-items: center;
+            }
+
+            .stat-card {
+                background: #ffffff;
+                padding: 40px 20px;
+                border-radius: 24px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+                text-align: center;
+                width: 100%;
+                max-width: 260px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+
+            .stat-card:hover {
+                transform: translateY(-5px);
+            }
+
+            /* Semi-circular / Progress ring matching the image design */
+            .progress-circle {
+                position: relative;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                            conic-gradient(#006fdf calc(var(--percent) * 1%), #dce7fa 0);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 25px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+                font-weight: 700;
+                color: #4d8dd7; /* Teal hex matching the image */
+                font-family: inherit;
+            }
+
+            .stat-label {
+                font-size: 16px;
+                color: #555555;
+                font-weight: 500;
+                line-height: 1.4;
+                margin: 0;
+                padding: 0 10px;
+            }
+ </style>
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="progress-circle" style="--percent: 75;">
+                <span class="stat-number">400+</span>
+            </div>
+            <p class="stat-label">Community Members Reached</p>
+        </div>
+        <div class="stat-card">
+            <div class="progress-circle" style="--percent: 65;">
+                <span class="stat-number">20+</span>
+            </div>
+            <p class="stat-label">Care Experienced Youth</p>
+        </div>
+        <div class="stat-card">
+            <div class="progress-circle" style="--percent: 30;">
+                <span class="stat-number">4+</span>
+            </div>
+            <p class="stat-label">Countries in Africa</p>
+        </div>
+        <div class="stat-card">
+            <div class="progress-circle" style="--percent: 50;">
+                <span class="stat-number">200+</span>
+            </div>
+            <p class="stat-label">Individual Sessions</p>
+        </div>
+    </div>
+</section>
+
     <h2>Awards</h2>
     <div class="awards-container">
         <div class="award-item">
@@ -446,7 +540,6 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
         }
     }
 </style>
-
 <div class="customization-panel">
     <button class="customization-toggle" id="customizationToggle">
     <i class="fas fa-user-cog"></i>
