@@ -49,6 +49,14 @@ $pageTitle = "Book Now";
                         </p>
 
                     </div>
+
+                    <div class="swiper-slide box">
+                        <img src="images/bridgit.jpeg" loading="lazy" alt="">
+                        <h3>Bridgit Mwaniki</h3>
+                        <p>
+                            Counseling Psychologist
+                        </p>
+                    </div>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
