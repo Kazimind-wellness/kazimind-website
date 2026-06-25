@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="assets/css/h-footer.min.css">
     <link rel="stylesheet" href="assets/css/indexStyles.min.css">
 </head>
-<div class="awards-section">
- <style>
+
+<style>
     
     /* Stats Section Styles */
             .stats-section {
@@ -70,35 +70,36 @@
                 padding: 0 10px;
             }
  </style>
-<section class="stats-section">
+<section class="stats-section" id="statsSection">
     <div class="stats-container">
         <div class="stat-card">
             <div class="progress-circle" style="--percent: 75;">
-                <span class="stat-number">400+</span>
+                <span class="stat-number" data-target="4000" data-suffix="+">0</span>
             </div>
             <p class="stat-label">Community Members Reached</p>
         </div>
         <div class="stat-card">
             <div class="progress-circle" style="--percent: 65;">
-                <span class="stat-number">20+</span>
+                <span class="stat-number" data-target="20" data-suffix="+">0</span>
             </div>
             <p class="stat-label">Care Experienced Youth</p>
         </div>
         <div class="stat-card">
             <div class="progress-circle" style="--percent: 30;">
-                <span class="stat-number">4+</span>
+                <span class="stat-number" data-target="30" data-suffix="+">0</span>
             </div>
-            <p class="stat-label">Countries in Africa</p>
+            <p class="stat-label">Countries in the World</p>
         </div>
         <div class="stat-card">
             <div class="progress-circle" style="--percent: 50;">
-                <span class="stat-number">200+</span>
+                <span class="stat-number" data-target="1000" data-suffix="+">0</span>
             </div>
-            <p class="stat-label">Individual Sessions</p>
+            <p class="stat-label">Therapy Sessions</p>
         </div>
     </div>
 </section>
 
+<div class="awards-section">
     <h2>Awards</h2>
     <div class="awards-container">
         <div class="award-item">
@@ -841,10 +842,99 @@ function applyStylesToWebsite(color, fontFamily, fontSize, theme) {
 
 <!-- CUSTOMIZATION BUTTON IMPLEMENTATION ENDS HERE -->
 
+<!-- Counter Animation Script -->
+<script>
+    (function() {
+        'use strict';
+
+        // Get all stat number elements
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let animationStarted = false; // to prevent multiple triggers
+        
+        // Function to animate a single element
+        function animateNumber(el) {
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 2000; // ms
+            const startTime = performance.now();
+            
+            // Store initial value (if any, else 0)
+            let currentValue = parseInt(el.textContent.replace(/,/g, ''), 10) || 0;
+            
+            function updateCounter(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1); // 0 to 1
+                
+                // Easing function for smoother animation
+                const eased = 1 - Math.pow(1 - progress, 3); // cubic ease-out
+                const current = Math.round(eased * target);
+                
+                // Update the display
+                el.textContent = current + suffix;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.textContent = target + suffix; // Ensure final value is exact
+                }
+            }
+            
+            requestAnimationFrame(updateCounter);
+        }
+        
+        // Function to start animation for all stat numbers
+        function startCounters() {
+            if (animationStarted) return;
+            animationStarted = true;
+            
+            statNumbers.forEach(el => {
+                // Set initial text to 0 (or use data-start if needed)
+                const suffix = el.getAttribute('data-suffix') || '';
+                el.textContent = '0' + suffix;
+                animateNumber(el);
+            });
+        }
+        
+        // Intersection Observer to trigger animation when section comes into view
+        const statsSection = document.getElementById('statsSection');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startCounters();
+                        // Optionally unobserve after animation starts
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.3 // 30% of the section must be visible
+            });
+            
+            observer.observe(statsSection);
+        } else {
+            // Fallback: if section not found, start on page load
+            document.addEventListener('DOMContentLoaded', startCounters);
+        }
+        
+        // If the section is already visible on load, start immediately
+        // (in case observer doesn't fire due to fast loading)
+        if (statsSection) {
+            const rect = statsSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            if (rect.top < windowHeight * 0.7 && rect.bottom > 0) {
+                // Section is likely visible
+                startCounters();
+                // Try to unobserve if already observed
+                const observers = IntersectionObserver.prototype;
+                // We can't easily unobserve here, but we can set a flag to prevent double start
+            }
+        }
+    })();
+</script>
+
 <!-- <script>
 window.addEventListener("load", function () {
     const preloader = document.getElementById("preloader");
     if (preloader) preloader.style.display = "none";
 });
 </script> -->
-
