@@ -331,6 +331,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 5px;
         }
 
+        /* Conditional field styling */
+        .conditional-field {
+            transition: all 0.3s ease;
+        }
+        .conditional-field.hidden {
+            display: none;
+        }
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .two-columns, .phone-input-group {
@@ -400,15 +408,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="Other">Other</option>
                     </select>
                 </div>
-                <div class="form-group scroll-animate">
-                    <label for="Nationality">Nationality <span>*</span></label>
-                    <input type="text" id="Nationality" placeholder="Nationality" name="Nationality" required>
-                </div>
-                <div class="form-group scroll-animate">
+               <div class="form-group scroll-animate">
                     <label for="Country">Country <span>*</span></label>
                     <select id="Country" name="Country" required>
                         <option value="">Select your country</option>
                     </select>
+                </div>
+                <div class="form-group scroll-animate">
+                    <label for="Nationality">Nationality <span>*</span></label>
+                    <input type="text" id="Nationality" placeholder="Nationality" name="Nationality" required>
                 </div>
                 <div class="form-group scroll-animate">
                     <label for="location">Place of residence / Ward <span>*</span></label>
@@ -480,18 +488,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </select>
                 </div>
                 <div class="form-group scroll-animate">
-                    <label for="before">If you been in Therapy before? <span>*</span></label>
+                    <label for="before">Have you been in Therapy before? <span>*</span></label>
                     <select id="before" name="before" required>
                         <option value="">Select an option</option>
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
                 </div>
-                <div class="form-group scroll-animate">
+                <div class="form-group conditional-field scroll-animate" id="therapist-field" data-condition="before">
                     <label for="therapist">If you been in Therapy before, who was your therapist?</label>
                     <input type="text" id="therapist" name="therapist">
                 </div>
-                <div class="form-group scroll-animate">
+                <div class="form-group conditional-field scroll-animate" id="therapistloc-field" data-condition="before">
                     <label for="therapistloc">If you been in Therapy before, where was your therapist?</label>
                     <input type="text" id="therapistloc" name="therapistloc">
                 </div>
@@ -503,7 +511,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="No">No</option>
                     </select>
                 </div>
-                <div class="form-group scroll-animate">
+                <div class="form-group conditional-field scroll-animate" id="doctor-field" data-condition="medication">
                     <label for="doctor">If you're on medication, who is the doctor?</label>
                     <input type="text" id="doctor" name="doctor">
                 </div>
@@ -619,32 +627,74 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Located right in the heart of Nanyuki town, on Lenana Road. Within Sportsmans Arms Hotel.</p>
     </div>
         <script>
-        document.addEventListener("DOMContentLoaded", async () => {
-            const countrySelect = document.getElementById("Country");
+document.addEventListener("DOMContentLoaded", async () => {
+    const countrySelect = document.getElementById("Country");
 
-            try {
-            const response = await fetch("https://restcountries.com/v3.1/all?fields=name");
-            const countries = await response.json();
+    try {
+        // Alternative: Use a more reliable API
+        const response = await fetch("https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/index.json");
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const countries = await response.json();
+        
+        // The data format might be different, adjust accordingly
+        const sortedCountries = countries.sort((a, b) =>
+            a.name.localeCompare(b.name)
+        );
 
-            // Sort countries alphabetically
-            const sortedCountries = countries.sort((a, b) =>
-                a.name.common.localeCompare(b.name.common)
-            );
+        // Clear existing options (except the first one)
+        while (countrySelect.options.length > 1) {
+            countrySelect.remove(1);
+        }
 
-            // Populate dropdown
-            sortedCountries.forEach(country => {
-                const option = document.createElement("option");
-                option.value = country.name.common;
-                option.textContent = country.name.common;
-                countrySelect.appendChild(option);
-            });
-            } catch (error) {
-            console.error("Error loading countries:", error);
+        // Populate dropdown
+        sortedCountries.forEach(country => {
             const option = document.createElement("option");
-            option.textContent = "Unable to load countries";
+            option.value = country.name;
+            option.textContent = country.name;
             countrySelect.appendChild(option);
-            }
         });
+        
+    } catch (error) {
+        console.error("Error loading countries:", error);
+        // Fallback to hardcoded list
+        const fallbackCountries = [
+            "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", 
+            "Australia", "Austria", "Bangladesh", "Belgium", "Brazil", "Canada", 
+            "China", "Colombia", "Croatia", "Cuba", "Denmark", "Egypt", "Ethiopia", 
+            "Finland", "France", "Germany", "Ghana", "Greece", "Hungary", "India", 
+            "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", 
+            "Japan", "Kenya", "Malaysia", "Mexico", "Morocco", "Netherlands", 
+            "New Zealand", "Nigeria", "Norway", "Pakistan", "Peru", "Philippines", 
+            "Poland", "Portugal", "Romania", "Russia", "Saudi Arabia", "Singapore", 
+            "South Africa", "South Korea", "Spain", "Sweden", "Switzerland", 
+            "Thailand", "Turkey", "Uganda", "Ukraine", "United Arab Emirates", 
+            "United Kingdom", "United States", "Vietnam", "Zimbabwe"
+        ];
+        
+        // Clear existing options
+        while (countrySelect.options.length > 0) {
+            countrySelect.remove(0);
+        }
+        
+        // Add default option
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "Select your country";
+        countrySelect.appendChild(defaultOption);
+        
+        // Add fallback countries
+        fallbackCountries.sort().forEach(country => {
+            const option = document.createElement("option");
+            option.value = country;
+            option.textContent = country;
+            countrySelect.appendChild(option);
+        });
+    }
+});
         </script>
 
     <script>
@@ -719,6 +769,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Initialize animation on elements in the first page
             animateElements();
+
+            // --- Conditional field logic ---
+            function toggleConditionalFields() {
+                // Therapy before fields
+                const beforeSelect = document.getElementById('before');
+                const therapistField = document.getElementById('therapist-field');
+                const therapistlocField = document.getElementById('therapistloc-field');
+                
+                if (beforeSelect) {
+                    if (beforeSelect.value === 'Yes') {
+                        therapistField.classList.remove('hidden');
+                        therapistlocField.classList.remove('hidden');
+                    } else {
+                        therapistField.classList.add('hidden');
+                        therapistlocField.classList.add('hidden');
+                        // Clear values when hidden
+                        document.getElementById('therapist').value = '';
+                        document.getElementById('therapistloc').value = '';
+                    }
+                }
+
+                // Medication fields
+                const medicationSelect = document.getElementById('medication');
+                const doctorField = document.getElementById('doctor-field');
+                
+                if (medicationSelect) {
+                    if (medicationSelect.value === 'Yes') {
+                        doctorField.classList.remove('hidden');
+                    } else {
+                        doctorField.classList.add('hidden');
+                        // Clear value when hidden
+                        document.getElementById('doctor').value = '';
+                    }
+                }
+            }
+
+            // Add event listeners to trigger conditional logic
+            const beforeSelect = document.getElementById('before');
+            if (beforeSelect) {
+                beforeSelect.addEventListener('change', toggleConditionalFields);
+            }
+
+            const medicationSelect = document.getElementById('medication');
+            if (medicationSelect) {
+                medicationSelect.addEventListener('change', toggleConditionalFields);
+            }
+
+            // Initial toggle on page load
+            toggleConditionalFields();
+
+            // Also run toggle when navigating to page 2
+            // Override the changePage function to include conditional toggle
+            const originalChangePage = changePage;
+            changePage = function(from, to) {
+                originalChangePage(from, to);
+                if (to === 2) {
+                    toggleConditionalFields();
+                }
+            };
 
             // Next button click handler
             nextButton.addEventListener('click', function() {
@@ -855,6 +964,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 });
             });
         });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const countrySelect = document.getElementById('Country');
+    const nationalityInput = document.getElementById('Nationality');
+    
+    if (countrySelect && nationalityInput) {
+        countrySelect.addEventListener('change', function() {
+            const selectedCountry = this.value;
+            if (selectedCountry && !nationalityInput.dataset.userEdited) {
+                nationalityInput.value = selectedCountry;
+            }
+        });
+        
+        nationalityInput.addEventListener('focus', function() {
+            this.dataset.userEdited = 'true';
+        });
+        
+        nationalityInput.addEventListener('input', function() {
+            if (this.value === '') {
+                this.dataset.userEdited = 'false';
+            }
+        });
+    }
+});
     </script>
 
     <?php 

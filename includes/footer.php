@@ -285,7 +285,7 @@ document.getElementById('signupForm').addEventListener('submit', function(e) {
 
 
 <div class="whatsapp-float">
-  <a href="https://wa.me/254700479944" target="_blank">
+  <a href="https://wa.me/254700479944?text=Hi%20Kazimind%20Wellness%2C%20I%20would%20like%20to%20book%20an%20appointment" target="_blank">
     <i class="whatsapp-icon"></i>
     <span>Chat with us</span>
   </a>
