@@ -39,8 +39,9 @@ $pageTitle = "About Us";
             <h2 class="review-title animate-on-scroll">About Our Centre</h2>
             <br>
             <h3 class="review-title animate-on-scroll">Our History</h3> 
-            <p class="animate-on-scroll">Established with a vision to prioritize mental health, KaziMind Wellness Centre has been serving the community since its founding in 2021. Launched with the idea of bringing together a group of therapists for a wider, supportive community for both clients and therapists alike, KaziMind Wellness has dedicated itself to providing accessible and effective therapy services.</p>
-            <p class="animate-on-scroll">Since inception, we have achieved significant milestones in promoting mental wellness and breaking the stigma surrounding mental health issues.</p>
+            <p class="animate-on-scroll">Established with a vision to prioritize mental health and promote holistic well-being, <strong>KaziMind Wellness was officially launched in February 2024.</strong></p>
+            <p class="animate-on-scroll">The organisation was established with the idea of creating a supportive mental wellness community that brings together professionals and individuals seeking accessible, effective, and compassionate mental health support. Since its official launch, KaziMind Wellness has been committed to providing quality mental health and workplace wellness services to individuals, families, schools, and organisations.</p>
+            <p class="animate-on-scroll">Since it's inception,KaziMind Wellness has continued to grow its impact by promoting mental wellness, building emotional resilience, supporting healthier workplaces, and contributing to efforts to reduce the stigma surrounding mental health.</p>
             
             <h3 class="animate-on-scroll">Our Slogan</h3>
             <p class="animate-on-scroll">Cultivate Your Mind</p>
